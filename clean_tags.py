@@ -24,7 +24,8 @@ def clean_xml_folder(input_folder, output_folder="clean_text"):
         try:
             # קריאה ופרסינג עם lxml
             tree = etree.parse(input_path)
-            text = "".join(tree.itertext())  # חילוץ כל הטקסט שבין התגים
+            root = tree.getroot()
+            text = "".join(root.itertext())  # חילוץ כל הטקסט שבין התגים
 
             # ניקוי רווחים מיותרים
             text = " ".join(text.split())
