@@ -3,3 +3,6 @@ venv/
 clean_text/
 tokens/
 lemmatized_text/
+vectors_word/
+vectors_lemm/
+embeddings_w2v/
