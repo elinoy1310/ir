@@ -3,6 +3,7 @@ import argparse
 import os
 import re
 from pathlib import Path
+"""python tokenize_clean_text.py --input clean_text --output tokens"""
 
 # תבנית טוקן "מילה" הכוללת:
 # - אותיות עברית/לטינית ומספרים
