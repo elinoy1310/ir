@@ -48,12 +48,8 @@ def process_folder(input_folder: Path, output_folder: Path, suffix_in=".txt", su
     print(f"\nסיכום: נקראו {count_in} קבצים, נוצרו {count_out} קבצים בתיקייה: {output_folder.resolve()}")
 
 def main():
-    ap = argparse.ArgumentParser(description="Tokenize TXT files: separate words and punctuation into standalone tokens.")
-    ap.add_argument("--input", "-i", required=True, help="תיקיית קלט עם קבצי TXT הנקיים (למשל clean_text)")
-    ap.add_argument("--output", "-o", default="tokens", help="תיקיית פלט לקבצים המטוקננים (ברירת מחדל: tokens)")
-    args = ap.parse_args()
-
-    process_folder(Path(args.input), Path(args.output))
-
+    input_folder = Path("clean_text")
+    output_folder = Path("tokens")
+    process_folder(input_folder, output_folder)
 if __name__ == "__main__":
     main()

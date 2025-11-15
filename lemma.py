@@ -2,6 +2,7 @@ import os
 import spacy
 '''
 pip install spacy
+python -m spacy download en_core_web_sm
 
 '''
 def lemmatize_folder(input_folder, output_folder="lemmatized_text"):
