@@ -64,7 +64,7 @@ def main():
     np.save(out / "SBERT_Origen.npy", X_sbert)
     (out / "SBERT_Origen_files.json").write_text(json.dumps({"files": names}, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    print("\n✅ נשמרו ייצוגים בתיקייה:", out.resolve())
+    print("\n נשמרו ייצוגים בתיקייה:", out.resolve())
     print("SimCSE_Origen.npy  shape:", X_simcse.shape)
     print("SBERT_Origen.npy   shape:", X_sbert.shape)
 

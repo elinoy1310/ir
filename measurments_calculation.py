@@ -103,7 +103,7 @@ def save_to_excel(input_folder, ig_df, mi_df):
     
     # שמירת התוצאות ב-Excel
     merged_df.to_excel(f"{input_folder}/tfidf_resultsV3.xlsx", index=False)
-    print(f"✅ התוצאות נשמרו ב-{input_folder}/tfidf_resultsV3.xlsx")
+    print(f" התוצאות נשמרו ב-{input_folder}/tfidf_resultsV3.xlsx")
 
 
 if __name__ == "__main__":

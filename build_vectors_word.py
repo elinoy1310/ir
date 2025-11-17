@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse
 import os
 import json
@@ -116,7 +115,7 @@ def main():
     save_json(count_vec.vocabulary_, out_dir / f"TFIDF-{source_type}_vocabulary.json")
     save_json({"files": file_names}, out_dir / f"TFIDF-{source_type}_files.json")
 
-    print(f"\n✅ נשמרו קבצים בתיקייה: {out_dir.resolve()}")
+    print(f"\n נשמרו קבצים בתיקייה: {out_dir.resolve()}")
     print(f"  - BM25_{source_type}.npz  + vocab + files")
 
 if __name__ == "__main__":
