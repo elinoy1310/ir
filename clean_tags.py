@@ -43,9 +43,7 @@ def clean_xml_folder(input_folder, output_folder="clean_text"):
                 log.write(f"{filename}: {e}\n")
 
 
-# --- דוגמת הרצה ---
 if __name__ == "__main__":
-    # לדוגמה, אם הקבצים נמצאים בתיקייה "raw_xml"
     clean_xml_folder(input_folder="debates_xml", output_folder="clean_text")
     import os
 

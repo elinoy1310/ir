@@ -25,7 +25,7 @@ def make_session():
     return s
 
 def list_remote_files(session, base_url: str):
-    # קורא את הדף כטקסט פשוט ומחלץ href-ים עם regex (בלי BeautifulSoup)
+    # קורא את הדף כטקסט פשוט ומחלץ href-ים עם regex
     r = session.get(base_url, timeout=60)
     r.raise_for_status()
     # מחלץ רק קבצים שמתחילים ב-debates ומסתיימים ב-xml
