@@ -47,3 +47,23 @@ def clean_xml_folder(input_folder, output_folder="clean_text"):
 if __name__ == "__main__":
     # לדוגמה, אם הקבצים נמצאים בתיקייה "raw_xml"
     clean_xml_folder(input_folder="debates_xml", output_folder="clean_text")
+    import os
+
+    folder = r"clean_text" 
+    empty_files = []
+
+    for filename in os.listdir(folder):
+        path = os.path.join(folder, filename)
+        if os.path.isfile(path):
+            size = os.path.getsize(path)
+            if size == 0:
+                empty_files.append(filename)
+            else:
+                with open(path, "r", encoding="utf-8", errors="ignore") as f:
+                    content = f.read().strip()
+                    if len(content) < 10: 
+                        empty_files.append(filename)
+
+    print(f"נמצאו {len(empty_files)} קבצים ריקים או כמעט ריקים:")
+    for f in empty_files:
+        print("-", f)
