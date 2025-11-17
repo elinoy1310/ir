@@ -67,8 +67,6 @@ def main():
     ap.add_argument("--outdir", "-o", default="vectors_word", help="תיקיית פלט לשמירת המטריצות (ברירת מחדל: vectors_word)")
     # פרמטרי צמצום מאפיינים
     ap.add_argument("--min_df", type=int, default=5, help="סף הופעה מינימלי במספר מסמכים (ברירת מחדל: 5)")
-    ap.add_argument("--max_df", type=float, default=0.9, help="התעלמות ממונחים שמופיעים ביותר מחלק זה מן המסמכים (ברירת מחדל: 0.9)")
-    ap.add_argument("--max_features", type=int, default=None, help="מס' מאפיינים מקסימלי (אופציונלי)")
     args = ap.parse_args()
 
     input_dir = Path(args.input)
@@ -79,47 +77,47 @@ def main():
     texts, file_names = read_corpus(input_dir)
     print(f"נקראו {len(texts)} מסמכים מ-{input_dir}")
 
-    # --- 2) TF-IDF (דליל) ---
-    tfidf_vec = TfidfVectorizer(
-        input="content",
-        analyzer="word",
-        stop_words="english",       # הסרת stopwords באנגלית
-        min_df=args.min_df,         # מסמך מינימלי
-        max_df=args.max_df,         # מסמך מקסימלי (יחסי)
-        max_features=args.max_features,
-        norm="l2",                  # נרמול וקטורים
-        sublinear_tf=True           # tf לוגרי"ת - לעתים משפר
-    )
-    X_tfidf = tfidf_vec.fit_transform(texts)  # CSR
-    print(f"TF-IDF shape: {X_tfidf.shape}, צפיפות: {X_tfidf.nnz / (X_tfidf.shape[0]*X_tfidf.shape[1] + 1e-9):.6f}")
+    # # --- 2) TF-IDF (דליל) ---
+    # tfidf_vec = TfidfVectorizer(
+    #     input="content",
+    #     analyzer="word",
+    #     stop_words="english",       # הסרת stopwords באנגלית
+    #     min_df=args.min_df,         # מסמך מינימלי
+    #     max_df=args.max_df,         # מסמך מקסימלי (יחסי)
+    #     max_features=args.max_features,
+    #     norm="l2",                  # נרמול וקטורים
+    #     sublinear_tf=True           # tf לוגרי"ת - לעתים משפר
+    # )
+    # X_tfidf = tfidf_vec.fit_transform(texts)  # CSR
+    # print(f"TF-IDF shape: {X_tfidf.shape}, צפיפות: {X_tfidf.nnz / (X_tfidf.shape[0]*X_tfidf.shape[1] + 1e-9):.6f}")
 
-    # שמירה
-    sparse.save_npz(out_dir / "TFIDF_Word.npz", X_tfidf)
-    save_json(tfidf_vec.vocabulary_, out_dir / "TFIDF_Word_vocabulary.json")
-    save_json({"files": file_names}, out_dir / "TFIDF_Word_files.json")
+    # # שמירה
+    # sparse.save_npz(out_dir / "TFIDF_Word.npz", X_tfidf)
+    # save_json(tfidf_vec.vocabulary_, out_dir / "TFIDF_Word_vocabulary.json")
+    # save_json({"files": file_names}, out_dir / "TFIDF_Word_files.json")
 
-    # --- 3) BM25 (Okapi) ---
-    # תחילה נבנה מטריצת ספירות עם אותם סינונים כמו ב-TFIDF, כדי שהמרחב יתאים
+    # --- 2) BM25 (Okapi) בלבד ---
     count_vec = CountVectorizer(
         input="content",
         analyzer="word",
         stop_words="english",
-        min_df=args.min_df,
-        max_df=args.max_df,
-        max_features=args.max_features,
-        vocabulary=None  # אפשר גם להצמיד ל-vocabulary של TFIDF אם רוצים זהות מוחלטת בעמודות
+        min_df=args.min_df
     )
+
     X_counts = count_vec.fit_transform(texts).tocsr()
     print(f"Counts shape: {X_counts.shape}")
 
+    # חישוב BM25
     X_bm25 = bm25_matrix(X_counts, k1=1.5, b=0.75)
-    sparse.save_npz(out_dir / "BM25_Word.npz", X_bm25)
-    save_json(count_vec.vocabulary_, out_dir / "BM25_Word_vocabulary.json")
-    save_json({"files": file_names}, out_dir / "BM25_Word_files.json")
+    source_type="Word" if args.input=="tokens" else "Lemm"
+
+    # שמירה
+    sparse.save_npz(out_dir / f"TFIDF-{source_type}.npz", X_bm25)
+    save_json(count_vec.vocabulary_, out_dir / f"TFIDF-{source_type}_vocabulary.json")
+    save_json({"files": file_names}, out_dir / f"TFIDF-{source_type}_files.json")
 
     print(f"\n✅ נשמרו קבצים בתיקייה: {out_dir.resolve()}")
-    print("  - TFIDF_Word.npz + vocab + files")
-    print("  - BM25_Word.npz  + vocab + files")
+    print(f"  - BM25_{source_type}.npz  + vocab + files")
 
 if __name__ == "__main__":
     main()
