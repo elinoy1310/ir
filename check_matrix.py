@@ -6,16 +6,16 @@ from pathlib import Path
 from scipy import sparse
 
 # תיקיית הפלט שבה נשמרו המטריצות
-OUTDIR = Path("vectors_lemm")  # שנה לפי הצורך
-BM25_FILE = OUTDIR / "TFIDF-Lemm.npz"
-VOCAB_FILE = OUTDIR / "TFIDF-Lemm_vocabulary.json"
-FILES_FILE = OUTDIR / "TFIDF-Lemm_files.json"
-CSV_OUTPUT = OUTDIR / "BM25_top10_with_sums.csv"
-# OUTDIR = Path("vectors_word")  # שנה לפי הצורך
-# BM25_FILE = OUTDIR / "TFIDF-Word.npz"
-# VOCAB_FILE = OUTDIR / "TFIDF-Word_vocabulary.json"
-# FILES_FILE = OUTDIR / "TFIDF-Word_files.json"
+# OUTDIR = Path("vectors_lemm")  # שנה לפי הצורך
+# BM25_FILE = OUTDIR / "TFIDF_Word.npz"
+# VOCAB_FILE = OUTDIR / "TFIDF_Word_vocabulary.json"
+# FILES_FILE = OUTDIR / "TFIDF_Word_files.json"
 # CSV_OUTPUT = OUTDIR / "BM25_top10_with_sums.csv"
+OUTDIR = Path("vectors_word")  # שנה לפי הצורך
+BM25_FILE = OUTDIR / "TFIDF_Word.npz"
+VOCAB_FILE = OUTDIR / "TFIDF_Word_vocabulary.json"
+FILES_FILE = OUTDIR / "TFIDF_Word_files.json"
+CSV_OUTPUT = OUTDIR / "BM25_top10_with_sums.csv"
 
 # --- טעינת המטריצה ---
 X_bm25 = sparse.load_npz(BM25_FILE)
