@@ -10,16 +10,16 @@ pip install openpyxl
 
 '''
 
-def calculate_mutual_information(input_folder):
+def calculate_mutual_information(input_folder, file_type):
     """
     מחשב את ה-Information Gain (Mutual Information) עבור תכונות מבוססות TF-IDF.
     קורא את המטריצה השמורה ואת המילון, ומחשב את ה-Information Gain לכל תכונה.
     """
     # קריאת המטריצה ששמרת (TFIDF)
-    tfidf_matrix = load_npz(f"{input_folder}/BM25_Word.npz")
+    tfidf_matrix = load_npz(f"{input_folder}/TFIDF-{file_type}.npz")
 
     # קריאת המילים מתוך קובץ ה-vocabulary
-    with open(f"{input_folder}/BM25_Word_vocabulary.json", "r", encoding="utf-8") as f:
+    with open(f"{input_folder}/TFIDF-{file_type}_vocabulary.json", "r", encoding="utf-8") as f:
         vocabulary = json.load(f)
 
     # הוצאת המילים מתוך המילון (keys) כדי להפיק רשימה של הפיצ'רים
@@ -27,7 +27,7 @@ def calculate_mutual_information(input_folder):
  
 
     # קריאת שמות הקבצים (למשל, ייצוג של קטגוריות)
-    file_names = pd.read_json(f"{input_folder}/BM25_Word_files.json")["files"].values
+    file_names = pd.read_json(f"{input_folder}/TFIDF-{file_type}_files.json")["files"].values
 
     # המרת שמות הקבצים לקטגוריות (למשל, כל קובץ הוא קטגוריה)
     le = LabelEncoder()
@@ -43,7 +43,7 @@ def calculate_mutual_information(input_folder):
     return mi_df
 
 
-def calculate_information_gain(input_folder):
+def calculate_information_gain(input_folder,file_type):
     # פונקציה לחישוב Entropy
     def entropy(labels):
         count = Counter(labels)
@@ -67,17 +67,17 @@ def calculate_information_gain(input_folder):
         return total_entropy - weighted_entropy
 
     # קריאת המילים מתוך קובץ ה-vocabulary # שים כאן את הנתיב הנכון
-    with open(f"{input_folder}/BM25_Word_vocabulary.json", "r", encoding="utf-8") as f:
+    with open(f"{input_folder}/TFIDF-{file_type}_vocabulary.json", "r", encoding="utf-8") as f:
         vocabulary = json.load(f)
 
     # הוצאת המילים מתוך המילון (keys) כדי להפיק רשימה של הפיצ'רים
     feature_names = list(vocabulary.keys())
 
     # טוען את מטריצת ה-TFIDF
-    tfidf_matrix = load_npz(f"{input_folder}/BM25_Word.npz")
+    tfidf_matrix = load_npz(f"{input_folder}/TFIDF-{file_type}.npz")
 
     # קריאת שמות הקבצים (כמו קטגוריות)
-    file_names = pd.read_json(f"{input_folder}/BM25_Word_files.json")["files"].values
+    file_names = pd.read_json(f"{input_folder}/TFIDF-{file_type}_files.json")["files"].values
 
     # המרת שמות הקבצים לקטגוריות (תוויות)
     le = LabelEncoder()
@@ -102,20 +102,17 @@ def save_to_excel(input_folder, ig_df, mi_df):
     merged_df = pd.merge(ig_df, mi_df, on="Feature", how="outer")
     
     # שמירת התוצאות ב-Excel
-    merged_df.to_excel(f"{input_folder}/tfidf_resultsV3.xlsx", index=False)
-    print(f"✅ התוצאות נשמרו ב-{input_folder}/tfidf_resultsV3.xlsx")
+    merged_df.to_excel(f"{input_folder}/tfidf_results.xlsx", index=False)
+    print(f"✅ התוצאות נשמרו ב-{input_folder}/tfidf_results.xlsx")
 
 
 if __name__ == "__main__":
-    # חישוב ה-Information Gain ו- Chi-Square עבור כל מטריצה
-    for tfidf_folder in ["vectors_word", "vectors_lemm"]:
-        print(f"\nחישוב Information Gain ו-Chi-Square עבור: {tfidf_folder}")
-        
+  
+    for tfidf_folder,file_type in zip(["vectors_word", "vectors_lemm"],["Word", "Lemm"]):
         # חישוב ה-Information Gain
-        ig_df = calculate_information_gain(tfidf_folder)
+        ig_df = calculate_information_gain(tfidf_folder,file_type)
 
-        # חישוב ה-Chi-Square
-        mi_df = calculate_mutual_information(tfidf_folder)
+        mi_df = calculate_mutual_information(tfidf_folder,file_type)
 
         # שמירת התוצאות בקובץ Excel
         save_to_excel(tfidf_folder, ig_df, mi_df)
