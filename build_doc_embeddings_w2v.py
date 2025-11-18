@@ -103,7 +103,7 @@ def main():
     model_lemm, shapes_l = process_split(Path(args.lemma_dir), outdir, label="Lemm", model=None)
     model_lemm.save(str(outdir / "w2v_model_lemm.model"))
 
-    print("\n✅ נשמרו הייצוגים בתיקייה:", outdir.resolve())
+    print("\n נשמרו הייצוגים בתיקייה:", outdir.resolve())
     print("Word  shapes (basic, nostop):", shapes_w)
     print("Lemm  shapes (basic, nostop):", shapes_l)
 
