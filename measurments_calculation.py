@@ -3,8 +3,9 @@ import json
 import numpy as np
 from scipy.sparse import load_npz
 import pandas as pd
-from sklearn.feature_selection import mutual_info_classif, chi2
+from sklearn.feature_selection import mutual_info_classif
 from sklearn.preprocessing import LabelEncoder
+import warnings
 '''
 pip install openpyxl
 
@@ -34,7 +35,11 @@ def calculate_mutual_information(input_folder, file_type):
     labels = le.fit_transform(file_names)
 
     # חישוב ה-Information Gain (Mutual Information)
-    mi = mutual_info_classif(tfidf_matrix, labels)
+    # mi = mutual_info_classif(tfidf_matrix, labels)
+    # חישוב ה-Information Gain (Mutual Information) תוך השתקת האזהרה
+    with warnings.catch_warnings():
+        warnings.filterwarnings("ignore", category=UserWarning)
+        mi = mutual_info_classif(tfidf_matrix, labels)
 
     # יצירת DataFrame להציג את התוצאות
     mi_df = pd.DataFrame({"Feature": feature_names, "Mutual Information": mi})
@@ -111,8 +116,10 @@ if __name__ == "__main__":
     for tfidf_folder,file_type in zip(["vectors_word", "vectors_lemm"],["Word", "Lemm"]):
         # חישוב ה-Information Gain
         ig_df = calculate_information_gain(tfidf_folder,file_type)
+        print(f"\n✅ חישוב Information Gain עבור {file_type} הושלם.")
 
         mi_df = calculate_mutual_information(tfidf_folder,file_type)
+        print(f"\n✅ חישוב Mutual Information עבור {file_type} הושלם.")
 
         # שמירת התוצאות בקובץ Excel
         save_to_excel(tfidf_folder, ig_df, mi_df)
