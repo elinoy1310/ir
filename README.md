@@ -135,12 +135,12 @@ count_vec = CountVectorizer(
 עבור קבצי המקור לאחר הניקוי :
 - מספר המאפיינים: 29151
 - מספר שורות ריקות:0
-- הצצה לערכי המטריצה: <img width="966" height="160" alt="image" src="https://github.com/user-attachments/assets/ff14b0ab-a480-4366-beb8-ab1e61850848" />
-**ויזואליזציה של המטריצות שנוצרו:** <br> 
+- הצצה לערכי המטריצה: <img width="1288" height="153" alt="image" src="https://github.com/user-attachments/assets/2c99b59f-38c6-434f-b923-c6c9b0c5f6e7" />
+ 
 עבור קבצי הלמות :
 - מספר המאפיינים: 22993
 - מספר שורות ריקות:0
-- הצצה לערכי המטריצה: <img width="916" height="186" alt="image" src="https://github.com/user-attachments/assets/423a5454-3340-4eeb-99a9-d87c588fcee0" />
+- הצצה לערכי המטריצה: <img width="1292" height="159" alt="image" src="https://github.com/user-attachments/assets/06b9032b-f2f8-4c9f-89be-22682b63974e"  />
 
 
 ---
@@ -291,13 +291,14 @@ count_vec = CountVectorizer(
    2.4 יוצר DataFrame עם עמודות: שם המאפיין וערך המדד שחושב. <br>
 3. שמירה לקובץ אקסל טבלה עם העמודות : feature, information gain, mutual information (נעשה outer join על הdataframe שנוצרו כדי שהערכים יהיו תואמים למאפיין). 
 
+
 **תוצאות:**  
 התקבלו 2 קבצי אקסל- אחד לכל סוג מטריצה, במיקומים : vectors_word/tfidf_results.xlsx, vectors_lemm/tfidf_results.xlsx
  **20 המאפיינים החשובים לכל קבוצה**
 - עבור TFIDF-Word: 
- <br><br> <img width="695" height="488" alt="image" src="https://github.com/user-attachments/assets/41967ceb-c453-4e1b-8ff9-a5cb043019ee" /><br><br>
+ <br><br> <img width="713" height="505" alt="image" src="https://github.com/user-attachments/assets/effdc899-fda6-4289-9734-374f8134d39b" /><br><br>
 - עבור TFIDF-Lemm:
-  <br><br><img width="545" height="487" alt="image" src="https://github.com/user-attachments/assets/27ec5b32-51ff-4056-bb34-dc70c32f2884" />
+  <br><br><img width="916" height="507" alt="image" src="https://github.com/user-attachments/assets/07bb5daf-b533-4725-a508-71da7503e26d" />
 
 
 ## סיכום ותובנות
