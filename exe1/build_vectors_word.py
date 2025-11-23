@@ -40,24 +40,31 @@ def bm25_matrix(counts_csr: sparse.csr_matrix, k1=1.5, b=0.75):
     # אורך כל מסמך (סכום ספירות), ממוצע אורכים
     dl = np.asarray(counts_csr.sum(axis=1)).ravel()
     avgdl = dl.mean() if N > 0 else 0.0
+    print(f"  ממוצע אורך מסמך: {avgdl:.2f} מילים")
+    print(f"  סה׳׳כ מסמכים: {N}")
 
     # שכיחות מסמכים למונח (df)
     df = counts_csr.getnnz(axis=0)
     idf = np.log((N - df + 0.5) / (df + 0.5) + 1.0)
+    print(f" first 5 idf values: {idf[:5]}")
 
     # נבנה מטריצה חדשה ערך-ערך (יעיל ל-CSR דרך data/indices/indptr)
-    bm25 = counts_csr.tolil(copy=True)  # עבודה נוחה לטפל בכל שורה
+    bm25 = counts_csr.tolil(copy=True).astype(np.float32)  # עבודה נוחה לטפל בכל שורה
     for i in range(N):
         row = bm25.rows[i]
         data = bm25.data[i]
         doc_len = dl[i] if dl[i] > 0 else 1.0
         norm = k1 * (1 - b + b * (doc_len / (avgdl if avgdl > 0 else doc_len)))
+        if i<5:
+            print(f"  מסמך {i}: אורך={doc_len}, נורמליזציה={norm:.2f}")
         for j in range(len(row)):
             term_idx = row[j]
             tf = data[j]
             # משקל BM25
             score = idf[term_idx] * (tf * (k1 + 1)) / (tf + norm)
             data[j] = score
+            if i<5 and j<5:
+                print(f"    מונח {term_idx}: tf={tf}, BM25={score:.4f}")
     return bm25.tocsr()
 
 def main():
@@ -75,25 +82,6 @@ def main():
     # --- 1) קריאת קורפוס ---
     texts, file_names = read_corpus(input_dir)
     print(f"נקראו {len(texts)} מסמכים מ-{input_dir}")
-
-    # # --- 2) TF-IDF (דליל) ---
-    # tfidf_vec = TfidfVectorizer(
-    #     input="content",
-    #     analyzer="word",
-    #     stop_words="english",       # הסרת stopwords באנגלית
-    #     min_df=args.min_df,         # מסמך מינימלי
-    #     max_df=args.max_df,         # מסמך מקסימלי (יחסי)
-    #     max_features=args.max_features,
-    #     norm="l2",                  # נרמול וקטורים
-    #     sublinear_tf=True           # tf לוגרי"ת - לעתים משפר
-    # )
-    # X_tfidf = tfidf_vec.fit_transform(texts)  # CSR
-    # print(f"TF-IDF shape: {X_tfidf.shape}, צפיפות: {X_tfidf.nnz / (X_tfidf.shape[0]*X_tfidf.shape[1] + 1e-9):.6f}")
-
-    # # שמירה
-    # sparse.save_npz(out_dir / "TFIDF_Word.npz", X_tfidf)
-    # save_json(tfidf_vec.vocabulary_, out_dir / "TFIDF_Word_vocabulary.json")
-    # save_json({"files": file_names}, out_dir / "TFIDF_Word_files.json")
 
     # --- 2) BM25 (Okapi) בלבד ---
     count_vec = CountVectorizer(
