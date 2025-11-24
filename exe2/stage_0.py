@@ -1,5 +1,7 @@
 import os
 from glob import glob
+from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 def load_corpus(base_dir):
     uk_dir = os.path.join(base_dir, "UK")
@@ -25,6 +27,27 @@ def load_corpus(base_dir):
 
     return texts, labels, filenames
 
-# שימוש:
-# base_dir = r"C:\Users\user\Desktop\שנה ד\איחזור מידע\ir\parliament_small"
-# texts, labels, filenames = load_corpus(base_dir)
+def build_tfidf_vectors(texts, max_features=5000):
+    vectorizer = TfidfVectorizer(
+        max_features=max_features,
+        stop_words="english"
+    )
+    X = vectorizer.fit_transform(texts)
+    return X, vectorizer
+
+
+if __name__ == "__main__":
+    base_dir = r"C:\Users\user\Desktop\שנה ד\איחזור מידע\ir\exe2"
+
+    texts, labels, filenames = load_corpus(base_dir)
+    X_tfidf, tfidf_vectorizer = build_tfidf_vectors(texts)
+
+    print("TF-IDF shape:", X_tfidf.shape)
+    print("Labels example:", labels[:10])
+    print("First vector preview:", X_tfidf[0][:20])
+
+
+
+
+
+
