@@ -55,7 +55,6 @@ def run_kmeans(X, y, n_clusters: int = 2):
 
 
 if __name__ == "__main__":
-    # !!! לעדכן לנתיב האמיתי אצלך !!!
     base_dir = r"C:\Users\user\Desktop\שנה ד\איחזור מידע\ir\exe2"
 
     # שלב 1 – טעינת המסמכים
