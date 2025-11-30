@@ -1,0 +1,6 @@
+debates_xml/
+venv/
+clean_text/
+tokens/
+lemmatized_text/
+README.docx
