@@ -36,9 +36,7 @@ def load_corpus(base_dir: str):
 
 
 if __name__ == "__main__":
-    base_dir = r"C:\Users\user\Desktop\שנה ד\איחזור מידע\ir\exe2"
-
-    texts, labels, filenames = load_corpus(base_dir)
+    texts, labels, filenames = load_corpus("")
 
     print("Total documents:", len(texts))
     print("Num UK (0):", int((labels == 0).sum()))
