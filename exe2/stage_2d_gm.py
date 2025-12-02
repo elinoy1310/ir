@@ -1,4 +1,7 @@
+import json
+from pathlib import Path
 import numpy as np
+from scipy import sparse
 from sklearn.decomposition import TruncatedSVD
 from sklearn.mixture import GaussianMixture
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, confusion_matrix
@@ -56,20 +59,19 @@ def run_gmm(X, y, n_components=2, n_dim=100):
         "recall": recall,
         "f1": f1,
         "confusion_matrix": cm,
+        "cluster_labels": cluster_labels
     }
 
 
 if __name__ == "__main__":
-    base_dir = r"C:\Users\user\Desktop\שנה ד\איחזור מידע\ir\exe2"
+    base_dir = r"exe2"
 
     # טוענים קורפוס מהלמות (אחרי ה-preprocess)
-    docs, labels, filenames = load_corpus(base_dir)
+    X_tfidf = sparse.load_npz(Path(base_dir) / r"vectors_tfidf\TFIDF-Documents.npz")
+    labels = np.array(json.loads(Path(base_dir).joinpath(r"vectors_tfidf\TFIDF-Documents_labels.json").read_text())['labels'])
+    filenames = json.loads(Path(base_dir).joinpath(r"vectors_tfidf\TFIDF-Documents_files.json").read_text())['files']
     # חשוב: להפוך ל-numpy array
     labels = np.array(labels)
-
-    X_tfidf, tfidf_vectorizer = build_tfidf_vectors(docs)
-    print(f"Loaded documents: {len(docs)}")
-    print(f"TF-IDF shape: {X_tfidf.shape}")
 
     results = run_gmm(X_tfidf, labels, n_components=2, n_dim=100)
 
@@ -81,3 +83,11 @@ if __name__ == "__main__":
     print("F1       :", round(results["f1"], 4))
     print("\nConfusion matrix:")
     print(results["confusion_matrix"])
+
+    from eval_and_plot import visualize_clusters
+    visualize_clusters(
+        X=X_tfidf,
+        cluster_labels=results["cluster_labels"],
+        true_labels=labels,
+        title_prefix="GMM Clusters"
+    )

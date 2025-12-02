@@ -53,10 +53,21 @@ def build_tfidf_vectors(base_dir, out_dir: Path, output_name:str):
     texts, labels, filenames = load_corpus(base_dir)
     print("Loaded documents:", len(texts))
 
+    from sklearn.feature_extraction import _stop_words
+
+    # 1. רשימת המילים המטות שצריך להסיר
+    bias_words = [
+        'usa', 'us', 'u s', 'american', 'america', 'senate',  'senator',
+        'uk', 'britain', 'british', 'lords', 'westminster'    ]
+
+    # 2. איחוד רשימת ה-stopwords המובנית עם המילים המטות
+    # חשוב: יש לוודא שכל המילים ברשימת ההטיה הן באותיות קטנות
+    custom_stop_words = list(_stop_words.ENGLISH_STOP_WORDS) + bias_words
+
     count_vec = CountVectorizer(
         input="content",
         analyzer="word",
-        stop_words="english",
+        stop_words=custom_stop_words,
         min_df=5,
         token_pattern=r'\b[a-zA-Z0-9]+\b'
     )
@@ -84,9 +95,13 @@ def build_tfidf_vectors(base_dir, out_dir: Path, output_name:str):
 
 
 if __name__ == "__main__":
-    base_dir = r"exe2/lemmas"
 
+    base_dir = r"exe2"
+    abs_dir = Path(base_dir).resolve()
+    print(f"Searching for documents in: {abs_dir}")
+
+# הפעל שוב ובדוק שהנתיב המודפס נכון.
 
     # שלב 2 – בניית TF-IDF
-    build_tfidf_vectors(base_dir, out_dir=Path("exe2") / "vectors_tfidf", output_name="TFIDF-Documents")
+    build_tfidf_vectors(Path(base_dir), out_dir=Path("exe2") / "vectors_tfidf", output_name="TFIDF-Documents")
 
