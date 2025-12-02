@@ -16,6 +16,9 @@ def run_hdbscan(X, y, min_cluster_size=30, min_samples=5):
     y – תוויות אמת: 0 = UK, 1 = US
     """
 
+    # לוודא ש-y הוא numpy array
+    y = np.asarray(y)
+
     # מחשבים מטריצת מרחקים קוסינוס (כמו ב-DBSCAN)
     dist_matrix = cosine_distances(X)
 
@@ -86,13 +89,16 @@ if __name__ == "__main__":
 
     # שלב 1 – טעינת המסמכים
     texts, labels, filenames = load_corpus(base_dir)
+    # חשוב: להפוך ל-numpy array
+    labels = np.array(labels)
+
     print("Loaded documents:", len(texts))
 
     # שלב 2 – בניית TF-IDF
     X_tfidf, tfidf_vectorizer = build_tfidf_vectors(texts)
     print("TF-IDF shape:", X_tfidf.shape)
 
-    # המרה ל-dense לשימוש ב-cosine_distances
+    # HDBSCAN עובד עם dense + cosine_distances
     X_dense = X_tfidf.toarray()
 
     # שלב 3 – HDBSCAN

@@ -12,6 +12,9 @@ def run_dbscan(X, y, eps=0.4, min_samples=5):
     מעביר DBSCAN על ייצוג TF-IDF.
     משתמשים ב-cosine distance כי זה הסטנדרט בטקסט.
     """
+    # לוודא ש-y הוא numpy array
+    y = np.asarray(y)
+
     # חישוב מטריצת מרחקים מבוססת Cosine
     dist_matrix = cosine_distances(X)
 
@@ -65,6 +68,9 @@ if __name__ == "__main__":
     base_dir = r"C:\Users\user\Desktop\שנה ד\איחזור מידע\ir\exe2"
 
     texts, labels, filenames = load_corpus(base_dir)
+    # כאן ההמרה הכי חשובה
+    labels = np.array(labels)
+
     print("Loaded:", len(texts))
 
     # TF-IDF

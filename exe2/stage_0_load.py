@@ -1,50 +1,46 @@
-import os
-from glob import glob
-import numpy as np
+from pathlib import Path
 
 
 def load_corpus(base_dir: str):
     """
-    טוען את כל המסמכים משתי תיקיות: UK ו-US
+    טוען מסמכים מהלמות:
+    base_dir/lemmas/UK
+    base_dir/lemmas/US
+
     מחזיר:
-      texts    – רשימת טקסטים (str) של המסמכים
-      labels   – numpy array של תוויות: 0 = UK, 1 = US
-      filenames – רשימת שמות קבצים (str)
+    texts  – רשימת טקסטים (למות)
+    labels – 0 עבור UK, 1 עבור US
+    filenames – שם הקובץ
     """
-    uk_dir = os.path.join(base_dir, "UK")
-    us_dir = os.path.join(base_dir, "US")
+    base = Path(base_dir)
+
+    uk_dir = base / "lemmas" / "UK"
+    us_dir = base / "lemmas" / "US"
 
     texts = []
     labels = []
     filenames = []
 
-    # --- UK = 0 ---
-    for path in sorted(glob(os.path.join(uk_dir, "*.txt"))):
-        with open(path, encoding="utf-8", errors="ignore") as f:
-            texts.append(f.read())
+    # קודם UK – label 0
+    for path in sorted(uk_dir.glob("*.txt")):
+        txt = path.read_text(encoding="utf-8", errors="ignore")
+        texts.append(txt)
         labels.append(0)
-        filenames.append(os.path.basename(path))
+        filenames.append(path.name)
 
-    # --- US = 1 ---
-    for path in sorted(glob(os.path.join(us_dir, "*.txt"))):
-        with open(path, encoding="utf-8", errors="ignore") as f:
-            texts.append(f.read())
+    # אחר כך US – label 1
+    for path in sorted(us_dir.glob("*.txt")):
+        txt = path.read_text(encoding="utf-8", errors="ignore")
+        texts.append(txt)
         labels.append(1)
-        filenames.append(os.path.basename(path))
+        filenames.append(path.name)
 
-    return texts, np.array(labels), filenames
+    return texts, labels, filenames
 
 
 if __name__ == "__main__":
     base_dir = r"C:\Users\user\Desktop\שנה ד\איחזור מידע\ir\exe2"
-
     texts, labels, filenames = load_corpus(base_dir)
-
     print("Total documents:", len(texts))
-    print("Num UK (0):", int((labels == 0).sum()))
-    print("Num US (1):", int((labels == 1).sum()))
-    print("First filename:", filenames[0] if filenames else "N/A")
-    print("First label:", labels[0] if len(labels) else "N/A")
-    print("First document preview:")
-    if texts:
-        print(texts[0][:200], "...")
+    print("First file:", filenames[0] if filenames else "NONE")
+    print("Preview:", texts[0][:200] if texts else "")
