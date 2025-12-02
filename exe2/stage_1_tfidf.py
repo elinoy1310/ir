@@ -84,12 +84,9 @@ def build_tfidf_vectors(base_dir, out_dir: Path, output_name:str):
 
 
 if __name__ == "__main__":
-    base_dir = r"exe2"
+    base_dir = r"exe2/lemmas"
 
-    # שלב 1 – טעינת המסמכים
-    
-    
 
     # שלב 2 – בניית TF-IDF
-    build_tfidf_vectors(base_dir, out_dir=Path(base_dir) / "vectors_tfidf", output_name="TFIDF-Documents")
+    build_tfidf_vectors(base_dir, out_dir=Path("exe2") / "vectors_tfidf", output_name="TFIDF-Documents")
 
