@@ -1,0 +1,9 @@
+debates_xml/
+venv/
+clean_text/
+tokens/
+lemmatized_text/
+README.docx
+exe2/UK_british_debates_text_files_normalize/
+exe2/US_congressional_speeches_Text_Files/
+exe1/__pycache__

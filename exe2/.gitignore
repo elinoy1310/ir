@@ -3,3 +3,5 @@
 /venv
 /tokens
 /lemmas
+/vectors_tfidf
+/__pycache__

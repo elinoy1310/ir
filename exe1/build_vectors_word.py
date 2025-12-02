@@ -5,7 +5,7 @@ from pathlib import Path
 
 import numpy as np
 from scipy import sparse
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from sklearn.feature_extraction.text import  CountVectorizer
 
 
 """pip install scikit-learn scipy numpy
