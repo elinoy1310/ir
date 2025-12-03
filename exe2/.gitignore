@@ -5,3 +5,4 @@
 /lemmas
 /vectors_tfidf
 /__pycache__
+*.keras
