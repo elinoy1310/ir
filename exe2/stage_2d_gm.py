@@ -16,7 +16,6 @@ def run_gmm(X, y, n_components=2, n_dim=100):
     X – מטריצת TF-IDF (sparse או dense)
     y – תוויות אמת (0 = UK, 1 = US)
     """
-
     # לוודא ש-y הוא numpy array
     y = np.asarray(y)
 
@@ -70,6 +69,7 @@ if __name__ == "__main__":
     X_tfidf = sparse.load_npz(Path(base_dir) / r"vectors_tfidf\TFIDF-Documents.npz")
     labels = np.array(json.loads(Path(base_dir).joinpath(r"vectors_tfidf\TFIDF-Documents_labels.json").read_text())['labels'])
     filenames = json.loads(Path(base_dir).joinpath(r"vectors_tfidf\TFIDF-Documents_files.json").read_text())['files']
+    #features_names = json.loads(Path(base_dir).joinpath(r"vectors_tfidf\TFIDF-Documents_vocabulary.json").read_text())
     # חשוב: להפוך ל-numpy array
     labels = np.array(labels)
 
