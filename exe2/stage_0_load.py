@@ -1,3 +1,4 @@
+# exe2/stage_0_load.py
 from pathlib import Path
 
 
@@ -39,7 +40,7 @@ def load_corpus(base_dir: str):
 
 
 if __name__ == "__main__":
-    base_dir = r"C:\Users\user\Desktop\שנה ד\איחזור מידע\ir\exe2"
+    base_dir = r"exe2"
     texts, labels, filenames = load_corpus(base_dir)
     print("Total documents:", len(texts))
     print("First file:", filenames[0] if filenames else "NONE")

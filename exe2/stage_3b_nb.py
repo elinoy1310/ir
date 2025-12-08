@@ -1,4 +1,4 @@
-# naive_bayes_classifier.py
+# exe2/stage_3b_nb.py
 from important_features import load_data, run_cross_validation, extract_top_features
 from sklearn.naive_bayes import MultinomialNB
 

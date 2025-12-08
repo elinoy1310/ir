@@ -1,4 +1,4 @@
-# random_forest_classifier.py
+# exe2/stage_3e_rf.py
 from important_features import load_data, run_cross_validation, extract_top_features
 from sklearn.ensemble import RandomForestClassifier
 

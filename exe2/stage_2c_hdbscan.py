@@ -1,3 +1,4 @@
+# exe2/ stage_2c_hdbscan.py
 import numpy as np
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, confusion_matrix
 from sklearn.metrics.pairwise import cosine_distances
@@ -6,7 +7,7 @@ import json
 from pathlib import Path
 import numpy as np
 from scipy import sparse
-from eval_and_plot import visualize_clusters
+from eval_and_plot import visualize_clusters, plot_umap_results
 from stage_0_load import load_corpus
 from stage_1_tfidf import build_tfidf_vectors
 
@@ -21,60 +22,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
-def determine_min_samples(tfidf_matrix, k=30):
-    nn = NearestNeighbors(n_neighbors=k, metric='cosine')
-    nn.fit(tfidf_matrix)
-    distances, _ = nn.kneighbors(tfidf_matrix)
-    k_distances = distances[:, -1]
-    avg_distance = np.mean(k_distances)
-    print(f"Average k-distance for min_samples: {avg_distance}")
-    return avg_distance
-
-def determine_min_cluster_size(tfidf_matrix):
-    from sklearn.neighbors import kneighbors_graph
-    from scipy.sparse.csgraph import minimum_spanning_tree
-
-    graph = kneighbors_graph(tfidf_matrix, n_neighbors=10, metric='cosine')
-    mst = minimum_spanning_tree(graph)
-    mst_distances = mst.data
-    mst_distances.sort()
-    median_distance = mst_distances[int(len(mst_distances) * 0.5)] if len(mst_distances) > 0 else 1.0
-    print(f"Median MST distance for min_cluster_size: {median_distance}")
-    return median_distance
-
-# פונקציה לבחירת min_samples בעזרת k-distances
-# def determine_min_samples(tfidf_matrix, k=10):
-#     """
-#     מחשבת את min_samples בעזרת k-distances
-#     tfidf_matrix: מטריצת ה-TF-IDF (כמטריצה דלילה)
-#     k: מספר השכנים הקרובים שברצוננו לבדוק
-#     """
-#     nn = NearestNeighbors(n_neighbors=k, metric='cosine')
-#     nn.fit(tfidf_matrix)
-#     distances, _ = nn.kneighbors(tfidf_matrix)
-#     k_distances = distances[:, -1]  # המרחק של השכן ה-k
-#     return np.mean(k_distances)  # שימוש בממוצע המרחקים
-
-# # פונקציה לבחירת min_cluster_size בעזרת MST (Minimum Spanning Tree)
-# def determine_min_cluster_size(tfidf_matrix):
-#     """
-#     מחשבת את min_cluster_size בעזרת MST
-#     tfidf_matrix: מטריצת ה-TF-IDF (כמטריצה דלילה)
-#     """
-#     from sklearn.neighbors import kneighbors_graph
-#     from scipy.sparse.csgraph import minimum_spanning_tree
-
-#     # יצירת גרף של שכנים קרובים
-#     graph = kneighbors_graph(tfidf_matrix, n_neighbors=10, metric='cosine')
-    
-#     # חישוב MST (Minimum Spanning Tree)
-#     mst = minimum_spanning_tree(graph)
-#     mst_distances = mst.data
-    
-#     # מיון המרחקים של ה-MST
-#     mst_distances.sort()
-#     return mst_distances[int(len(mst_distances) * 0.5)]  # ערך החצי של המרחקים
-
 
 def run_hdbscan(X, y, min_cluster_size=30, min_samples=5):
     """
@@ -89,17 +36,6 @@ def run_hdbscan(X, y, min_cluster_size=30, min_samples=5):
     dist_matrix = cosine_distances(X)
     # המרה למטריצה מסוג np.float64
     dist_matrix = np.array(dist_matrix, dtype=np.float64)
-
-    import math
-    # אם min_samples לא הוזן, חישוב עם היוריסטיקה
-    if min_samples is None:
-        min_samples =math.ceil(determine_min_samples(X))
-        print(f"Determined min_samples: {min_samples}")
-
-    # חישוב min_cluster_size עם היוריסטיקה
-    if min_cluster_size is None:
-        min_cluster_size = int(determine_min_cluster_size(X))
-        print(f"Determined min_cluster_size: {min_cluster_size}")
 
     # HDBSCAN עם מטריצת מרחקים מוכנה
     clusterer = hdbscan.HDBSCAN(
@@ -148,6 +84,8 @@ def run_hdbscan(X, y, min_cluster_size=30, min_samples=5):
         int(c): int((used_clusters == c).sum())
         for c in unique_clusters
     }
+    print("cluster_labels",cluster_labels[225:240])
+    print("true_labels",y[225:240])
 
     return {
         "total_points": len(cluster_labels),
@@ -160,6 +98,8 @@ def run_hdbscan(X, y, min_cluster_size=30, min_samples=5):
         "recall": recall,
         "f1": f1,
         "confusion_matrix": cm,
+    #     "DBCV": clusterer.relative_validity_,
+    # "cluster_persistence": clusterer.cluster_persistence_ # ניתן לנתח את המערך הזה
     }
 
 
@@ -181,7 +121,7 @@ if __name__ == "__main__":
     results = run_hdbscan(
         X_tfidf,
         labels,
-        30,3
+        30,5
     )
 
     if results is None:
@@ -200,9 +140,8 @@ if __name__ == "__main__":
 
         print("\nConfusion matrix (rows=true, cols=pred):")
         print(results["confusion_matrix"])
-        visualize_clusters(
-            X=X_tfidf,
-            cluster_labels=results["cluster_labels"],
-            true_labels=labels,
-            title_prefix="HDBSCAN"
+        plot_umap_results(
+            X_tfidf,results["cluster_labels"],"HDBSCAN Clusters","hdbscan_umap.png"
+
         )
+

@@ -8,11 +8,35 @@ from scipy import sparse
 import umap
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.neighbors import NearestNeighbors
-from sklearn.neighbors import kneighbors_graph
-from scipy.sparse.csgraph import minimum_spanning_tree
-from sklearn.base import ClusterMixin # לייצוג גנרי של מאשכל
 
+def plot_umap_results(x, predicted_labels, title,filename, save_path=Path("exe2")):
+    """
+    יוצר גרף UMAP של תוצאות הסיווג.
+    """
+    print(f"🎨 Generating UMAP plot: {title}...")
+    
+    # הפחתת מימדים ל-2 בעזרת UMAP
+    reducer = umap.UMAP(random_state=42 ,metric='cosine')
+    embedding = reducer.fit_transform(x)
+    
+    plt.figure(figsize=(10, 7))
+    
+    # יצירת סקאטר פלוט
+    # אנו צובעים את הנקודות לפי הסיווג שהמודל חזה (y_pred)
+    scatter = plt.scatter(embedding[:, 0], embedding[:, 1], c=predicted_labels, cmap='coolwarm', s=10, alpha=0.7)
+    
+    handles, labels = scatter.legend_elements()
+    plt.legend(handles, labels, title="Predicted Class")
+
+    plt.title(title)
+    plt.xlabel('UMAP 1')
+    plt.ylabel('UMAP 2')
+    
+    # שמירת הגרף
+    save_path = save_path / filename
+    plt.savefig(save_path)
+    plt.close()
+    print(f"✅ Plot saved to {save_path}")
 
 # --- פונקציה גנרית לוויזואליזציה ---
 def visualize_clusters(X, cluster_labels, true_labels, n_neighbors=15, min_dist=0.1, title_prefix=""):
@@ -167,62 +191,3 @@ def evaluate_clustering(clusterer, X, y, title="Clustering"):
         "accuracy": accuracy,
         "f1": f1
     }
-
-# # --- בלוק הפעלה ראשי (מעודכן) ---
-# if __name__ == "__main__":
-#     base_dir = r"exe2"
-#     # טעינת הנתונים
-#     X_tfidf = sparse.load_npz(Path(base_dir) / r"vectors_tfidf\TFIDF-Documents.npz")
-#     labels = np.array(json.loads(Path(base_dir).joinpath(r"vectors_tfidf\TFIDF-Documents_labels.json").read_text())['labels'])
-    
-#     print("TF-IDF shape:", X_tfidf.shape)
-
-#     # 1. יצירת מאשכל HDBSCAN
-    
-#     # חישוב פרמטרים היוריסטיים
-#     # אנו ממירים לצפוף לצורך חישוב היוריסטיקה כיוון שהפונקציות determine עשויות להתקשות עם מטריצות דלילות
-#     X_dense_for_heuristics = X_tfidf.toarray() 
-    
-#     min_samples_val = determine_min_samples(X_dense_for_heuristics)
-#     min_cluster_size_val = determine_min_cluster_size(X_dense_for_heuristics)
-    
-#     # עיגול הערכים
-#     min_samples_val = int(round(min_samples_val))
-#     min_cluster_size_val = int(round(min_cluster_size_val))
-    
-#     # הדפסת ההיוריסטיקות שנבחרו
-#     print(f"\nHDBSCAN Parameters Chosen:")
-#     print(f"- min_samples: {min_samples_val}")
-#     print(f"- min_cluster_size: {min_cluster_size_val}")
-
-#     hdbscan_clusterer = hdbscan.HDBSCAN(
-#         metric="precomputed",
-#         min_cluster_size=min_cluster_size_val,
-#         min_samples=min_samples_val
-#     )
-
-#     # 2. הפעלת הפונקציה הגנרית
-#     results = evaluate_clustering(
-#         clusterer=hdbscan_clusterer,
-#         X=X_tfidf,
-#         y=labels,
-#         title="HDBSCAN (Heuristic Params)"
-#     )
-
-#     # --- דוגמה להפעלת אלגוריתם נוסף (למשל K-Means) ---
-#     # כדי להריץ K-Means, נצטרך לייבא אותו ולהשתמש במטריצה הצפופה
-#     from sklearn.cluster import KMeans
-    
-#     print("\n" + "="*50)
-#     print("K-Means Example Setup")
-    
-#     # K-Means מצריך מספר אשכולות קבוע מראש. מכיוון שיש לנו 2 תוויות אמת (UK, US), נבחר k=2
-#     kmeans_clusterer = KMeans(n_clusters=2, random_state=42, n_init='auto') 
-    
-#     # הערה: K-Means עובד ישירות על X (sparse) במקרה זה, אם כי לעיתים עדיף להעביר לו dense
-#     kmeans_results = evaluate_clustering(
-#         clusterer=kmeans_clusterer,
-#         X=X_tfidf,
-#         y=labels,
-#         title="K-Means (k=2)"
-#     )

@@ -1,4 +1,4 @@
-# logistic_regression_classifier.py
+# exe2/stage_3d_lor.py
 from important_features import load_data, run_cross_validation, extract_top_features
 from sklearn.linear_model import LogisticRegression
 

@@ -1,9 +1,11 @@
+# exe2/stage_2a_kmeans.py
 import json
 from pathlib import Path
 import numpy as np
 from scipy import sparse
 from sklearn.cluster import KMeans
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, confusion_matrix
+from eval_and_plot import plot_umap_results
 import umap
 import matplotlib.pyplot as plt
 import plotly.express as px
@@ -66,11 +68,6 @@ def run_kmeans(X, y, n_clusters: int = 2):
 if __name__ == "__main__":
     base_dir = r"C:\Users\user\Desktop\שנה ד\איחזור מידע\ir\exe2"
 
-    # # שלב 1 – טעינת המסמכים
-    # texts, labels, filenames = load_corpus(base_dir)
-    # print("Loaded documents:", len(texts))
-
-    # שלב 2 – בניית TF-IDF
     X_tfidf=sparse.load_npz(Path(r"exe2\vectors_tfidf\TFIDF-Documents.npz"))
     print("TF-IDF shape:", X_tfidf.shape)
 
@@ -104,63 +101,6 @@ if __name__ == "__main__":
     # 🌟 שלב 4 – הפחתת ממדים והצגה ויזואלית באמצעות UMAP
     # ----------------------------------------------------
     print("\n--- Running UMAP to visualize ---")
-    
-    # הפחתת ממדים ל-2D באמצעות UMAP
-    # ניתן להשתמש ב-X_tfidf הדלילה ישירות ללא toarray()!
-    reducer = umap.UMAP(
-        n_components=2,
-        random_state=42,
-        metric='cosine' # קוסינוס עדיפה למטריצות TF-IDF
-    )
-    
-    # הפחתת הנתונים
-    X_umap = reducer.fit_transform(X_tfidf)
-
-    # יצירת DataFrame לטובת ציור
-    df = pd.DataFrame(X_umap, columns=['UMAP-1', 'UMAP-2'])
-    df['True Label'] = np.where(labels == 0, 'UK (True)', 'US (True)') # יצירת תוויות טקסט
-    df['Cluster Result'] = np.where(results["mapped_clusters"] == 0, 'UK (Predicted)', 'US (Predicted)')
-    with open(r"exe2\vectors_tfidf\TFIDF-Documents_files.json", "r", encoding="utf-8") as f:
-        files_data = json.load(f)
-    file_names = files_data["files"]
-    df['Filename'] = file_names 
-        
-    
-    ## אפשרות 1: גרף אינטראקטיבי (מומלץ)
-    # ניתן להשתמש ב-Plotly כדי לקבל גרף שמאפשר זום וריחוף מעל נקודות
-    print("Generating Plotly interactive visualization...")
-    fig = px.scatter(
-        df,
-        x='UMAP-1',
-        y='UMAP-2',
-        color='Cluster Result', # צבע לפי התוצאה
-        symbol='True Label', # צורה לפי התווית האמיתית
-        hover_data=['Filename', 'True Label', 'Cluster Result'],
-        title='K-Means Clustering on TF-IDF Vectors (UMAP Reduction)',
-        labels={'color': 'Predicted Cluster', 'symbol': 'True Country'}
-    )
-    fig.show() # פתיחת הגרף בדפדפן
+    plot_umap_results(X_tfidf, results["mapped_clusters"], title="K-Means Clustering on TF-IDF Vectors", filename="kmeans_umap.png")
     
     
-    ## אפשרות 2: גרף סטטי (Matplotlib) - לצרכי שמירה
-    plt.figure(figsize=(10, 8))
-    
-    # ציור לפי התווית האמיתית
-    scatter = plt.scatter(
-        X_umap[:, 0],
-        X_umap[:, 1],
-        c=results["mapped_clusters"], # צבע לפי תוצאת האשכול
-        cmap='viridis',
-        s=50,
-        alpha=0.6
-    )
-    plt.title('K-Means Clusters (UMAP Reduction)')
-    plt.xlabel('UMAP-1')
-    plt.ylabel('UMAP-2')
-    
-    # הוספת מקרא
-    legend1 = plt.legend(*scatter.legend_elements(), 
-                         loc="lower left", title="Cluster")
-    plt.gca().add_artist(legend1)
-    
-    plt.show()

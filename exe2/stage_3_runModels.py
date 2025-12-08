@@ -1,3 +1,4 @@
+# exe2/stage_3_runModels.py
 import sys
 from important_features import create_consolidated_excel
 
@@ -22,7 +23,7 @@ def main():
 
     # 1. ANN (No features to extract)
     print(">>> Processing ANN...(already exist)")
-    # run_ann() # רק מדפיס תוצאות CV
+    run_ann() # רק מדפיס תוצאות CV
     
     # 2. Naive Bayes
     print("\n>>> Processing Naive Bayes...")

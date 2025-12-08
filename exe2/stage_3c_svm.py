@@ -1,4 +1,4 @@
-
+#exe2/stage_3c_svm.py
 from important_features import load_data, run_cross_validation, extract_top_features
 from sklearn.svm import LinearSVC
 from sklearn.preprocessing import MaxAbsScaler

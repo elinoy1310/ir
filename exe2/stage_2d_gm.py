@@ -1,3 +1,4 @@
+# exe2/ stage_2d_gm.py
 import json
 from pathlib import Path
 import numpy as np
@@ -6,8 +7,6 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.mixture import GaussianMixture
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, confusion_matrix
 
-from stage_0_load import load_corpus
-from stage_1_tfidf import build_tfidf_vectors
 
 
 def run_gmm(X, y, n_components=2, n_dim=100):
@@ -84,10 +83,6 @@ if __name__ == "__main__":
     print("\nConfusion matrix:")
     print(results["confusion_matrix"])
 
-    from eval_and_plot import visualize_clusters
-    visualize_clusters(
-        X=X_tfidf,
-        cluster_labels=results["cluster_labels"],
-        true_labels=labels,
-        title_prefix="GMM Clusters"
-    )
+    from eval_and_plot import visualize_clusters, plot_umap_results
+
+    plot_umap_results(X_tfidf, results["cluster_labels"], "GMM Clusters", "gmm_umap.png")
