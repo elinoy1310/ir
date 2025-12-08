@@ -66,32 +66,32 @@ def build_ann_model(input_dim, topology_type='relu'):
     
     return model
 
-def plot_umap_results(X_test, y_pred, title, filename):
-    """
-    יוצר גרף UMAP של תוצאות הסיווג.
-    """
-    print(f"🎨 Generating UMAP plot: {title}...")
+# def plot_umap_results(X_test, y_pred, title, filename):
+#     """
+#     יוצר גרף UMAP של תוצאות הסיווג.
+#     """
+#     print(f"🎨 Generating UMAP plot: {title}...")
     
-    # הפחתת מימדים ל-2 בעזרת UMAP
-    reducer = umap.UMAP(random_state=42)
-    embedding = reducer.fit_transform(X_test)
+#     # הפחתת מימדים ל-2 בעזרת UMAP
+#     reducer = umap.UMAP(random_state=42)
+#     embedding = reducer.fit_transform(X_test)
     
-    plt.figure(figsize=(10, 7))
+#     plt.figure(figsize=(10, 7))
     
-    # יצירת סקאטר פלוט
-    # אנו צובעים את הנקודות לפי הסיווג שהמודל חזה (y_pred)
-    scatter = plt.scatter(embedding[:, 0], embedding[:, 1], c=y_pred, cmap='coolwarm', s=10, alpha=0.7)
+#     # יצירת סקאטר פלוט
+#     # אנו צובעים את הנקודות לפי הסיווג שהמודל חזה (y_pred)
+#     scatter = plt.scatter(embedding[:, 0], embedding[:, 1], c=y_pred, cmap='coolwarm', s=10, alpha=0.7)
     
-    plt.colorbar(scatter, label='Predicted Class')
-    plt.title(title)
-    plt.xlabel('UMAP 1')
-    plt.ylabel('UMAP 2')
+#     plt.colorbar(scatter, label='Predicted Class')
+#     plt.title(title)
+#     plt.xlabel('UMAP 1')
+#     plt.ylabel('UMAP 2')
     
-    # שמירת הגרף
-    save_path = OUTPUT_DIR / filename
-    plt.savefig(save_path)
-    plt.close()
-    print(f"✅ Plot saved to {save_path}")
+#     # שמירת הגרף
+#     save_path = OUTPUT_DIR / filename
+#     plt.savefig(save_path)
+#     plt.close()
+#     print(f"✅ Plot saved to {save_path}")
 
 def run_ann():
     print("==========================================")
@@ -168,13 +168,17 @@ def run_ann():
         print(classification_report(y_test, y_pred, target_names=['Class 0', 'Class 1']))
         
         # הצגת תוצאות ויזואליות (UMAP)
-        plot_umap_results(
-            X_test, 
-            y_pred, 
-            title=f"ANN ({topo}) Classification Results (UMAP)", 
-            filename=f"umap_ann_{topo}.png"
-        )
-        
+        # plot_umap_results(
+        #     X_test, 
+        #     y_pred, 
+        #     title=f"ANN ({topo}) Classification Results (UMAP)", 
+        #     filename=f"umap_ann_{topo}.png"
+        # )
+        from eval_and_plot import plot_umap_results as plt_umap
+        plt_umap(  X_test, 
+                   y_pred, 
+                   title=f"ANN ({topo}) Classification Results (UMAP)", 
+            filename=f"umap_ann_{topo}.png",save_path=OUTPUT_DIR)
         # שמירת מטריצת הבלבול (אופציונלי)
         cm = confusion_matrix(y_test, y_pred)
         print("Confusion Matrix:\n", cm)
