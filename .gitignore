@@ -7,3 +7,15 @@ README1.docx
 exe2/UK_british_debates_text_files_normalize/
 exe2/US_congressional_speeches_Text_Files/
 exe1/__pycache__
+exe1/embeddings_out
+exe1/embeddings_w2v
+exe1/vectors_lemm
+exe1/vectors_word
+*/US
+*/UK
+*/venv
+*/tokens
+*/lemmas
+*vectors_tfidf
+*/__pycache__
+*.keras
