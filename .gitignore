@@ -11,8 +11,8 @@ exe1/embeddings_out
 exe1/embeddings_w2v
 exe1/vectors_lemm
 exe1/vectors_word
-*/US
-*/UK
+*US
+*UK
 */venv
 */tokens
 */lemmas
