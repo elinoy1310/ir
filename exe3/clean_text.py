@@ -10,12 +10,13 @@ def clean_text(text, remove_header=False):
     text = re.sub(r'([.!?])(?=\S)', r'\1', text)
     text = re.sub(r'</?pre>', '', text)
     if remove_header:
-        text = re.sub(r'Title:.*?(\d{4}).*?\1', '', text, flags=re.DOTALL)
+        text = re.sub(r'Title:.*?(\d{4}).*?,\s\1', '', text, flags=re.DOTALL)
     text = re.sub(r'_+', '', text)
     text = re.sub(r'\[\[Page.*?\]\]', '', text)
     text = text.strip()
     # Replace multiple spaces with a single space
     text = re.sub(r'\s\s+', '\n', text)
+    text = re.sub(r'\n+', ' ', text)
     return text
 
 def process_files_in_directory(input_directory, output_directory, remove_header=False):
