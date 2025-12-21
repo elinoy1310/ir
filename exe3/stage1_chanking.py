@@ -206,7 +206,5 @@ if __name__ == "__main__":
 
     process_directory_for_chunking("exe3/clean-text/UK", "exe3/fixed-chunked-text/UK")
     process_directory_for_chunking("exe3/clean-text/US", "exe3/fixed-chunked-text/US")
-   
     process_directory_for_parent_child_chunking("exe3/clean-text/UK", "exe3/parent-child-chunked-text/UK")
-     
     process_directory_for_parent_child_chunking("exe3/clean-text/US", "exe3/parent-child-chunked-text/US")
