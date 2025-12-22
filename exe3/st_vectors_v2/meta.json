@@ -1,0 +1,8 @@
+{
+  "model": "embaas/sentence-transformers-multilingual-e5-base",
+  "count": 11584,
+  "dim": 768,
+  "dtype": "float16",
+  "normalized": true,
+  "note": "embeddings are for E5 with 'passage:' prefix; queries should use 'query:' prefix"
+}
