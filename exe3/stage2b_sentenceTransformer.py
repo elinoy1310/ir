@@ -104,8 +104,8 @@ def generate_embeddings(texts, filenames, output_folder):
 #     print(f"Filenames saved to {filenames_filename}")
 
 if __name__ == "__main__":
-    uk_chanks_texts, uk_filenames = load_text(r"exe3\chunked-text\UK")
-    us_chanks_texts, us_filenames = load_text(r"exe3\chunked-text\US")
+    uk_chanks_texts, uk_filenames = load_text(r"exe3\fixed-chunked-text\UK")
+    us_chanks_texts, us_filenames = load_text(r"exe3\fixed-chunked-text\US")
     print(f"Loaded {len(uk_chanks_texts)} UK chunks and {len(us_chanks_texts)} US chunks.")
     all_texts = uk_chanks_texts + us_chanks_texts
     all_filenames = uk_filenames + us_filenames
