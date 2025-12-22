@@ -19,3 +19,4 @@ exe1/vectors_word
 *vectors_tfidf
 */__pycache__
 *.keras
+temp.py
