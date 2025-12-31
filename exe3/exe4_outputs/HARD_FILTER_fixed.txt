@@ -1,0 +1,189 @@
+==========================================================================================
+### TEMPORAL TEST GROUP: HARD_FILTER
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=3, Chunking=fixed
+
+[HARD_FILTER] What was the specific budget allocated to security in 2024?
+
+
+Built prompt with 9642 context chunks.
+
+==========================================================================================
+METHOD=dense  K=3
+QUESTION: What was the specific budget allocated to security in 2024?
+
+ANSWER:
+ The specific budget allocated to security in 2024 is not mentioned in the context, so I cannot answer this question from the provided context.
+
+**SOURCES:**
+
+* [1] SOURCE_FILE: exe3/clean-text/US/2023-10-02.txt
+* [2] SOURCE_FILE: exe3/clean-text/US/2025-05-12.txt
+* [3] SOURCE_FILE: exe3/clean-text/US/2024-05-15.txt
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/US/2023-10-02.txt  (exe3/chunked-text/US/chunk_277.txt)  score=0.8396
+[2] exe3/clean-text/US/2025-05-12.txt  (exe3/chunked-text/US/chunk_1850.txt)  score=0.8380
+[3] exe3/clean-text/US/2024-05-15.txt  (exe3/chunked-text/US/chunk_940.txt)  score=0.8354
+End of Run 1 for dense with k=3
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=5, Chunking=fixed
+
+[HARD_FILTER] What was the specific budget allocated to security in 2024?
+
+
+Built prompt with 16845 context chunks.
+
+==========================================================================================
+METHOD=dense  K=5
+QUESTION: What was the specific budget allocated to security in 2024?
+
+ANSWER:
+ The context does not provide any information about the specific budget allocated to security in 2024, so I cannot answer this question from the provided context.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/US/2023-10-02.txt  (exe3/chunked-text/US/chunk_277.txt)  score=0.8396
+[2] exe3/clean-text/US/2025-05-12.txt  (exe3/chunked-text/US/chunk_1850.txt)  score=0.8380
+[3] exe3/clean-text/US/2024-05-15.txt  (exe3/chunked-text/US/chunk_940.txt)  score=0.8354
+[4] exe3/clean-text/US/2025-06-09.txt  (exe3/chunked-text/US/chunk_1944.txt)  score=0.8351
+[5] exe3/clean-text/US/2024-04-10.txt  (exe3/chunked-text/US/chunk_802.txt)  score=0.8312
+End of Run 1 for dense with k=5
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=8, Chunking=fixed
+
+[HARD_FILTER] What was the specific budget allocated to security in 2024?
+
+
+Built prompt with 27663 context chunks.
+
+==========================================================================================
+METHOD=dense  K=8
+QUESTION: What was the specific budget allocated to security in 2024?
+
+ANSWER:
+ ## House of Commons Debate: NHS Dentistry Funding
+
+**Mr. Garbarino:** Mr. Speaker, I rise today to express my deep concern about the lack of transparency regarding the NHS dentistry funding allocation.
+
+**Mr. Heappey:** I understand that this is a sensitive issue, and I have been working closely with the Department for Education to ensure that the matter is addressed with the utmost care and sensitivity.
+
+**Mr. Garbarino:** I am particularly troubled by the fact that the Department has only recently identified this error, and that it has taken so long to issue new funding allocations to rectify it.
+
+**Mr. Heappey:** I can assure you that the Department is committed to transparency and accountability in the management of public funds. We have already identified the error and are working to address it as quickly as possible.
+
+**Mr. Garbarino:** I am also concerned about the impact this error may have on patients who rely on NHS dentistry services. I urge the Government to provide a full and transparent account of the situation, and to assure the House that the necessary steps will be taken to prevent similar errors in the future.
+
+**Mr. Heappey:** I will be happy to provide the House with a further update on this matter at the next opportunity.
+
+**Motion:**
+
+That the Government provide a full and transparent account of the NHS dentistry funding error, and to assure the House that the necessary steps will be taken to prevent similar errors in the future
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/US/2023-10-02.txt  (exe3/chunked-text/US/chunk_277.txt)  score=0.8396
+[2] exe3/clean-text/US/2025-05-12.txt  (exe3/chunked-text/US/chunk_1850.txt)  score=0.8380
+[3] exe3/clean-text/US/2024-05-15.txt  (exe3/chunked-text/US/chunk_940.txt)  score=0.8354
+[4] exe3/clean-text/US/2025-06-09.txt  (exe3/chunked-text/US/chunk_1944.txt)  score=0.8351
+[5] exe3/clean-text/US/2024-04-10.txt  (exe3/chunked-text/US/chunk_802.txt)  score=0.8312
+[6] exe3/clean-text/US/2024-02-28.txt  (exe3/chunked-text/US/chunk_653.txt)  score=0.8304
+[7] exe3/clean-text/UK/debates2025-07-15.txt  (exe3/chunked-text/UK/chunk_8482.txt)  score=0.8299
+[8] exe3/clean-text/UK/debates2023-10-17.txt  (exe3/chunked-text/UK/chunk_717.txt)  score=0.8289
+End of Run 1 for dense with k=8
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=3, Chunking=fixed
+
+[HARD_FILTER] What was the specific budget allocated to security in 2024?
+
+
+Built prompt with 10826 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=3
+QUESTION: What was the specific budget allocated to security in 2024?
+
+ANSWER:
+ The specific budget allocated to security in 2024 is not mentioned in the context, so I cannot answer this question from the provided context.
+
+SOURCES:
+
+1. Official Report, 21 November 2024 ; Vol. 757, c. 3WC.
+2. Welsh Affairs Committee, January 2025.
+3. UK Health Security Agency, 22 November 2024.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-11-04.txt  (exe3/chunked-text/UK/chunk_4734.txt)  score=57.4512
+[2] exe3/clean-text/UK/debates2025-07-16.txt  (exe3/chunked-text/UK/chunk_8495.txt)  score=52.2875
+[3] exe3/clean-text/UK/debates2024-01-22.txt  (exe3/chunked-text/UK/chunk_1876.txt)  score=51.9978
+End of Run 1 for bm25 with k=3
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=5, Chunking=fixed
+
+[HARD_FILTER] What was the specific budget allocated to security in 2024?
+
+
+Built prompt with 18044 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=5
+QUESTION: What was the specific budget allocated to security in 2024?
+
+ANSWER:
+ The specific budget allocated to security in 2024 is not mentioned in the context, so I cannot answer this question from the provided context.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-11-04.txt  (exe3/chunked-text/UK/chunk_4734.txt)  score=57.4512
+[2] exe3/clean-text/UK/debates2025-07-16.txt  (exe3/chunked-text/UK/chunk_8495.txt)  score=52.2875
+[3] exe3/clean-text/UK/debates2024-01-22.txt  (exe3/chunked-text/UK/chunk_1876.txt)  score=51.9978
+[4] exe3/clean-text/UK/debates2025-03-04.txt  (exe3/chunked-text/UK/chunk_6393.txt)  score=51.8402
+[5] exe3/clean-text/UK/debates2024-05-09.txt  (exe3/chunked-text/UK/chunk_3448.txt)  score=51.5565
+End of Run 1 for bm25 with k=5
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=8, Chunking=fixed
+
+[HARD_FILTER] What was the specific budget allocated to security in 2024?
+
+
+Built prompt with 28870 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=8
+QUESTION: What was the specific budget allocated to security in 2024?
+
+ANSWER:
+ **Q1: What is the current state of NHS dentistry in England?**
+
+The Secretary of State has committed to 100% FLS coverage across England, but the error in the notional allocations of the schools national funding formula for 2024-25 has resulted in an overstatement of 0.62% in the overall cost of the core schools budget.
+
+**Q2: What is the impact of this error on the core schools budget?**
+
+The error does not affect the overall level of school funding, but it does mean that the average funding is 5,300 per primary school pupil and 6,830 per secondary school pupil in 2024-25, up from 5,200 and 6,720 respectively in 2023-24.
+
+**Q3: What is the impact of this error on the publication of the schools grant?**
+
+The error will not impact on the publication of a dedicated schools grant in December.
+
+**Q4: What is the impact of this error on the implementation of the new childcare system?**
+
+The error will not impact on the implementation of the new childcare system, as it only affects the calculation of funding rates for providers.
+
+**Q5: What is the impact of this error on the families who are eligible for childcare places?**
+
+The error will not impact on the number of families
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-11-04.txt  (exe3/chunked-text/UK/chunk_4734.txt)  score=57.4512
+[2] exe3/clean-text/UK/debates2025-07-16.txt  (exe3/chunked-text/UK/chunk_8495.txt)  score=52.2875
+[3] exe3/clean-text/UK/debates2024-01-22.txt  (exe3/chunked-text/UK/chunk_1876.txt)  score=51.9978
+[4] exe3/clean-text/UK/debates2025-03-04.txt  (exe3/chunked-text/UK/chunk_6393.txt)  score=51.8402
+[5] exe3/clean-text/UK/debates2024-05-09.txt  (exe3/chunked-text/UK/chunk_3448.txt)  score=51.5565
+[6] exe3/clean-text/UK/debates2025-04-29.txt  (exe3/chunked-text/UK/chunk_7242.txt)  score=50.9492
+[7] exe3/clean-text/UK/debates2023-10-17.txt  (exe3/chunked-text/UK/chunk_717.txt)  score=50.9202
+[8] exe3/clean-text/UK/debates2024-01-22.txt  (exe3/chunked-text/UK/chunk_1895.txt)  score=48.6826
+End of Run 1 for bm25 with k=8
+==========================================================================================

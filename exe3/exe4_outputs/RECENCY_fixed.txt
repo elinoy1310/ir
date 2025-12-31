@@ -1,0 +1,555 @@
+==========================================================================================
+### TEMPORAL TEST GROUP: RECENCY
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=3, Chunking=fixed
+
+[RECENCY] What is the current official position regarding the State of Israel?
+
+
+Built prompt with 8590 context chunks.
+
+==========================================================================================
+METHOD=dense  K=3
+QUESTION: What is the current official position regarding the State of Israel?
+
+ANSWER:
+ The current official position regarding the State of Israel is that it is not breaching international law.
+
+Sources:
+
+[1] SOURCE_FILE: exe3/clean-text/UK/debates2024-07-30.txt
+CHUNK: exe3/chunked-text/UK/chunk_4029.txt
+TEXT: Gentleman that the last Government to get to 2.5% of GDP spending on defence was a Labour Government. We intend to get back there and those plans will be announced at a fiscal event in the future. What his planned timescale is for completing his review of Israel's compliance with international humanitarian law. As soon as I come into office, I commissioned new advice on Israel's compliance with international humanitarian law in the context of war in Gaza. We are obliged to look at that advice under criterion 2C for items exported. That is an ongoing process. I pledge to update the House as soon as I can on this very serious matter. I welcome the Government's changing approach to the devastating conflict in Gaza and the fact that the review was ordered soon after the Foreign Secretary's appointment. Will the Foreign Secretary confirm that, if the review were to conclude that Israel was breaching international law, all actions including halting arms sales would be considered as part of the Government's proportional response?
+
+[2] SOURCE_FILE: exe3/clean-text/UK/debates2023
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-07-30.txt  (exe3/chunked-text/UK/chunk_4029.txt)  score=0.8460
+[2] exe3/clean-text/UK/debates2023-11-14.txt  (exe3/chunked-text/UK/chunk_1061.txt)  score=0.8452
+[3] exe3/clean-text/UK/debates2023-07-04.txt  (exe3/chunked-text/UK/chunk_111.txt)  score=0.8433
+End of Run 1 for dense with k=3
+==========================================================================================
+
+Running RAG (Run 2): Method=dense, k=3, Chunking=fixed
+
+[RECENCY] What is the current official position regarding Hamas/Gaza?
+
+
+Built prompt with 10825 context chunks.
+
+==========================================================================================
+METHOD=dense  K=3
+QUESTION: What is the current official position regarding Hamas/Gaza?
+
+ANSWER:
+ The current official position regarding Hamas/Gaza is that they are a terrorist organisation that has prosecuted an atrocity.
+
+<sources>
+* [1] SOURCE_FILE: exe3/clean-text/UK/debates2023-10-23.txt
+* [2] SOURCE_FILE: exe3/clean-text/UK/debates2023-11-14.txt
+* [3] SOURCE_FILE: exe3/clean-text/UK/debates2024-04-29.txt
+</sources>
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2023-10-23.txt  (exe3/chunked-text/UK/chunk_833.txt)  score=0.8841
+[2] exe3/clean-text/UK/debates2023-11-14.txt  (exe3/chunked-text/UK/chunk_1061.txt)  score=0.8819
+[3] exe3/clean-text/UK/debates2024-04-29.txt  (exe3/chunked-text/UK/chunk_3297.txt)  score=0.8794
+End of Run 2 for dense with k=3
+==========================================================================================
+
+Running RAG (Run 3): Method=dense, k=3, Chunking=fixed
+
+[RECENCY] Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+
+Built prompt with 10653 context chunks.
+
+==========================================================================================
+METHOD=dense  K=3
+QUESTION: Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+ANSWER:
+ **Sources:**
+
+* [1] SOURCE_FILE: exe3/clean-text/US/2024-02-28.txt
+* [2] SOURCE_FILE: exe3/clean-text/UK/debates2023-10-17.txt
+* [3] SOURCE_FILE: exe3/clean-text/UK/debates2023-10-19.txt
+
+**I do not know based on the provided context.**
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/US/2024-02-28.txt  (exe3/chunked-text/US/chunk_653.txt)  score=0.8605
+[2] exe3/clean-text/UK/debates2023-10-17.txt  (exe3/chunked-text/UK/chunk_717.txt)  score=0.8599
+[3] exe3/clean-text/UK/debates2023-10-19.txt  (exe3/chunked-text/UK/chunk_773.txt)  score=0.8596
+End of Run 3 for dense with k=3
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=5, Chunking=fixed
+
+[RECENCY] What is the current official position regarding the State of Israel?
+
+
+Built prompt with 15801 context chunks.
+
+==========================================================================================
+METHOD=dense  K=5
+QUESTION: What is the current official position regarding the State of Israel?
+
+ANSWER:
+ The current official position regarding the State of Israel is that it is not breaching international law.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-07-30.txt  (exe3/chunked-text/UK/chunk_4029.txt)  score=0.8460
+[2] exe3/clean-text/UK/debates2023-11-14.txt  (exe3/chunked-text/UK/chunk_1061.txt)  score=0.8452
+[3] exe3/clean-text/UK/debates2023-07-04.txt  (exe3/chunked-text/UK/chunk_111.txt)  score=0.8433
+[4] exe3/clean-text/UK/debates2025-03-20.txt  (exe3/chunked-text/UK/chunk_6728.txt)  score=0.8429
+[5] exe3/clean-text/US/2024-07-11.txt  (exe3/chunked-text/US/chunk_1152.txt)  score=0.8426
+End of Run 1 for dense with k=5
+==========================================================================================
+
+Running RAG (Run 2): Method=dense, k=5, Chunking=fixed
+
+[RECENCY] What is the current official position regarding Hamas/Gaza?
+
+
+Built prompt with 18043 context chunks.
+
+==========================================================================================
+METHOD=dense  K=5
+QUESTION: What is the current official position regarding Hamas/Gaza?
+
+ANSWER:
+ The context does not provide any information about the current official position of the British Government regarding Hamas/Gaza, so I cannot answer this question from the provided context.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2023-10-23.txt  (exe3/chunked-text/UK/chunk_833.txt)  score=0.8841
+[2] exe3/clean-text/UK/debates2023-11-14.txt  (exe3/chunked-text/UK/chunk_1061.txt)  score=0.8819
+[3] exe3/clean-text/UK/debates2024-04-29.txt  (exe3/chunked-text/UK/chunk_3297.txt)  score=0.8794
+[4] exe3/clean-text/UK/debates2023-12-05.txt  (exe3/chunked-text/UK/chunk_1392.txt)  score=0.8792
+[5] exe3/clean-text/UK/debates2024-01-30.txt  (exe3/chunked-text/UK/chunk_2048.txt)  score=0.8784
+End of Run 2 for dense with k=5
+==========================================================================================
+
+Running RAG (Run 3): Method=dense, k=5, Chunking=fixed
+
+[RECENCY] Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+
+Built prompt with 17871 context chunks.
+
+==========================================================================================
+METHOD=dense  K=5
+QUESTION: Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+ANSWER:
+ The question is about the impact of the recent error in the notional allocations of the schools national funding formula on the 2024-25 core school budget.
+
+The Secretary of State for Education has confirmed that the error will not affect the overall level of school funding, which remains at 59.6 billion for 2024-25.
+
+The Secretary of State has also assured that the 2024-25 high needs national funding formula allocations are unaffected by the error.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/US/2024-02-28.txt  (exe3/chunked-text/US/chunk_653.txt)  score=0.8605
+[2] exe3/clean-text/UK/debates2023-10-17.txt  (exe3/chunked-text/UK/chunk_717.txt)  score=0.8599
+[3] exe3/clean-text/UK/debates2023-10-19.txt  (exe3/chunked-text/UK/chunk_773.txt)  score=0.8596
+[4] exe3/clean-text/UK/debates2023-11-23.txt  (exe3/chunked-text/UK/chunk_1212.txt)  score=0.8586
+[5] exe3/clean-text/UK/debates2025-05-22.txt  (exe3/chunked-text/UK/chunk_7640.txt)  score=0.8571
+End of Run 3 for dense with k=5
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=8, Chunking=fixed
+
+[RECENCY] What is the current official position regarding the State of Israel?
+
+
+Built prompt with 26628 context chunks.
+
+==========================================================================================
+METHOD=dense  K=8
+QUESTION: What is the current official position regarding the State of Israel?
+
+ANSWER:
+ Error calling Ollama: HTTPConnectionPool(host='127.0.0.1', port=11434): Read timed out. (read timeout=300)
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-07-30.txt  (exe3/chunked-text/UK/chunk_4029.txt)  score=0.8460
+[2] exe3/clean-text/UK/debates2023-11-14.txt  (exe3/chunked-text/UK/chunk_1061.txt)  score=0.8452
+[3] exe3/clean-text/UK/debates2023-07-04.txt  (exe3/chunked-text/UK/chunk_111.txt)  score=0.8433
+[4] exe3/clean-text/UK/debates2025-03-20.txt  (exe3/chunked-text/UK/chunk_6728.txt)  score=0.8429
+[5] exe3/clean-text/US/2024-07-11.txt  (exe3/chunked-text/US/chunk_1152.txt)  score=0.8426
+[6] exe3/clean-text/UK/debates2024-03-26.txt  (exe3/chunked-text/UK/chunk_2990.txt)  score=0.8425
+[7] exe3/clean-text/UK/debates2024-01-30.txt  (exe3/chunked-text/UK/chunk_2048.txt)  score=0.8423
+[8] exe3/clean-text/UK/debates2023-11-27.txt  (exe3/chunked-text/UK/chunk_1248.txt)  score=0.8415
+End of Run 1 for dense with k=8
+==========================================================================================
+
+Running RAG (Run 2): Method=dense, k=8, Chunking=fixed
+
+[RECENCY] What is the current official position regarding Hamas/Gaza?
+
+
+Built prompt with 28869 context chunks.
+
+==========================================================================================
+METHOD=dense  K=8
+QUESTION: What is the current official position regarding Hamas/Gaza?
+
+ANSWER:
+ **Shadow Secretary of State's Response**
+
+My Lords and Ladies,
+
+I stand before you today to address the grave humanitarian crisis unfolding in the Middle East. The situation in Gaza is dire, with over 45,000 innocent people lost and countless others suffering from starvation, violence, and discrimination.
+
+The recent terrorist attack has been an act of barbarism, targeting a hospital that provided vital medical assistance to the people of Gaza. This attack will only serve to intensify the passions and polarize the debate further.
+
+I am deeply concerned about the plight of ordinary Palestinians who have been forced to flee their homes and seek safety in neighboring countries. The international community must stand united in its support for their right to a peaceful and prosperous future.
+
+I fully endorse the Foreign Secretary's commitment to humanitarian assistance for the ordinary people of Palestine. We must work tirelessly to ensure that they receive the food, water, and medical care they desperately need.
+
+I also support the Government's efforts to facilitate a negotiated two-state solution to the conflict. A two-state solution would allow for the establishment of a sovereign Palestinian state, including the West Bank and Gaza, alongside a safe and secure Israel.
+
+I urge all parties involved in the conflict to work together with the international community to find a lasting solution that addresses the root causes of the violence, such as poverty, inequality, and discrimination.
+
+I am confident that, with the UK's continued leadership and support, we
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2023-10-23.txt  (exe3/chunked-text/UK/chunk_833.txt)  score=0.8841
+[2] exe3/clean-text/UK/debates2023-11-14.txt  (exe3/chunked-text/UK/chunk_1061.txt)  score=0.8819
+[3] exe3/clean-text/UK/debates2024-04-29.txt  (exe3/chunked-text/UK/chunk_3297.txt)  score=0.8794
+[4] exe3/clean-text/UK/debates2023-12-05.txt  (exe3/chunked-text/UK/chunk_1392.txt)  score=0.8792
+[5] exe3/clean-text/UK/debates2024-01-30.txt  (exe3/chunked-text/UK/chunk_2048.txt)  score=0.8784
+[6] exe3/clean-text/UK/debates2024-03-26.txt  (exe3/chunked-text/UK/chunk_2987.txt)  score=0.8774
+[7] exe3/clean-text/UK/debates2025-03-04.txt  (exe3/chunked-text/UK/chunk_6408.txt)  score=0.8762
+[8] exe3/clean-text/UK/debates2023-10-18.txt  (exe3/chunked-text/UK/chunk_754.txt)  score=0.8759
+End of Run 2 for dense with k=8
+==========================================================================================
+
+Running RAG (Run 3): Method=dense, k=8, Chunking=fixed
+
+[RECENCY] Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+
+Built prompt with 28690 context chunks.
+
+==========================================================================================
+METHOD=dense  K=8
+QUESTION: Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+ANSWER:
+ **Clause 12: Corporation Tax Charge**
+
+* The charge for corporation tax must be set every year in advance.
+* This provides certainty to large and very large companies that pay tax in advance on the basis of their estimated tax liabilities.
+* The charge must be set at the current main rate of 25% and the small profits rate of 19%.
+
+**Clause 13: Corporation Tax Thresholds**
+
+* The charge for corporation tax applies when the annual turnover of a company exceeds a certain threshold.
+* The thresholds are not specified in the Bill, so they will be set by secondary legislation.
+
+**Clause 19: Energy Profits Levy Exemption**
+
+* The energy profits levy will no longer apply if oil and gas prices return to historically normal levels for a sustained period of time.
+* This is achieved by introducing legislation to give effect to the energy security investment mechanism, or ESIM.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/US/2024-02-28.txt  (exe3/chunked-text/US/chunk_653.txt)  score=0.8605
+[2] exe3/clean-text/UK/debates2023-10-17.txt  (exe3/chunked-text/UK/chunk_717.txt)  score=0.8599
+[3] exe3/clean-text/UK/debates2023-10-19.txt  (exe3/chunked-text/UK/chunk_773.txt)  score=0.8596
+[4] exe3/clean-text/UK/debates2023-11-23.txt  (exe3/chunked-text/UK/chunk_1212.txt)  score=0.8586
+[5] exe3/clean-text/UK/debates2025-05-22.txt  (exe3/chunked-text/UK/chunk_7640.txt)  score=0.8571
+[6] exe3/clean-text/US/2024-04-10.txt  (exe3/chunked-text/US/chunk_802.txt)  score=0.8570
+[7] exe3/clean-text/UK/debates2023-11-23.txt  (exe3/chunked-text/UK/chunk_1211.txt)  score=0.8565
+[8] exe3/clean-text/UK/debates2024-05-08.txt  (exe3/chunked-text/UK/chunk_3414.txt)  score=0.8564
+End of Run 3 for dense with k=8
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=3, Chunking=fixed
+
+[RECENCY] What is the current official position regarding the State of Israel?
+
+
+Built prompt with 10826 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=3
+QUESTION: What is the current official position regarding the State of Israel?
+
+ANSWER:
+ The current official position regarding the State of Israel is that the UK has been proposing different ways in which we can help in the process of decommissioning and disarming Hamas, using expertise that we have built up over very many years.
+
+The UK is taking a range of measures with its partners to work through the very complicated but necessary steps, whether that is about transitional governance.
+
+The UK is making a contribution to the Civil-Military Co-ordination Centre, which plays a role in seeking to verify the facts on the ground where we can.
+
+The UK is also working to increase getting aid into Gaza.
+
+The UK is tracking events in Gaza incredibly carefully.
+
+<sources>
+
+[1] SOURCE_FILE: exe3/clean-text/UK/debates2024-02-01.txt
+[2] SOURCE_FILE: exe3/clean-text/UK/debates2025-01-07.txt
+[3] SOURCE_FILE: exe3/clean-text/UK/debates2025-10-29.txt
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-02-01.txt  (exe3/chunked-text/UK/chunk_2116.txt)  score=67.5886
+[2] exe3/clean-text/UK/debates2025-01-07.txt  (exe3/chunked-text/UK/chunk_5571.txt)  score=58.4074
+[3] exe3/clean-text/UK/debates2025-10-29.txt  (exe3/chunked-text/UK/chunk_9174.txt)  score=58.2186
+End of Run 1 for bm25 with k=3
+==========================================================================================
+
+Running RAG (Run 2): Method=bm25, k=3, Chunking=fixed
+
+[RECENCY] What is the current official position regarding Hamas/Gaza?
+
+
+Built prompt with 10826 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=3
+QUESTION: What is the current official position regarding Hamas/Gaza?
+
+ANSWER:
+ The current official position regarding Hamas/Gaza is that they are a terrorist organisation and their cowardly tactics are reprehensible.
+
+The UK is taking a range of measures with its partners to work through the very complicated but necessary steps, whether that is about transitional governance.
+
+The UK is making a contribution to the Civil-Military Co-ordination Centre, which plays a role in seeking to verify the facts on the ground where we can.
+
+The UK is also working to increase getting aid into Gaza via vital land routes, alongside sea and air, to alleviate the suffering.
+
+The UK is looking to Israel to meet its commitments to flood Gaza with aid.
+
+The UK is also working tirelessly to achieve it.
+
+Sources:
+
+[1] SOURCE_FILE: exe3/clean-text/UK/debates2025-10-29.txt
+[2] SOURCE_FILE: exe3/clean-text/UK/debates2023-12-11.txt
+[3] SOURCE_FILE: exe3/clean-text/UK/debates2024-05-07.txt
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2025-10-29.txt  (exe3/chunked-text/UK/chunk_9174.txt)  score=99.8841
+[2] exe3/clean-text/UK/debates2023-12-11.txt  (exe3/chunked-text/UK/chunk_1476.txt)  score=85.8929
+[3] exe3/clean-text/UK/debates2024-05-07.txt  (exe3/chunked-text/UK/chunk_3404.txt)  score=84.3632
+End of Run 2 for bm25 with k=3
+==========================================================================================
+
+Running RAG (Run 3): Method=bm25, k=3, Chunking=fixed
+
+[RECENCY] Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+
+Built prompt with 10826 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=3
+QUESTION: Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+ANSWER:
+ **Sources:**
+
+* [1] SOURCE_FILE: exe3/clean-text/UK/debates2024-11-11.txt
+* [2] SOURCE_FILE: exe3/clean-text/UK/debates2025-03-31.txt
+* [3] SOURCE_FILE: exe3/clean-text/UK/debates2024-07-29.txt
+
+**I do not know based on the context, so I cannot answer this question.**
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-11-11.txt  (exe3/chunked-text/UK/chunk_4804.txt)  score=94.5013
+[2] exe3/clean-text/UK/debates2025-03-31.txt  (exe3/chunked-text/UK/chunk_6921.txt)  score=91.7881
+[3] exe3/clean-text/UK/debates2024-07-29.txt  (exe3/chunked-text/UK/chunk_3994.txt)  score=76.5786
+End of Run 3 for bm25 with k=3
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=5, Chunking=fixed
+
+[RECENCY] What is the current official position regarding the State of Israel?
+
+
+Built prompt with 18036 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=5
+QUESTION: What is the current official position regarding the State of Israel?
+
+ANSWER:
+ The current official position regarding the State of Israel is that the UK Government supports the ceasefire and the wider peace initiative. The UK has been proposing different ways in which they can help in the process of decommissioning and disarming Hamas, using expertise that they have built up over very many years.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-02-01.txt  (exe3/chunked-text/UK/chunk_2116.txt)  score=67.5886
+[2] exe3/clean-text/UK/debates2025-01-07.txt  (exe3/chunked-text/UK/chunk_5571.txt)  score=58.4074
+[3] exe3/clean-text/UK/debates2025-10-29.txt  (exe3/chunked-text/UK/chunk_9174.txt)  score=58.2186
+[4] exe3/clean-text/US/2023-08-15.txt  (exe3/chunked-text/US/chunk_147.txt)  score=57.6689
+[5] exe3/clean-text/UK/debates2024-05-07.txt  (exe3/chunked-text/UK/chunk_3404.txt)  score=55.7376
+End of Run 1 for bm25 with k=5
+==========================================================================================
+
+Running RAG (Run 2): Method=bm25, k=5, Chunking=fixed
+
+[RECENCY] What is the current official position regarding Hamas/Gaza?
+
+
+Built prompt with 18044 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=5
+QUESTION: What is the current official position regarding Hamas/Gaza?
+
+ANSWER:
+ Sure, here is the answer:
+
+The context does not provide any information about the current official position of the UK Government regarding Hamas/Gaza, so I cannot answer this question from the provided context.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2025-10-29.txt  (exe3/chunked-text/UK/chunk_9174.txt)  score=99.8841
+[2] exe3/clean-text/UK/debates2023-12-11.txt  (exe3/chunked-text/UK/chunk_1476.txt)  score=85.8929
+[3] exe3/clean-text/UK/debates2024-05-07.txt  (exe3/chunked-text/UK/chunk_3404.txt)  score=84.3632
+[4] exe3/clean-text/UK/debates2024-02-01.txt  (exe3/chunked-text/UK/chunk_2116.txt)  score=83.4743
+[5] exe3/clean-text/UK/debates2024-04-29.txt  (exe3/chunked-text/UK/chunk_3298.txt)  score=82.1991
+End of Run 2 for bm25 with k=5
+==========================================================================================
+
+Running RAG (Run 3): Method=bm25, k=5, Chunking=fixed
+
+[RECENCY] Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+
+Built prompt with 18044 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=5
+QUESTION: Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+ANSWER:
+ The context does not provide any information about the assessment of child poverty rates in Cornwall, so I cannot answer this question from the provided context.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-11-11.txt  (exe3/chunked-text/UK/chunk_4804.txt)  score=94.5013
+[2] exe3/clean-text/UK/debates2025-03-31.txt  (exe3/chunked-text/UK/chunk_6921.txt)  score=91.7881
+[3] exe3/clean-text/UK/debates2024-07-29.txt  (exe3/chunked-text/UK/chunk_3994.txt)  score=76.5786
+[4] exe3/clean-text/UK/debates2024-05-07.txt  (exe3/chunked-text/UK/chunk_3386.txt)  score=73.8366
+[5] exe3/clean-text/UK/debates2025-10-27.txt  (exe3/chunked-text/UK/chunk_9113.txt)  score=72.7239
+End of Run 3 for bm25 with k=5
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=8, Chunking=fixed
+
+[RECENCY] What is the current official position regarding the State of Israel?
+
+
+Built prompt with 28862 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=8
+QUESTION: What is the current official position regarding the State of Israel?
+
+ANSWER:
+ ## Summary of the Questions
+
+**1. Urgent Question on Thames Water**
+
+* The Secretary of State for Environment, Food and Rural Affairs should clarify the financial situation of Thames Water and provide an update on the situation.
+
+**2. Inquiry on the Prime Minister's stance on humanitarian aid to Gaza**
+
+* The Prime Minister should express his sympathy to those affected by the recent storms and acknowledge the urgent need for humanitarian aid to Gaza.
+* He should also emphasize that depriving 2 million civilians of essential supplies is not in accordance with international law.
+* The Prime Minister should indicate his commitment to working with partners on the ground to ensure that aid reaches those in need as quickly as possible.
+
+**3. Question on the Parole System**
+
+* The Prime Minister should agree that sexual offenders who rape and brutally murder young women should remain in prison for as long as necessary to keep the public safe.
+* He should also indicate his commitment to reforming the parole system to ensure that dangerous offenders are held accountable and that victims are provided with support.
+
+**4. Request for an Urgent Debate on Houthi Aggression**
+
+* The Justice Secretary should confirm that the Government will take action on the recent attacks on commercial shipping in the Red Sea and that they are committed to working with the international community to address the issue.
+
+**5. Request for a Statement on Thames Water's Financial Situation**
+
+* The Prime Minister should provide an update on the financial situation of Thames Water and
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-02-01.txt  (exe3/chunked-text/UK/chunk_2116.txt)  score=67.5886
+[2] exe3/clean-text/UK/debates2025-01-07.txt  (exe3/chunked-text/UK/chunk_5571.txt)  score=58.4074
+[3] exe3/clean-text/UK/debates2025-10-29.txt  (exe3/chunked-text/UK/chunk_9174.txt)  score=58.2186
+[4] exe3/clean-text/US/2023-08-15.txt  (exe3/chunked-text/US/chunk_147.txt)  score=57.6689
+[5] exe3/clean-text/UK/debates2024-05-07.txt  (exe3/chunked-text/UK/chunk_3404.txt)  score=55.7376
+[6] exe3/clean-text/UK/debates2024-02-26.txt  (exe3/chunked-text/UK/chunk_2427.txt)  score=55.1288
+[7] exe3/clean-text/UK/debates2025-06-03.txt  (exe3/chunked-text/UK/chunk_7697.txt)  score=55.0122
+[8] exe3/clean-text/UK/debates2023-10-25.txt  (exe3/chunked-text/UK/chunk_875.txt)  score=54.7485
+End of Run 1 for bm25 with k=8
+==========================================================================================
+
+Running RAG (Run 2): Method=bm25, k=8, Chunking=fixed
+
+[RECENCY] What is the current official position regarding Hamas/Gaza?
+
+
+Built prompt with 28871 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=8
+QUESTION: What is the current official position regarding Hamas/Gaza?
+
+ANSWER:
+ Error calling Ollama: HTTPConnectionPool(host='127.0.0.1', port=11434): Read timed out. (read timeout=300)
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2025-10-29.txt  (exe3/chunked-text/UK/chunk_9174.txt)  score=99.8841
+[2] exe3/clean-text/UK/debates2023-12-11.txt  (exe3/chunked-text/UK/chunk_1476.txt)  score=85.8929
+[3] exe3/clean-text/UK/debates2024-05-07.txt  (exe3/chunked-text/UK/chunk_3404.txt)  score=84.3632
+[4] exe3/clean-text/UK/debates2024-02-01.txt  (exe3/chunked-text/UK/chunk_2116.txt)  score=83.4743
+[5] exe3/clean-text/UK/debates2024-04-29.txt  (exe3/chunked-text/UK/chunk_3298.txt)  score=82.1991
+[6] exe3/clean-text/UK/debates2023-11-14.txt  (exe3/chunked-text/UK/chunk_1061.txt)  score=81.8038
+[7] exe3/clean-text/UK/debates2025-01-07.txt  (exe3/chunked-text/UK/chunk_5570.txt)  score=78.9744
+[8] exe3/clean-text/UK/debates2025-03-04.txt  (exe3/chunked-text/UK/chunk_6408.txt)  score=78.6780
+End of Run 2 for bm25 with k=8
+==========================================================================================
+
+Running RAG (Run 3): Method=bm25, k=8, Chunking=fixed
+
+[RECENCY] Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+
+Built prompt with 28869 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=8
+QUESTION: Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?
+
+ANSWER:
+ ## Summary of the debate:
+
+The debate focused on the proposed Assisted Dying Bill, which would allow terminally ill patients to end their lives with dignity and control. 
+
+**Key points:**
+
+* The bill allows terminally ill patients to seek an assisted death if they are suffering from unbearable pain and have a competent medical team supporting their decision.
+* The bill also allows the patient to specify their wishes for the procedure, including the setting of a reasonable timeframe and the presence of family members.
+* The bill requires a panel of medical professionals to ensure the patient's competence and that the process is carried out with dignity and respect.
+* The bill also includes safeguards to protect family members from emotional or psychological harm.
+
+**Key questions and concerns:**
+
+* Some concerns were raised about the bill's potential impact on family members and the potential for coercion.
+* There were also concerns about the lack of clarity in the bill regarding the definition of "unbearable pain" and the process of determining the patient's competence.
+* Some members also expressed concerns about the potential for abuse of the bill.
+
+**Overall, the debate was heated and passionate, with strong arguments on both sides. While the bill ultimately passed, it is clear that there are still many complex and challenging issues that need to be addressed.**
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-11-11.txt  (exe3/chunked-text/UK/chunk_4804.txt)  score=94.5013
+[2] exe3/clean-text/UK/debates2025-03-31.txt  (exe3/chunked-text/UK/chunk_6921.txt)  score=91.7881
+[3] exe3/clean-text/UK/debates2024-07-29.txt  (exe3/chunked-text/UK/chunk_3994.txt)  score=76.5786
+[4] exe3/clean-text/UK/debates2024-05-07.txt  (exe3/chunked-text/UK/chunk_3386.txt)  score=73.8366
+[5] exe3/clean-text/UK/debates2025-10-27.txt  (exe3/chunked-text/UK/chunk_9113.txt)  score=72.7239
+[6] exe3/clean-text/UK/debates2025-03-04.txt  (exe3/chunked-text/UK/chunk_6404.txt)  score=71.7791
+[7] exe3/clean-text/UK/debates2023-06-29.txt  (exe3/chunked-text/UK/chunk_47.txt)  score=71.4786
+[8] exe3/clean-text/UK/debates2025-06-20.txt  (exe3/chunked-text/UK/chunk_8031.txt)  score=70.0085
+End of Run 3 for bm25 with k=8
+==========================================================================================
