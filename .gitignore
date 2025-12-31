@@ -20,3 +20,4 @@ exe1/vectors_word
 */__pycache__
 *.keras
 temp.py
+exe3/outputs
