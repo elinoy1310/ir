@@ -1,0 +1,180 @@
+==========================================================================================
+### TEMPORAL TEST GROUP: EVOLUTION
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=3, Chunking=fixed
+
+[EVOLUTION] How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+
+Built prompt with 10824 context chunks.
+
+==========================================================================================
+METHOD=dense  K=3
+QUESTION: How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+ANSWER:
+ Sure, here is the answer to the question:
+
+The passage does not mention whether the Prime Minister agrees or disagrees with the statements he made in his first and last speeches on the war between Israel and Hamas/Gaza. Therefore, I cannot answer this question from the provided context.
+
+**SOURCES:**
+
+1. exe3/clean-text/UK/debates2023-10-16.txt
+2. exe3/clean-text/UK/debates2023-10-16.txt
+3. exe3/clean-text/UK/debates2023-12-11.txt
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_695.txt)  score=0.9010
+[2] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_696.txt)  score=0.8974
+[3] exe3/clean-text/UK/debates2023-12-11.txt  (exe3/chunked-text/UK/chunk_1477.txt)  score=0.8960
+End of Run 1 for dense with k=3
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=5, Chunking=fixed
+
+[EVOLUTION] How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+
+Built prompt with 18040 context chunks.
+
+==========================================================================================
+METHOD=dense  K=5
+QUESTION: How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+ANSWER:
+ Sure, here's the answer:
+
+The passage does not provide any information about whether the Prime Minister agrees with the statement he made about the reality of the situation for ordinary Palestinian people living in the nightmare that is unfolding around them. Therefore, I cannot answer this question from the provided context.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_695.txt)  score=0.9010
+[2] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_696.txt)  score=0.8974
+[3] exe3/clean-text/UK/debates2023-12-11.txt  (exe3/chunked-text/UK/chunk_1477.txt)  score=0.8960
+[4] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_694.txt)  score=0.8959
+[5] exe3/clean-text/UK/debates2023-10-18.txt  (exe3/chunked-text/UK/chunk_738.txt)  score=0.8955
+End of Run 1 for dense with k=5
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=8, Chunking=fixed
+
+[EVOLUTION] How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+
+Built prompt with 28867 context chunks.
+
+==========================================================================================
+METHOD=dense  K=8
+QUESTION: How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+ANSWER:
+ **Answer:**
+
+The context does not provide any information about the Prime Minister's statement on the Address, or whether he explicitly condemned the drone attacks on Iranian and Israeli facilities. Therefore, I cannot answer this question from the provided context.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_695.txt)  score=0.9010
+[2] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_696.txt)  score=0.8974
+[3] exe3/clean-text/UK/debates2023-12-11.txt  (exe3/chunked-text/UK/chunk_1477.txt)  score=0.8960
+[4] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_694.txt)  score=0.8959
+[5] exe3/clean-text/UK/debates2023-10-18.txt  (exe3/chunked-text/UK/chunk_738.txt)  score=0.8955
+[6] exe3/clean-text/UK/debates2024-07-19.txt  (exe3/chunked-text/UK/chunk_3832.txt)  score=0.8947
+[7] exe3/clean-text/UK/debates2024-02-05.txt  (exe3/chunked-text/UK/chunk_2156.txt)  score=0.8940
+[8] exe3/clean-text/UK/debates2024-04-15.txt  (exe3/chunked-text/UK/chunk_3019.txt)  score=0.8939
+End of Run 1 for dense with k=8
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=3, Chunking=fixed
+
+[EVOLUTION] How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+
+Built prompt with 10824 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=3
+QUESTION: How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+ANSWER:
+ The context does not mention whether the Prime Minister agrees or disagrees with the statements he made in his first and last speeches. Therefore, I cannot answer this question from the provided context.
+
+**SOURCES:**
+
+* [1] exe3/clean-text/UK/debates2024-01-08.txt
+* [2] exe3/clean-text/UK/debates2023-10-16.txt
+* [3] exe3/clean-text/UK/debates2023-10-16.txt
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-01-08.txt  (exe3/chunked-text/UK/chunk_1646.txt)  score=156.0114
+[2] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_696.txt)  score=151.9669
+[3] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_695.txt)  score=140.3994
+End of Run 1 for bm25 with k=3
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=5, Chunking=fixed
+
+[EVOLUTION] How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+
+Built prompt with 18042 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=5
+QUESTION: How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+ANSWER:
+ Sure, here is the answer to the question:
+
+The passage does not provide any information about the Prime Minister's stance on the issue of the war between Israel and Hamas/Gaza, so I cannot answer this question from the provided context.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-01-08.txt  (exe3/chunked-text/UK/chunk_1646.txt)  score=156.0114
+[2] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_696.txt)  score=151.9669
+[3] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_695.txt)  score=140.3994
+[4] exe3/clean-text/UK/debates2025-09-10.txt  (exe3/chunked-text/UK/chunk_8790.txt)  score=138.9847
+[5] exe3/clean-text/UK/debates2023-12-19.txt  (exe3/chunked-text/UK/chunk_1617.txt)  score=135.8876
+End of Run 1 for bm25 with k=5
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=8, Chunking=fixed
+
+[EVOLUTION] How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+
+Built prompt with 28868 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=8
+QUESTION: How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?
+
+ANSWER:
+ ## Summary of the speech:
+
+* The speech highlights the urgency of addressing the humanitarian crisis in Gaza and the need for immediate action from the UK government.
+* The UK government's focus on protecting British nationals and ensuring the safety of the civilian population must be prioritized.
+* The UK must work with Israel and other parties to achieve a diplomatic solution and establish a lasting peace in the region.
+* The UK must use its diplomatic influence to encourage Israel to adhere to the international law and to take concrete steps to prevent further civilian casualties.
+* The UK must also work to address the root causes of the conflict, such as the Israeli-Palestinian conflict and the occupation of Palestinian territories.
+* The UK must be clear that it will not tolerate any further violence or human rights abuses by Israel.
+* The UK must also work to ensure accountability for those responsible for human rights violations.
+
+## Key points:
+
+* The UK's immediate focus should be on providing humanitarian aid to the Palestinian people in Gaza.
+* The UK must use its diplomatic influence to encourage Israel to take concrete steps to address the root causes of the conflict.
+* The UK must work to ensure accountability for human rights violations by Israel.
+* The UK must be clear that it will not tolerate any further violence or human rights abuses by Israel.
+
+## Overall, the speech is persuasive and sets a clear expectation on the Israeli government to take immediate action to address the humanitarian crisis in Gaza.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-01-08.txt  (exe3/chunked-text/UK/chunk_1646.txt)  score=156.0114
+[2] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_696.txt)  score=151.9669
+[3] exe3/clean-text/UK/debates2023-10-16.txt  (exe3/chunked-text/UK/chunk_695.txt)  score=140.3994
+[4] exe3/clean-text/UK/debates2025-09-10.txt  (exe3/chunked-text/UK/chunk_8790.txt)  score=138.9847
+[5] exe3/clean-text/UK/debates2023-12-19.txt  (exe3/chunked-text/UK/chunk_1617.txt)  score=135.8876
+[6] exe3/clean-text/UK/debates2025-05-14.txt  (exe3/chunked-text/UK/chunk_7479.txt)  score=133.0369
+[7] exe3/clean-text/UK/debates2023-10-24.txt  (exe3/chunked-text/UK/chunk_842.txt)  score=128.5108
+[8] exe3/clean-text/UK/debates2023-12-04.txt  (exe3/chunked-text/UK/chunk_1370.txt)  score=124.4082
+End of Run 1 for bm25 with k=8
+==========================================================================================

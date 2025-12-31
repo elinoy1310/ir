@@ -1,0 +1,200 @@
+==========================================================================================
+### TEMPORAL TEST GROUP: AMBIGUITY
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=3, Chunking=fixed
+
+[AMBIGUITY] Who is the Minister of Defense/Secretary of Defense?
+
+
+Built prompt with 9890 context chunks.
+
+==========================================================================================
+METHOD=dense  K=3
+QUESTION: Who is the Minister of Defense/Secretary of Defense?
+
+ANSWER:
+ The Minister of Defense/Secretary of Defense is not explicitly mentioned in the context, so I cannot answer this question from the provided context.
+
+**SOURCES:**
+
+1. exe3/clean-text/UK/debates2024-04-24.txt
+2. exe3/clean-text/UK/debates2025-01-06.txt
+3. exe3/clean-text/UK/debates2025-02-10.txt
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-04-24.txt  (exe3/chunked-text/UK/chunk_3217.txt)  score=0.8631
+[2] exe3/clean-text/UK/debates2025-01-06.txt  (exe3/chunked-text/UK/chunk_5538.txt)  score=0.8563
+[3] exe3/clean-text/UK/debates2025-02-10.txt  (exe3/chunked-text/UK/chunk_6141.txt)  score=0.8538
+End of Run 1 for dense with k=3
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=5, Chunking=fixed
+
+[AMBIGUITY] Who is the Minister of Defense/Secretary of Defense?
+
+
+Built prompt with 17108 context chunks.
+
+==========================================================================================
+METHOD=dense  K=5
+QUESTION: Who is the Minister of Defense/Secretary of Defense?
+
+ANSWER:
+ The Minister of Defence/Secretary of State for Defence has not explicitly stated whether he agrees with the Labour party's position to significantly increase the size of the standing Army.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-04-24.txt  (exe3/chunked-text/UK/chunk_3217.txt)  score=0.8631
+[2] exe3/clean-text/UK/debates2025-01-06.txt  (exe3/chunked-text/UK/chunk_5538.txt)  score=0.8563
+[3] exe3/clean-text/UK/debates2025-02-10.txt  (exe3/chunked-text/UK/chunk_6141.txt)  score=0.8538
+[4] exe3/clean-text/UK/debates2024-03-25.txt  (exe3/chunked-text/UK/chunk_2948.txt)  score=0.8517
+[5] exe3/clean-text/UK/debates2024-03-11.txt  (exe3/chunked-text/UK/chunk_2682.txt)  score=0.8508
+End of Run 1 for dense with k=5
+==========================================================================================
+
+Running RAG (Run 1): Method=dense, k=8, Chunking=fixed
+
+[AMBIGUITY] Who is the Minister of Defense/Secretary of Defense?
+
+
+Built prompt with 27926 context chunks.
+
+==========================================================================================
+METHOD=dense  K=8
+QUESTION: Who is the Minister of Defense/Secretary of Defense?
+
+ANSWER:
+ ## Summary of the Speech
+
+The speech is a tribute to the former Defence Secretary and highlights the UK's commitment to NATO and defence. 
+
+**Key Points:**
+
+* **Legacy of the former Defence Secretary:** The speech emphasizes the positive impact the former Secretary had on the UK's defence and NATO, particularly in the context of the EU's diminished role in the region.
+* **NATO's southern flank:** The speech emphasizes the importance of NATO's southern flank and the need for a European response to the ongoing conflicts in Africa.
+* **2% of GDP commitment:** The speech highlights the arbitrary and low 2% of GDP target for defence expenditure, and calls for a significant increase in spending to meet the growing security threats.
+* **Military figures' concerns:** The speech acknowledges concerns from senior military figures about the UK's ability to deliver NATO obligations due to the planned cuts in the armed forces.
+* **EU's diminished role:** The speech acknowledges the decline of the EU in the region and the need for the UK to take a proactive role in maintaining security.
+
+**Additional Notes:**
+
+* The speech is primarily focused on the UK's role in NATO and defence, but it also acknowledges the challenges and concerns faced by the EU.
+* The speech is well-delivered and persuasive, and it effectively conveys the UK's commitment to NATO and defence.
+* The speech is a reminder of the importance of maintaining a strong and
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/UK/debates2024-04-24.txt  (exe3/chunked-text/UK/chunk_3217.txt)  score=0.8631
+[2] exe3/clean-text/UK/debates2025-01-06.txt  (exe3/chunked-text/UK/chunk_5538.txt)  score=0.8563
+[3] exe3/clean-text/UK/debates2025-02-10.txt  (exe3/chunked-text/UK/chunk_6141.txt)  score=0.8538
+[4] exe3/clean-text/UK/debates2024-03-25.txt  (exe3/chunked-text/UK/chunk_2948.txt)  score=0.8517
+[5] exe3/clean-text/UK/debates2024-03-11.txt  (exe3/chunked-text/UK/chunk_2682.txt)  score=0.8508
+[6] exe3/clean-text/UK/debates2025-01-06.txt  (exe3/chunked-text/UK/chunk_5524.txt)  score=0.8504
+[7] exe3/clean-text/US/2023-12-07.txt  (exe3/chunked-text/US/chunk_508.txt)  score=0.8502
+[8] exe3/clean-text/UK/debates2023-09-11.txt  (exe3/chunked-text/UK/chunk_515.txt)  score=0.8495
+End of Run 1 for dense with k=8
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=3, Chunking=fixed
+
+[AMBIGUITY] Who is the Minister of Defense/Secretary of Defense?
+
+
+Built prompt with 8337 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=3
+QUESTION: Who is the Minister of Defense/Secretary of Defense?
+
+ANSWER:
+ The Minister of Defense/Secretary of Defense is not mentioned in the context, so I cannot answer this question from the provided context.
+
+SOURCES:
+
+1. exe3/clean-text/US/2024-05-01.txt
+2. exe3/clean-text/US/2024-12-09.txt
+3. exe3/clean-text/US/2025-06-30.txt
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/US/2024-05-01.txt  (exe3/chunked-text/US/chunk_894.txt)  score=54.6958
+[2] exe3/clean-text/US/2024-12-09.txt  (exe3/chunked-text/US/chunk_1627.txt)  score=53.8213
+[3] exe3/clean-text/US/2025-06-30.txt  (exe3/chunked-text/US/chunk_2031.txt)  score=53.6482
+End of Run 1 for bm25 with k=3
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=5, Chunking=fixed
+
+[AMBIGUITY] Who is the Minister of Defense/Secretary of Defense?
+
+
+Built prompt with 15155 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=5
+QUESTION: Who is the Minister of Defense/Secretary of Defense?
+
+ANSWER:
+ The question is about the Minister of Defense/Secretary of Defense.
+
+The context does not provide any information about the Minister of Defense/Secretary of Defense, so I cannot answer this question from the provided context.
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/US/2024-05-01.txt  (exe3/chunked-text/US/chunk_894.txt)  score=54.6958
+[2] exe3/clean-text/US/2024-12-09.txt  (exe3/chunked-text/US/chunk_1627.txt)  score=53.8213
+[3] exe3/clean-text/US/2025-06-30.txt  (exe3/chunked-text/US/chunk_2031.txt)  score=53.6482
+[4] exe3/clean-text/US/2025-04-03.txt  (exe3/chunked-text/US/chunk_1735.txt)  score=52.4933
+[5] exe3/clean-text/US/2024-04-15.txt  (exe3/chunked-text/US/chunk_827.txt)  score=51.8521
+End of Run 1 for bm25 with k=5
+==========================================================================================
+
+Running RAG (Run 1): Method=bm25, k=8, Chunking=fixed
+
+[AMBIGUITY] Who is the Minister of Defense/Secretary of Defense?
+
+
+Built prompt with 25958 context chunks.
+
+==========================================================================================
+METHOD=bm25  K=8
+QUESTION: Who is the Minister of Defense/Secretary of Defense?
+
+ANSWER:
+ ## Summary of Meeting Notes
+
+**Date:** July 7, 2023
+
+**Topic:** Proposed National Defense Authorization Act
+
+**Key Points:**
+
+* The committee discussed the proposed National Defense Authorization Act (NDAA) and its potential impact on defense contractors and the Department of Defense (DoD).
+* The committee highlighted several key provisions of the NDAA that they believe would be detrimental to defense contractors and taxpayers.
+* These provisions include:
+    * Ensuring competitive and transparent pricing for defense contractors.
+    * Restoring market dynamics and ensuring commercial goods are those actually sold to customers.
+    * Creating a pilot program for progress payments tied to performance.
+    * Requiring disclosures from defense contractors mirroring those already required by publicly traded companies.
+* The committee expressed concerns that these provisions could lead to increased costs for defense contractors, reduced competition, and potential fraud.
+* The committee requested that the DoD provide a detailed analysis of the proposed NDAA and its potential impact on defense contractors and taxpayers.
+
+**Other Relevant Items:**
+
+* The committee also discussed several other topics, including:
+    * The status of the COPS ON THE BEAT grant program.
+    * The implementation of the Bipartisan Infrastructure Law.
+    * The understanding of understanding the Department of Transportation's financing for more transit-oriented housing development.
+
+**Next Steps:**
+
+* The committee will continue to markup the proposed NDAA and address the concerns
+
+TOP CONTEXT SOURCES:
+[1] exe3/clean-text/US/2024-05-01.txt  (exe3/chunked-text/US/chunk_894.txt)  score=54.6958
+[2] exe3/clean-text/US/2024-12-09.txt  (exe3/chunked-text/US/chunk_1627.txt)  score=53.8213
+[3] exe3/clean-text/US/2025-06-30.txt  (exe3/chunked-text/US/chunk_2031.txt)  score=53.6482
+[4] exe3/clean-text/US/2025-04-03.txt  (exe3/chunked-text/US/chunk_1735.txt)  score=52.4933
+[5] exe3/clean-text/US/2024-04-15.txt  (exe3/chunked-text/US/chunk_827.txt)  score=51.8521
+[6] exe3/clean-text/US/2025-06-25.txt  (exe3/chunked-text/US/chunk_2013.txt)  score=51.3064
+[7] exe3/clean-text/US/2024-06-03.txt  (exe3/chunked-text/US/chunk_1010.txt)  score=50.1075
+[8] exe3/clean-text/US/2023-07-06.txt  (exe3/chunked-text/US/chunk_6.txt)  score=49.5959
+End of Run 1 for bm25 with k=8
+==========================================================================================

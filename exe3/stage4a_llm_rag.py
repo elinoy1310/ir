@@ -58,6 +58,8 @@ def build_prompt(query: str, contexts: list[dict]) -> str:
 
 def run_rag(query: str, method: str = "hybrid", k: int = 5):
     # שימוש בפונקציות המיובאות
+    if isinstance(query, tuple):
+        query = query[1]
     uk_n = uk_count()
     chunkpath_to_source = load_chunkpath_to_source()
     X_bm25, vocab, bm25_names = load_bm25_store()
@@ -93,7 +95,12 @@ def run_rag_with_multiple_configs(queries: list, chunk_method: str):
         for k in [3, 5, 8]:
             for i, query in enumerate(queries, 1):
                 print(f"\nRunning RAG (Run {i}): Method={method}, k={k}, Chunking={chunk_method}")
-                run_rag(query, method=method, k=k)
+                if isinstance(query, tuple):
+                    label, q_text = query
+                    print(f"\n[{label}] {q_text}\n")
+                else:
+                    q_text = query
+                run_rag(q_text, method=method, k=k)
                 print(f"End of Run {i} for {method} with k={k}")
                 print("="*90)
 
