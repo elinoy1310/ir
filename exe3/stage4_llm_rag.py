@@ -105,7 +105,7 @@ def run_rag(query: str, method: str = "hybrid", k: int = 5):
     return answer, sources  # החזרת התשובה לשמירה
 
 
-def run_rag_with_multiple_configs(queries: list, chunk_method: str):
+def run_rag_with_multiple_configs(queries: list, chunk_method: str,answers_path_no_prefix="exe3/outputs/answers",sources_path_no_prefix="exe3/outputs/sources"):
     change_chanking_method(chunk_method)
 
     for method in ["dense", "bm25"]:
@@ -121,21 +121,21 @@ def run_rag_with_multiple_configs(queries: list, chunk_method: str):
 
                 # TXT
                 save_answer_to_txt(
-                    Path("exe3/outputs/answers.txt"),
+                    Path(answers_path_no_prefix+".txt"),
                     query, k, method, chunk_method, answer
                 )
                 save_sources_to_txt(
-                    Path("exe3/outputs/sources.txt"),
+                    Path(sources_path_no_prefix+".txt"),
                     query, k, method, chunk_method, sources
                 )
 
                 # EXCEL
                 save_answer_to_excel(
-                    Path("exe3/outputs/answers.xlsx"),
+                    Path(answers_path_no_prefix+".xlsx"),
                     query, k, method, chunk_method, answer
                 )
                 save_sources_to_excel(
-                    Path("exe3/outputs/sources.xlsx"),
+                    Path(sources_path_no_prefix+".xlsx"),
                     query, k, method, chunk_method, sources
                 )
 

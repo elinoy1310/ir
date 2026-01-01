@@ -2,7 +2,7 @@
 
 from pathlib import Path
 from contextlib import redirect_stdout
-from stage4a_llm_rag import run_rag_with_multiple_configs
+from stage4_llm_rag import run_rag_with_multiple_configs
 
 # =========================
 # Temporal query groups
@@ -51,6 +51,9 @@ if __name__ == "__main__":
                 print("=" * 90)
                 print(f"### TEMPORAL TEST GROUP: {group_name}")
                 print("=" * 90)
-                run_rag_with_multiple_configs(queries, chunk_method="fixed")
+                run_rag_with_multiple_configs(queries, chunk_method="fixed",answers_path_no_prefix="exe4/outputs/stage1/answers",
+                                              sources_path_no_prefix="exe4/outputs/stage1/sources")
+                # run_rag_with_multiple_configs(queries, chunk_method="parent-son",answers_path_no_prefix="exe4/outputs/stage1/answers",
+                #                               sources_path_no_prefix="exe4/outputs/stage1/sources")
 
         print(f"✅ Saved output to: {out_path}")
