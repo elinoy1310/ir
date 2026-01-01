@@ -1,0 +1,6 @@
+row_index,chunk_path,sim_score,time_score,final_score,query,chunking_method,embedding_method,alpha,lambda
+10702,exe3/chunked-text/US/chunk_2339.txt,0.8360714316368103,0.8064516129032259,0.8271854860167349,What was the specific budget allocated to security in 2024,fixed,st,0.3,0.1
+10727,exe3/chunked-text/US/chunk_2361.txt,0.826764702796936,0.8241758241758241,0.8259880392106025,What was the specific budget allocated to security in 2024,fixed,st,0.3,0.1
+10685,exe3/chunked-text/US/chunk_2323.txt,0.8362188339233398,0.7936507936507936,0.8234484218415759,What was the specific budget allocated to security in 2024,fixed,st,0.3,0.1
+10698,exe3/chunked-text/US/chunk_2335.txt,0.8290367722511292,0.8042895442359249,0.8216126038465679,What was the specific budget allocated to security in 2024,fixed,st,0.3,0.1
+8993,exe3/chunked-text/UK/chunk_9092.txt,0.8258048295974731,0.8108108108108107,0.8213066239614744,What was the specific budget allocated to security in 2024,fixed,st,0.3,0.1
