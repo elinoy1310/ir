@@ -1,0 +1,98 @@
+{
+  "query_id": "q3",
+  "query": "How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?",
+  "early": [
+    {
+      "row": 6612,
+      "chunk": "exe3/chunked-text/UK/chunk_695.txt",
+      "score": 0.9006175398826599,
+      "chunk_path": "exe3\\chunked-text\\UK\\chunk_695.txt",
+      "source_file": "exe3/clean-text/UK/debates2023-10-16.txt",
+      "text": "May I thank you, Mr Speaker, for the step that you took at the beginning of last week in lighting up this Palace in the colours of blue and white as an act of solidarity with the Israeli victims of Hamas terrorism? I know that it was appreciated by those British families mourning loved ones who were slain in that action as well as by families living with unimaginable fear right now because they have family members who have been taken hostage in Gaza. Some of those family members are with us in the Gallery. Does the Prime Minister agree that after the acts of barbarism by Hamas, there is no going back to the situation before where, right under the noses of the international community, Hamas were allowed to rearm time and again? They were allowed to misappropriate aid into terrorist infrastructure, building those tunnels, amassing armaments and hiding them behind civilian families. Does he",
+      "doc_date": "2023-10-16T00:00:00"
+    },
+    {
+      "row": 532,
+      "chunk": "exe3/chunked-text/UK/chunk_1477.txt",
+      "score": 0.8984888195991516,
+      "chunk_path": "exe3\\chunked-text\\UK\\chunk_1477.txt",
+      "source_file": "exe3/clean-text/UK/debates2023-12-11.txt",
+      "text": "Friend is absolutely right. We have made it clear that Israel has every right to defend itself, but that it must abide by international humanitarian law and the laws of war. It is \"wrong and illegal to target civiliansinternational law is very clear that there mustn't be the targeting of civilians\". Those are not my words, but the words of the new Foreign Secretary, and then Prime Minister, during the 2014 war in Gaza. Given that over 10,000 Palestinian children alone have been killed, can the Minister confirm whether the Foreign Secretary, and therefore this Conservative Government, still believes that Israel's targeting of civilians is wrong and illegal? What steps is he taking to hold the Israeli Government to account? Again, I recognise the integrity with which the hon. Gentleman speaks. I can tell him that, no, the Israeli Government never target civilians, but they are pursuing a s",
+      "doc_date": "2023-12-11T00:00:00"
+    },
+    {
+      "row": 1287,
+      "chunk": "exe3/chunked-text/UK/chunk_2156.txt",
+      "score": 0.896741509437561,
+      "chunk_path": "exe3\\chunked-text\\UK\\chunk_2156.txt",
+      "source_file": "exe3/clean-text/UK/debates2024-02-05.txt",
+      "text": "First, I welcome the right hon. Gentleman's support for this action. He asked a series of questions, which I will rattle through. Were the actions effective? Yes, they hit the targets. Were all the targets hit? Again, yes. We are still carrying out surveillance to find out the exact impact, but I think we can be very confident that all the relevant objectives were reached. We combined very closely with our US colleagues, and sometimes interchanged some of those targets with them. The right hon. Gentleman will have noted that, on this occasion, we were involved in dropping munitions on more targets than previously, so we carried a slightly greater weight than before. The right hon. Gentleman asked whether the action was successful, and rightly pointed out that what we are seeing is rather more sporadic: the attacks, including on HMS Diamond and on merchant shipping, have continued, but in",
+      "doc_date": "2024-02-05T00:00:00"
+    },
+    {
+      "row": 6623,
+      "chunk": "exe3/chunked-text/UK/chunk_696.txt",
+      "score": 0.8961536288261414,
+      "chunk_path": "exe3\\chunked-text\\UK\\chunk_696.txt",
+      "source_file": "exe3/clean-text/UK/debates2023-10-16.txt",
+      "text": "A six-year-old Palestinian child was murdered in Chicago because of his Muslim faith, and as a response to the war between Israel and Hamas. In the last week, we have seen a sharp rise in Islamophobic rhetoric and the dehumanisation of Palestinians. Tragically, yesterday, we saw the consequences in the murder of that little boy. Will the Prime Minister review his statements about the conflict and ensure that he does not add to the further vilification of Palestinians and Muslims when condemning the actions of Hamas? I gently urge the hon. Gentleman to examine what I said earlier from the Dispatch Box, particularly about standing with the British Muslim community at this difficult time. We will not tolerate anti-Muslim hatred in any form, and we will seek to stamp it out wherever it occurs. I am pleased to say that, in June, the Security Minister confirmed additional funding of 24.5 milli",
+      "doc_date": "2023-10-16T00:00:00"
+    },
+    {
+      "row": 717,
+      "chunk": "exe3/chunked-text/UK/chunk_1643.txt",
+      "score": 0.8941220045089722,
+      "chunk_path": "exe3\\chunked-text\\UK\\chunk_1643.txt",
+      "source_file": "exe3/clean-text/UK/debates2024-01-08.txt",
+      "text": "What have we learned since we last met? We have learned that Hamas are using North Korean weapons. We have heard of further examples of gender-based violence, we have heard examples of hostages being kept in cages, and we have heard the testimony of a released 17-year-old hostage, Agam Goldstein Almog, who spoke of sexual violence and torture perpetrated against hostages who are still being held. To top it all, in the last few days Jibril Rajoub, a Palestinian Authority representative and the secretary of Fatah's central committee, has said: \"We view political Islam, and foremost among it the Hamas Movement, as part of the fabric of our struggle and our political and social fabric.\" Given what the Minister has said about the need for a two-state solution and the role of Fatah and the PA in that, what representations is he making to the PA about the radicalised language that they are usin",
+      "doc_date": "2024-01-08T00:00:00"
+    }
+  ],
+  "late": [
+    {
+      "row": 6016,
+      "chunk": "exe3/chunked-text/UK/chunk_6412.txt",
+      "score": 0.8911353349685669,
+      "chunk_path": "exe3\\chunked-text\\UK\\chunk_6412.txt",
+      "source_file": "exe3/clean-text/UK/debates2025-03-04.txt",
+      "text": "Gentleman asked what we were doing practically. We are in daily contact with the region, including our mission there. Obviously, in the context of the international debate, interventions such as this urgent question push for a just solution for those on both sides of this terrible conflict. Last week, I was in the west bank, alongside other members of the Foreign Affairs Committee, on our wider trip to the middle east. While the world's attention is rightly on the devastating humanitarian situation in Gaza, we met Palestinians in the Jordan valley whose schools were being attacked, whose mosques were being burned, and whose livestock were being stolen by extremist Israeli settlers. This is happening with the apparent connivance of the Israeli security forces, and it appears to be part of a wider plan for annexation. What steps are we taking to prevent further erosion of Palestinian land ",
+      "doc_date": "2025-03-04T00:00:00"
+    },
+    {
+      "row": 8336,
+      "chunk": "exe3/chunked-text/UK/chunk_8500.txt",
+      "score": 0.8883539438247681,
+      "chunk_path": "exe3\\chunked-text\\UK\\chunk_8500.txt",
+      "source_file": "exe3/clean-text/UK/debates2025-07-16.txt",
+      "text": "I have to upgrade thatit is now 4.5 million extra appointments, so we will tell our constituents that. Then we will tell them about the free school meals we are rolling out, the free breakfast clubs, the free childcare, and school uniform costs. We will tell them about that. When we have done that, we will move on to affordable houses and tell them about the 39 billion we are investing. When we are finished with that, we will tell them about the rail and road upgrades across the country, the 120 billion investment and, of course, the three trade dealsand we are only just getting started. The Prime Minister will never know exactly how much it meant to victims of the troubles in Northern Ireland, from right across society, when he came, looked them in their eyes and promised them that no murderer would be immune from prosecution. Can he tell us when he last spoke to the Taoiseach about the",
+      "doc_date": "2025-07-16T00:00:00"
+    },
+    {
+      "row": 5985,
+      "chunk": "exe3/chunked-text/UK/chunk_6385.txt",
+      "score": 0.887661874294281,
+      "chunk_path": "exe3\\chunked-text\\UK\\chunk_6385.txt",
+      "source_file": "exe3/clean-text/UK/debates2025-03-03.txt",
+      "text": "It would have generated 11.2 MW, shoring up their energy pipeline. Where others have stepped back, will we step forward and support such projects, using either Russian assets or our own aid budget? Power supply is hugely important in Ukraine. Let us face it: power and energy have been weaponised by Putin; that is why he is attacking the power supplies to communities across Ukraine. We will work with Ukraine to ensure that its people have the security and power supplies they need as we go forward. I call the Father of the House. Our enemies should know that our Prime Minister has 100% support from us. I noticed in Moscow that they are referring to the small size of the British Army. Perhaps the Prime Minister could remind them of what the Kaiser said in 1914 about \"the contemptible little British Army\". Will the Prime Minister tell President Putin and other tyrants that our Army, the most",
+      "doc_date": "2025-03-03T00:00:00"
+    },
+    {
+      "row": 7159,
+      "chunk": "exe3/chunked-text/UK/chunk_7441.txt",
+      "score": 0.8876265287399292,
+      "chunk_path": "exe3\\chunked-text\\UK\\chunk_7441.txt",
+      "source_file": "exe3/clean-text/UK/debates2025-05-13.txt",
+      "text": "The entirety of Hezbollah has been proscribed in the UK since 2019. Raising money for terrorist organisations is a criminal offence. This Government will continue to take robust action against those suspected of raising money for terrorist organisations in the middle east and around the world. Nearly every single child is at risk of famine in Gaza as the Israeli Government use starvation as a weapon of war. We have heard from Ministers today about the action that the Government have taken so far, but there are still some actions that they have not taken, including the recognition of Palestine as a state, individual sanction and a total suspension of arms to Israel. If now is not the time to take those actions, when will that be? We are committed to recognising a Palestinian state at a time that has the most impact in achieving a reality most conducive to long-term peace in the region, an",
+      "doc_date": "2025-05-13T00:00:00"
+    },
+    {
+      "row": 9091,
+      "chunk": "exe3/chunked-text/UK/chunk_9180.txt",
+      "score": 0.8865393400192261,
+      "chunk_path": "exe3\\chunked-text\\UK\\chunk_9180.txt",
+      "source_file": "exe3/clean-text/UK/debates2025-10-29.txt",
+      "text": "I agree with my hon. Friend. The scenes we have seen, which the shadow Foreign Secretary referred to, are chilling. Hamas are terrorists and they can have no role. The work to remove and disarm them will not be easy, but it is the vital and necessary next step. Yesterday it emerged that Hamas do know where the bodies of the remaining hostages are, as video evidence emerged of them playing games with one body, removing it from a building, burying it, then bringing along the International Red Cross and pretending that they had found it and dug it up. Do the Minister and the Government condemn that, and what more can they do with our international allies and the Gulf nations to put pressure and leverage on Hamas to return all the remaining bodies immediately? The hon. Member is right: Hamas must return all the bodies immediately. We have made that point to our regional partners with force, ",
+      "doc_date": "2025-10-29T00:00:00"
+    }
+  ]
+}

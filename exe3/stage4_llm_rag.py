@@ -4,7 +4,7 @@ from pathlib import Path
 from sentence_transformers import SentenceTransformer
 
 # ייבוא הפונקציות והקבועים מהקובץ המעודכן (stage3)
-from stage3_retrieval import (
+from exe3.stage3_retrieval import (
     load_chunkpath_to_source,
     load_bm25_store,
     load_dense_store,
@@ -18,7 +18,7 @@ from stage3_retrieval import (
 
 # Ollama settings
 OLLAMA_URL = "http://127.0.0.1:11434/api/generate"
-OLLAMA_MODEL = "llama3.2:1b"
+OLLAMA_MODEL = "llama3:8b"
 
 # -------- LLM call --------
 def call_ollama(prompt: str) -> str:
@@ -32,7 +32,7 @@ def call_ollama(prompt: str) -> str:
         }
     }
     try:
-        r = requests.post(OLLAMA_URL, json=payload, timeout=300)
+        r = requests.post(OLLAMA_URL, json=payload, timeout=900)
         r.raise_for_status()
         return r.json().get("response", "").strip()
     except Exception as e:
