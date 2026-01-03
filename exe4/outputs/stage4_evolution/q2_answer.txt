@@ -1,0 +1,19 @@
+Here is the output:
+
+A) EARLY facts:
+
+• The UK government's approach to defence innovation and military technology emphasizes delivering real-world effect, increasing efficiency, and empowering people. [E1]
+• The conflict in Ukraine has led to a shift towards innovative, digitized warfare, requiring a recognition of trade-offs between assurance levels and operational impact. [E2]
+• The government is investing in the armed forces' workforce, including a new employment model and skills framework, to provide greater career flexibility. [E3]
+
+B) LATE facts:
+
+• The UK will spend at least 10% of its Ministry of Defence's equipment budget on new, novel technologies, driving forward advanced manufacturing production. [L1]
+• A protected budget of £400 million has been established for UK defence innovation, with a clear mandate to bring innovative technology to the frontline at speed. [L1]
+• The government is reforming its defence procurement system to make it quicker, more agile, and more streamlined, giving small businesses better access to Ministry of Defence contracts. [L1]
+
+C) What changed:
+
+• Early: "We are emphasising an ethos focused ruthlessly on the delivery of real-world effect..." [E1] -> Late: No direct quote available.
+• Early: No mention of specific technologies or investments in defence innovation. -> Late: The UK will spend at least 10% of its Ministry of Defence's equipment budget on new, novel technologies... [L1]
+• Early
