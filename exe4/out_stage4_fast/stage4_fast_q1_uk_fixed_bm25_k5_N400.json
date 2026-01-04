@@ -1,0 +1,107 @@
+{
+  "query": "How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?",
+  "nation": "uk",
+  "chunking_method": "fixed",
+  "vector_method": "bm25",
+  "k": 5,
+  "candidate_n": 400,
+  "window_months": 8,
+  "min_evidence": 2,
+  "early_window": [
+    "2023-06-28T00:00:00",
+    "2024-02-23T00:00:00"
+  ],
+  "late_window": [
+    "2025-03-04T00:00:00",
+    "2025-10-30T00:00:00"
+  ],
+  "early_sources": [
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_696.txt",
+      "score": 151.56651946434923,
+      "ts": "2023-10-16T00:00:00",
+      "corpus": "UK",
+      "text_preview": "A six-year-old Palestinian child was murdered in Chicago because of his Muslim faith, and as a response to the war between Israel and Hamas. In the last week, we have seen a sharp rise in Islamophobic rhetoric and the dehumanisation of Palestinians. "
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_695.txt",
+      "score": 140.02954098115657,
+      "ts": "2023-10-16T00:00:00",
+      "corpus": "UK",
+      "text_preview": "May I thank you, Mr Speaker, for the step that you took at the beginning of last week in lighting up this Palace in the colours of blue and white as an act of solidarity with the Israeli victims of Hamas terrorism? I know that it was appreciated by t"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_1617.txt",
+      "score": 135.5295634547563,
+      "ts": "2023-12-19T00:00:00",
+      "corpus": "UK",
+      "text_preview": "All of us were deeply sympathetic to the plight of our Jewish brothers after the October pogrom, and most of us accepted the argument that an immediate ceasefire would have played into the hands of Hamas, but I think on these Benches the mood is chan"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_842.txt",
+      "score": 128.17218182851292,
+      "ts": "2023-10-24T00:00:00",
+      "corpus": "UK",
+      "text_preview": "Can the Secretary of State ensure that they receive immediate assistance from the international Red Cross? My hon. Friend reminds the House that the Government remain focused on the protection of British nationals in Israel, the west bank and, of cou"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_1370.txt",
+      "score": 124.08039547392858,
+      "ts": "2023-12-04T00:00:00",
+      "corpus": "UK",
+      "text_preview": "I welcome the Minister's growing success in getting aid into Gaza and the tripling of UK aid, but even as he works urgently to get aid to the neediest civilians of Gaza in the shortest possible time, will the Government redouble their efforts to brin"
+    }
+  ],
+  "late_sources": [
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_8790.txt",
+      "score": 138.61849301850657,
+      "ts": "2025-09-10T00:00:00",
+      "corpus": "UK",
+      "text_preview": "I recognise the force of what he has said about Israeli politics; it is not appropriate for one Foreign Minister to comment on the internal politics of another country, but from the sanctions I announced from this Dispatch Box in June, the House can "
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_7479.txt",
+      "score": 132.68638751226763,
+      "ts": "2025-05-14T00:00:00",
+      "corpus": "UK",
+      "text_preview": "However, does the Minister agree with me that the actor in the region that has unequivocally embarked on genocide is Hamas, with their self-avowed policy of killing Jews and eradicating the state of Israel? I have condemned Hamas for their despicable"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_8789.txt",
+      "score": 114.43811438594572,
+      "ts": "2025-09-10T00:00:00",
+      "corpus": "UK",
+      "text_preview": "Regrettably, it has been continually delayed by events in the region, but we hope to have it soon. Qatar is an ally, and a key negotiator and mediator in Gaza ceasefire talks. Through committing atrocities in Gaza, illegal settlements in the west ban"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_7428.txt",
+      "score": 109.09307756557389,
+      "ts": "2025-05-13T00:00:00",
+      "corpus": "UK",
+      "text_preview": "I welcome the right hon. Member's strong views on this; I found his intervention last week very powerful indeed. There is no one on the Labour Benches who does not understand the gravity of the situation. That is why we invited the Palestinian Prime "
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_9174.txt",
+      "score": 106.3818662387251,
+      "ts": "2025-10-29T00:00:00",
+      "corpus": "UK",
+      "text_preview": "Britain will continue to play our full part in support of the ceasefire and the wider peace initiative. There is not a moment to lose to get relief at scale to those in need and to make progress on the pathway to a lasting peace. The situation in Gaz"
+    }
+  ],
+  "stats": {
+    "missing_meta": 0,
+    "other_nation": 16,
+    "gated_kept": 384,
+    "topic_rejects": 180,
+    "early_hits": 96,
+    "late_hits": 38
+  },
+  "early_prompt": "You are given evidence from ONLY the EARLY period.\n\nQUESTION:\n\"How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?\"\n\nEVIDENCE ITEMS COUNT: 5\n\nEVIDENCE:\nE1 (UK | 2023-10-16T00:00:00 | score=151.5665)\nA six-year-old Palestinian child was murdered in Chicago because of his Muslim faith, and as a response to the war between Israel and Hamas. In the last week, we have seen a sharp rise in Islamophobic rhetoric and the dehumanisation of Palestinians. Tragically, yesterday, we saw the consequences in the murder of that little boy. Will the Prime Minister review his statements about the conflict and ensure that he does not add to the further vilification of Palestinians and Muslims when condemning the actions of Hamas? I gently urge the hon. Gentleman to examine what I said earlier from the Dispatch Box, particularly about standing with the British Muslim community at this difficult time. We wi\n\nE2 (UK | 2023-10-16T00:00:00 | score=140.0295)\nMay I thank you, Mr Speaker, for the step that you took at the beginning of last week in lighting up this Palace in the colours of blue and white as an act of solidarity with the Israeli victims of Hamas terrorism? I know that it was appreciated by those British families mourning loved ones who were slain in that action as well as by families living with unimaginable fear right now because they have family members who have been taken hostage in Gaza. Some of those family members are with us in the Gallery. Does the Prime Minister agree that after the acts of barbarism by Hamas, there is no going back to the situation before where, right under the noses of the international community, Hamas w\n\nE3 (UK | 2023-12-19T00:00:00 | score=135.5296)\nAll of us were deeply sympathetic to the plight of our Jewish brothers after the October pogrom, and most of us accepted the argument that an immediate ceasefire would have played into the hands of Hamas, but I think on these Benches the mood is changing. Frankly, what Israel is doing is totally unacceptable. This is indiscriminate bombing of vast civilian populations. Leaving aside the outrage at the Holy Family church, it is simply not in the long-term interests of Israel that it radicalises whole generations of Arab youth. It is not in our interests, either, to be involved in any way on the side of Israel doing that. We must up the rhetoric and condemn that unequivocally. My right hon. Fr\n\nE4 (UK | 2023-10-24T00:00:00 | score=128.1722)\nCan the Secretary of State ensure that they receive immediate assistance from the international Red Cross? My hon. Friend reminds the House that the Government remain focused on the protection of British nationals in Israel, the west bank and, of course, Gaza. It would be inappropriate for me to go into detail, but I can assure him and the House that we speak with all parties who we believe could have influence on those holding hostages: Hamas, Palestinian Islamic Jihad and others. It is incredibly difficult. We do not have direct lines of communications, but we will not restwe will not restin trying to secure the release of hostages and the evacuation of British nationals from Gaza. I am cl\n\nE5 (UK | 2023-12-04T00:00:00 | score=124.0804)\nI welcome the Minister's growing success in getting aid into Gaza and the tripling of UK aid, but even as he works urgently to get aid to the neediest civilians of Gaza in the shortest possible time, will the Government redouble their efforts to bring about a diplomatic solution, perhaps using a contact group, in order that we can grow the humanitarian pauses into a just and lasting peace and a two-state solution? That is exactly our strategy. It is to use diplomatic efforts in concert with humanitarian efforts to bring about a situation whereby diplomacy can take effect and the foundations can be laid of a long-term peace. We are clearly not there yet, and it will require a huge amount of d\n\nTASK:\n1) Describe the dominant rhetoric/framing in this period (4-7 sentences).\n2) Provide 2-4 bullet talking points.\n3) Cite ONLY ids shown above (E1/E2... or L1/L2...) when referring to evidence.\n4) Only write \"Insufficient evidence.\" if EVIDENCE ITEMS COUNT is LESS THAN 2.\n\nRULES:\n- Do NOT mention the other time period.\n- Do NOT compare across periods.\n- Do NOT invent facts.",
+  "late_prompt": "You are given evidence from ONLY the LATE period.\n\nQUESTION:\n\"How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?\"\n\nEVIDENCE ITEMS COUNT: 5\n\nEVIDENCE:\nL1 (UK | 2025-09-10T00:00:00 | score=138.6185)\nI recognise the force of what he has said about Israeli politics; it is not appropriate for one Foreign Minister to comment on the internal politics of another country, but from the sanctions I announced from this Dispatch Box in June, the House can see the strength of this Government's feeling aboutfor examplethe rhetoric of Mr Smotrich and that of Mr Ben-Gvir. It has been deeply disheartening to see that rhetoric repeated over the course of the summer, but where we can, we demonstrate in the strongest possible way the strength of our feeling on these questions. The events that took place earlier this week in Jerusalem, and yesterday, prove that the two extremes in this conflict have no int\n\nL2 (UK | 2025-05-14T00:00:00 | score=132.6864)\nHowever, does the Minister agree with me that the actor in the region that has unequivocally embarked on genocide is Hamas, with their self-avowed policy of killing Jews and eradicating the state of Israel? I have condemned Hamas for their despicable actions and ugly and unacceptable rhetoric many times from this Dispatch Box, and I am happy to do so again. It is the events of 7 October , in all their full horror, that triggered this most recent, most horrific round of violence. In addition to calling for the release of all hostages, Tom Fletcher, the UN emergency relief co-ordinator, asked last night what action we will tell future generations that we each took \"to stop the 21st century atr\n\nL3 (UK | 2025-09-10T00:00:00 | score=114.4381)\nRegrettably, it has been continually delayed by events in the region, but we hope to have it soon. Qatar is an ally, and a key negotiator and mediator in Gaza ceasefire talks. Through committing atrocities in Gaza, illegal settlements in the west bank, marching into Syria, and attacking Lebanon, Iran, Yemen and now Qatar, this Israeli Government have proven themselves to be a rogue ally to us and a dangerous neighbour. At what point does the UK draw a line in the sand and call out this Israeli Government for what they area danger to peace in the middle east? I thank my hon. Friend for his long commitment to these issues. He has heard my condemnation, as well as that of the previous Foreign S\n\nL4 (UK | 2025-05-13T00:00:00 | score=109.0931)\nI welcome the right hon. Member's strong views on this; I found his intervention last week very powerful indeed. There is no one on the Labour Benches who does not understand the gravity of the situation. That is why we invited the Palestinian Prime Minister, why we signed the memorandum of understanding, and why we are calling an urgent session of the Security Council. This Government will not be on the other side of the road from Palestinian suffering. Last week the United Nations issued a report describing the situation in Gaza as \"one of the most ostentatious and merciless manifestations of the desecration of human life and dignity\". The Government have always insisted that it is not for\n\nL5 (UK | 2025-10-29T00:00:00 | score=106.3819)\nBritain will continue to play our full part in support of the ceasefire and the wider peace initiative. There is not a moment to lose to get relief at scale to those in need and to make progress on the pathway to a lasting peace. The situation in Gaza is fragile. We all want the ceasefire to hold and endure, and for it to transition into a sustainable end to the conflict, but that requires the terms of the ceasefire to be adhered to. The scenes of masked Hamas gunmen carrying out summary executions is sickening. Their continued hoarding and disruption of aid to starve Gazans is shocking. Their refusal to disarm is disturbing, and their failure to return the bodies of the deceased hostages is\n\nTASK:\n1) Describe the dominant rhetoric/framing in this period (4-7 sentences).\n2) Provide 2-4 bullet talking points.\n3) Cite ONLY ids shown above (E1/E2... or L1/L2...) when referring to evidence.\n4) Only write \"Insufficient evidence.\" if EVIDENCE ITEMS COUNT is LESS THAN 2.\n\nRULES:\n- Do NOT mention the other time period.\n- Do NOT compare across periods.\n- Do NOT invent facts.",
+  "change_prompt": "QUESTION:\n\"How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?\"\n\nEARLY SUMMARY:\nBased on the provided evidence from the early period, here's my analysis:\n\n**Dominant Rhetoric/Framing:**\nThe dominant rhetoric in this period is one of sympathy towards Israel and condemnation of Hamas' actions. There is a strong emphasis on supporting British Muslim communities and condemning Islamophobic rhetoric. The language used is often emotive, with references to \"barbarism\" and \"pogroms.\" The framing suggests that the conflict is primarily about Israeli victims and the need for international action to support them.\n\n**Talking Points:**\n\n* The Prime Minister should review his statements on the conflict to avoid adding to Islamophobic rhetoric (E1).\n* The UK Government should condemn Hamas' actions unequivocally (E3).\n* The Government should prioritize diplomatic efforts to bring about a lasting peace and two-state solution (E5).\n\n**References:**\nEvidence items E1, E2, E3, E4, and E5.\n\nLATE SUMMARY:\nBased on the provided evidence from the LATE period, here's my analysis:\n\n**Dominant Rhetoric/Framing:**\nThe dominant rhetoric in this period is critical of Israel and sympathetic towards Palestine/Gaza. The Prime Minister/President emphasizes the need for a lasting peace and condemns Hamas' actions as \"despicable\" and \"sickening\". There is a strong sense of moral outrage against Israeli policies, with the UK Government being urged to take a stronger stance.\n\n**Talking Points:**\n\n* Hamas' actions are condemned as \"genocide\" (L2) and \"desecration of human life and dignity\" (L4).\n* The UK Government has consistently called for a ceasefire and humanitarian aid to Gaza (L1, L3, L5).\n* Israel's policies are framed as a threat to peace in the Middle East, with the Prime Minister/President urging the UK to \"draw a line in the sand\" (L3).\n\n**Evidence Cited:**\nL2, L4\n\nTASK:\n1) Explain the change (or stability) between EARLY and LATE in 5-10 sentences.\n2) Provide 2-4 bullet \"change indicators\" (themes/emphases that differ).\n3) If either summary contains \"Insufficient evidence.\", do NOT invent changes; explain what is missing.\n\nRULES:\n- Do not cite raw evidence ids here (you only see summaries).",
+  "early_summary": "Based on the provided evidence from the early period, here's my analysis:\n\n**Dominant Rhetoric/Framing:**\nThe dominant rhetoric in this period is one of sympathy towards Israel and condemnation of Hamas' actions. There is a strong emphasis on supporting British Muslim communities and condemning Islamophobic rhetoric. The language used is often emotive, with references to \"barbarism\" and \"pogroms.\" The framing suggests that the conflict is primarily about Israeli victims and the need for international action to support them.\n\n**Talking Points:**\n\n* The Prime Minister should review his statements on the conflict to avoid adding to Islamophobic rhetoric (E1).\n* The UK Government should condemn Hamas' actions unequivocally (E3).\n* The Government should prioritize diplomatic efforts to bring about a lasting peace and two-state solution (E5).\n\n**References:**\nEvidence items E1, E2, E3, E4, and E5.",
+  "late_summary": "Based on the provided evidence from the LATE period, here's my analysis:\n\n**Dominant Rhetoric/Framing:**\nThe dominant rhetoric in this period is critical of Israel and sympathetic towards Palestine/Gaza. The Prime Minister/President emphasizes the need for a lasting peace and condemns Hamas' actions as \"despicable\" and \"sickening\". There is a strong sense of moral outrage against Israeli policies, with the UK Government being urged to take a stronger stance.\n\n**Talking Points:**\n\n* Hamas' actions are condemned as \"genocide\" (L2) and \"desecration of human life and dignity\" (L4).\n* The UK Government has consistently called for a ceasefire and humanitarian aid to Gaza (L1, L3, L5).\n* Israel's policies are framed as a threat to peace in the Middle East, with the Prime Minister/President urging the UK to \"draw a line in the sand\" (L3).\n\n**Evidence Cited:**\nL2, L4",
+  "answer": "Here's the analysis:\n\n**Change/ Stability:**\nThe Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza underwent a significant shift between the early and late periods. Initially, the dominant framing was sympathetic towards Israel and critical of Hamas' actions, with an emphasis on condemning Islamophobic rhetoric. In contrast, the later period saw a more critical tone towards Israel, with a focus on condemning their policies as a threat to peace in the Middle East.\n\n**Change Indicators:**\n\n* **Shift from condemnation of Hamas to criticism of Israeli policies**: The early period focused primarily on condemning Hamas' actions, while the late period shifted attention to criticizing Israeli policies and actions.\n* **Increased emphasis on moral outrage**: The later period saw a stronger sense of moral outrage against Israeli policies, with the Prime Minister/President urging the UK Government to take a stronger stance.\n* **Change in framing from \"supporting British Muslim communities\" to \"drawing a line in the sand\"**: The early period emphasized supporting British Muslim communities and condemning Islamophobic rhetoric, while the late period focused on drawing a clear boundary against Israeli policies.\n\n**Insufficient Evidence:**\nNone.",
+  "query_index": 1
+}

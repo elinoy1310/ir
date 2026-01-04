@@ -182,8 +182,8 @@ def save_sources_to_txt(
             f.write(f"- {s}\n")
 
 
-from openpyxl import Workbook, load_workbook
-from openpyxl.styles import Alignment
+# from openpyxl import Workbook, load_workbook
+# from openpyxl.styles import Alignment
 
 def get_or_create_wb(path: Path):
     if path.exists():
