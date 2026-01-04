@@ -1,6 +1,0 @@
-row_index,chunk_path,score,query,chunking_method,embedding_method,year_range
-4984,exe3/chunked-text/US/chunk_940.txt,0.8578383922576904,What was the specific budget allocated to security in 2024,fixed,st,2024-2024
-4431,exe3/chunked-text/US/chunk_1532.txt,0.8550150394439697,What was the specific budget allocated to security in 2024,fixed,st,2024-2024
-4846,exe3/chunked-text/US/chunk_802.txt,0.8514609932899475,What was the specific budget allocated to security in 2024,fixed,st,2024-2024
-3922,exe3/chunked-text/US/chunk_1023.txt,0.850801408290863,What was the specific budget allocated to security in 2024,fixed,st,2024-2024
-4961,exe3/chunked-text/US/chunk_917.txt,0.8503411412239075,What was the specific budget allocated to security in 2024,fixed,st,2024-2024

@@ -8,14 +8,14 @@ import pandas as pd
 import numpy as np
 from sentence_transformers import SentenceTransformer
 from exe3.stage3_retrieval import (
-    load_chunkpath_to_source,
     load_bm25_store,
     load_dense_store,
     bm25_retrieve,
     dense_retrieve,
     MODEL_NAME,
+    change_chanking_method
 )
-from .utils import resolve_chunk_metadata
+from .utils import resolve_chunk_metadata, get_queries
 
 # -------------------- Utils --------------------
 def return_keys_from_json_file(json_path:str):
@@ -146,12 +146,12 @@ def run_hard_filter_query(
     הפעלת שאילתה עם סינון קשיח לפי שנה.
     """
     # --- Shared Preparation ---
+    change_chanking_method(chunking_method)
     if not use_dense:
         X_bm25, vocab, names = load_bm25_store()
     else:
         X_emb, names = load_dense_store()
         model = SentenceTransformer(MODEL_NAME)
-
     # --- Step B: Extract year from query ---
     min_year, max_year = extract_year_range_from_query(query)
     if min_year is None:
@@ -160,7 +160,6 @@ def run_hard_filter_query(
     if max_year is None:
         print(f"No max year found in query: {query} for Hard Filtering")
         return
-
     # --- Step C: Filter chunks ---
     # הסינון נעשה על כל הצ'אנקים הקיימים
     filtered_chunk_names = filter_chunks_by_year_and_nation(
@@ -179,16 +178,11 @@ def run_hard_filter_query(
 
     # --- Step D: Compute similarity ---
     if use_dense:
-
-        
-
         # 1. יצירת mapping: chunk_name -> row_index במטריצה
         dense_name_to_idx = {name: i for i, name in enumerate(names)}
 
         # 2. רשימת אינדקסים של הצ'אנקים שנותרו אחרי הסינון
         filtered_idx = [dense_name_to_idx[n] for n in filtered_chunk_names if n in dense_name_to_idx]
-       
-
         # 3. סינון מטריצת Embeddings ורשימת השמות
         X_emb_filtered = X_emb[filtered_idx, :]
         chunk_names_filtered = [names[i] for i in filtered_idx]
@@ -265,10 +259,62 @@ example_queries = [
 
 # -------------------- Runner --------------------
 if __name__ == "__main__":
-    #-------------------------------------------need to run it for all the queries + us/uk + 2 chanking methods+ 2 emdedding method for 
-    # for q in example_queries:
-        q="What was the specific budget allocated to security in 2024"
-        try:
-            save_results(q,chunking_method="fixed",save_path=r"exe4\outputs\stage3_tables\hard_filter",chunks_index_path=r"exe4\united_fixed_chunk_index.json", top_k=5, use_dense=True)
-        except ValueError as e:
-            print(f"Query skipped: {q} | Reason: {e}")
+
+    queries = get_queries()
+    print(f"Running {len(queries)} queries")
+
+    k_lst = [5]
+    # k_lst = [3, 5, 8]
+    #embedding_methods = ["dense"]
+    embedding_methods = ["dense", "bm25"]
+    #chunking_methods = [ "parentSon"]
+    chunking_methods = ["fixed", "parentSon"]
+
+    for q_idx, q in enumerate(queries):
+        for k in k_lst:
+            for embedding_method in embedding_methods:
+                for chunking_method in chunking_methods:
+                    print(f"QUERY NUMBER: {q_idx} | k: {k}, embedding: {embedding_method} | chunking: {chunking_method}")
+
+                    # --- embedding flag ---
+                    use_dense = embedding_method == "dense"
+
+                    # --- chunk index path לפי chunking ---
+                   
+                    chunks_index_path = Path(f"exe4/united_{chunking_method}_chunk_index.json" )
+                   
+
+                    try:
+                        print("UK:")
+                        save_results(
+                            query=q,
+                            chunks_index_path=chunks_index_path,
+                            chunking_method=chunking_method,
+                            save_path=Path("exe4/outputs/stage3_tables/hard_filter/uk"),
+                            query_index=q_idx,
+                            top_k=k,
+                            use_dense=use_dense,
+                            nation="uk"
+                        )
+                        print("US:")
+                        save_results(
+                            query=q,
+                            chunks_index_path=chunks_index_path,
+                            chunking_method=chunking_method,
+                            save_path=Path("exe4/outputs/stage3_tables/hard_filter/us"),
+                            query_index=q_idx,
+                            top_k=k,
+                            use_dense=use_dense,
+                            nation="us"
+                        )
+
+                    except ValueError as e:
+                        print(
+                            f"Query skipped | "
+                            f"q_idx={q_idx}, "
+                            f"k={k}, "
+                            f"embedding={embedding_method}, "
+                            f"chunking={chunking_method} | "
+                            f"Reason: {e}"
+                        )
+

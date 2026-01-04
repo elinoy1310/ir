@@ -15,8 +15,9 @@ from exe3.stage3_retrieval import (
     bm25_retrieve,
     dense_retrieve,
     MODEL_NAME,
+    change_chanking_method
 )
-from .utils import resolve_chunk_metadata
+from .utils import resolve_chunk_metadata, get_queries
 
 
 def compute_time_score(
@@ -57,7 +58,8 @@ def run_soft_decay_query(
     # ---------- Shared Preparation ----------
     chunkpath_to_source = load_chunkpath_to_source()
     query_date = datetime.today() #maybe change this
-
+    change_chanking_method(chunking_method)
+    
     if use_dense:
         X_emb, names = load_dense_store()
         model = SentenceTransformer(MODEL_NAME)
@@ -119,6 +121,7 @@ def save_soft_decay_results(
     use_dense: bool = True,
     alpha: float = 0.3,
     lambda_decay: float = 0.6,
+    nation="both"
 ):
     results = run_soft_decay_query(
         query=query,
@@ -127,7 +130,8 @@ def save_soft_decay_results(
         top_k=top_k,
         use_dense=use_dense,
         alpha=alpha,
-        lambda_decay=lambda_decay
+        lambda_decay=lambda_decay,
+        nation=nation
     )
 
     df = pd.DataFrame(
@@ -151,12 +155,61 @@ def save_soft_decay_results(
     print(f"Results saved to {csv_filename}")
 
 
+
 # -------------------- Runner --------------------
 if __name__ == "__main__":
-    #-------------------------------------------need to run it for all the queries + us/uk + 2 chanking methods+ 2 emdedding method for 
-    # for q in example_queries:
-        q="What was the specific budget allocated to security in 2024"
-        try:
-            save_soft_decay_results(q,chunking_method="fixed",save_path=r"exe4\outputs\stage3_tables\soft_decay",chunks_index_path=r"exe4\united_fixed_chunk_index.json", top_k=5, use_dense=True)
-        except ValueError as e:
-            print(f"Query skipped: {q} | Reason: {e}")
+
+    queries = get_queries()
+    print(f"Running {len(queries)} queries")
+
+    k_lst = [5]
+    # embedding_methods = ["dense"]
+    # chunking_methods = ["parentSon"]
+    # k_lst = [3, 5, 8]
+    embedding_methods = ["dense", "bm25"]
+    chunking_methods = ["fixed", "parentSon"]
+
+    for q_idx, q in enumerate(queries):
+        for k in k_lst:
+            for embedding_method in embedding_methods:
+                for chunking_method in chunking_methods:
+
+                    # --- embedding flag ---
+                    use_dense = embedding_method == "dense"
+
+                    # --- chunk index path לפי chunking ---
+                   
+                    chunks_index_path = Path(f"exe4/united_{chunking_method}_chunk_index.json" )
+                   
+
+                    try:
+                        save_soft_decay_results(
+                            query=q,
+                            chunks_index_path=chunks_index_path,
+                            chunking_method=chunking_method,
+                            save_path=Path("exe4/outputs/stage3_tables/soft_decay/uk"),
+                            query_index=q_idx,
+                            top_k=k,
+                            use_dense=use_dense,
+                            nation="uk"
+                        )
+                        save_soft_decay_results(
+                            query=q,
+                            chunks_index_path=chunks_index_path,
+                            chunking_method=chunking_method,
+                            save_path=Path("exe4/outputs/stage3_tables/soft_decay/us"),
+                            query_index=q_idx,
+                            top_k=k,
+                            use_dense=use_dense,
+                            nation="us"
+                        )
+
+                    except ValueError as e:
+                        print(
+                            f"Query skipped | "
+                            f"q_idx={q_idx}, "
+                            f"k={k}, "
+                            f"embedding={embedding_method}, "
+                            f"chunking={chunking_method} | "
+                            f"Reason: {e}"
+                        )

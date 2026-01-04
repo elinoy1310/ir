@@ -1,4 +1,4 @@
-# exe3/stage4_llm_rag.py
+# exe4/stage0_llm_rag.py
 import requests
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
@@ -98,6 +98,12 @@ def run_rag(query: str, method: str = "hybrid", k: int = 5,nation="both"):
         for c in enriched
     ]
 
+    scores=[
+        f"{c['score']:.4f}"
+        for c in enriched
+    ]
+
+
     # הצגת התוצאה
     print("\n" + "="*90)
     print(f"METHOD={method}  K={k}")
@@ -142,6 +148,10 @@ def run_rag_with_multiple_configs(queries: list,k_list,method_list, chunk_method
                     Path(sources_path_no_prefix+".xlsx"),
                     query, k, method, chunk_method, sources
                 )
+
+                                # שמירת scores
+               
+
 
 
 from pathlib import Path
@@ -267,6 +277,48 @@ def save_sources_to_excel(
         chunking,
         joined_sources
     )
+
+def save_scores_to_txt(
+    filepath: Path,
+    query: str,
+    k: int,
+    method: str,
+    chunking: str,
+    enriched: list[dict]
+):
+    """
+    שמירת כל ה-scores של התוצאות המועשרות.
+    """
+    filepath.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(filepath, "a", encoding="utf-8") as f:
+        f.write("\n" + "="*120 + "\n")
+        f.write(f"QUERY:\n{query}\n\n")
+        f.write(f"K = {k}\n")
+        f.write(f"{method.upper()} with {chunking} chunking – SCORES:\n")
+        for i, c in enumerate(enriched, 1):
+            f.write(f"[{i}] {c['source_file']} ({c['chunk']}) score={c['score']:.4f}\n")
+def save_scores_to_excel(
+    filepath: Path,
+    query: str,
+    k: int,
+    method: str,
+    chunking: str,
+    enriched: list[dict]
+):
+    """
+    שמירה של scores בגיליון נוסף או בעמודה נוספת
+    """
+    joined_scores = "\n".join([f"{c['score']:.4f}" for c in enriched])
+    save_answer_to_excel(
+        filepath,
+        query,
+        k,
+        method,
+        chunking,
+        joined_scores
+    )
+
 
 
 
