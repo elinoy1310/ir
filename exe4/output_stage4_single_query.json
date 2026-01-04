@@ -1,0 +1,15 @@
+{
+  "query": "How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?",
+  "early_window": {
+    "start": "2023-06-28T00:00:00",
+    "end": "2024-02-23T00:00:00"
+  },
+  "late_window": {
+    "start": "2025-03-05T00:00:00",
+    "end": "2025-10-31T00:00:00"
+  },
+  "early_results": [],
+  "late_results": [],
+  "prompt": "You are given evidence from two different time periods.\n\nQUESTION:\nHow did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?\n\nEARLY PERIOD (older):\n\n\nLATE PERIOD (newer):\n\n\nTasks:\n1. Describe the main position in the early period.\n2. Describe the main position in the late period.\n3. Explain how and why the position changed over time.\nUse only the evidence above.",
+  "answer": "[LLM ANSWER PLACEHOLDER]\nYou are given evidence from two different time periods.\n\nQUESTION:\nHow did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?\n\nEARLY PERIOD (older):\n\n\nLATE PERIOD (newer):\n\n\nTasks:\n1. Describe the main position in the early period.\n2. Describe the main position in the late period.\n3. Explain how and why the position changed over time.\nUse only the evidence above."
+}

@@ -16,27 +16,35 @@ from exe3.stage3_retrieval import (
     change_chanking_method
 )
 
-# Ollama settings
+import requests
+
 OLLAMA_URL = "http://127.0.0.1:11434/api/generate"
 OLLAMA_MODEL = "llama3:8b"
 
-# -------- LLM call --------
 def call_ollama(prompt: str) -> str:
     payload = {
         "model": OLLAMA_MODEL,
         "prompt": prompt,
         "stream": False,
         "options": {
-            "temperature": 0.15,
-            "num_predict": 300
+            "temperature": 0.0,
+            "top_p": 0.9,
+            "top_k": 40,
+            "num_predict": 700,
+            "repeat_penalty": 1.1,
+            "seed": 42,
         }
     }
+
     try:
-        r = requests.post(OLLAMA_URL, json=payload, timeout=900)
-        r.raise_for_status()
-        return r.json().get("response", "").strip()
-    except Exception as e:
-        return f"Error calling Ollama: {e}"
+        resp = requests.post(OLLAMA_URL, json=payload, timeout=300)
+        resp.raise_for_status()
+        data = resp.json()
+        return (data.get("response") or "").strip()
+    except requests.exceptions.RequestException as e:
+        return f"[OLLAMA ERROR] {e}"
+    except ValueError:
+        return "[OLLAMA ERROR] Invalid JSON response from Ollama"
 
 def build_prompt(query: str, contexts: list[dict]) -> str:
     ctx_lines = []
@@ -178,8 +186,8 @@ def save_sources_to_txt(
             f.write(f"- {s}\n")
 
 
-from openpyxl import Workbook, load_workbook
-from openpyxl.styles import Alignment
+# from openpyxl import Workbook, load_workbook
+# from openpyxl.styles import Alignment
 
 def get_or_create_wb(path: Path):
     if path.exists():

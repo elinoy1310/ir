@@ -1,0 +1,35 @@
+{
+  "query": "How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?",
+  "nation": "us",
+  "chunking_method": "parent-son",
+  "vector_method": "bm25",
+  "k": 5,
+  "candidate_n": 400,
+  "window_months": 8,
+  "min_evidence": 2,
+  "early_window": [
+    "2023-07-03T00:00:00",
+    "2024-02-28T00:00:00"
+  ],
+  "late_window": [
+    "2025-03-05T00:00:00",
+    "2025-10-31T00:00:00"
+  ],
+  "early_sources": [],
+  "late_sources": [],
+  "stats": {
+    "missing_meta": 0,
+    "other_nation": 380,
+    "gated_kept": 20,
+    "topic_rejects": 20,
+    "early_hits": 0,
+    "late_hits": 0
+  },
+  "early_prompt": "You are given evidence from ONLY the EARLY period.\n\nQUESTION:\n\"How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?\"\n\nEVIDENCE ITEMS COUNT: 0\n\nEVIDENCE:\n\n\nTASK:\n1) Describe the dominant rhetoric/framing in this period (4-7 sentences).\n2) Provide 2-4 bullet talking points.\n3) Cite ONLY ids shown above (E1/E2... or L1/L2...) when referring to evidence.\n4) Only write \"Insufficient evidence.\" if EVIDENCE ITEMS COUNT is LESS THAN 2.\n\nRULES:\n- Do NOT mention the other time period.\n- Do NOT compare across periods.\n- Do NOT invent facts.",
+  "late_prompt": "You are given evidence from ONLY the LATE period.\n\nQUESTION:\n\"How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?\"\n\nEVIDENCE ITEMS COUNT: 0\n\nEVIDENCE:\n\n\nTASK:\n1) Describe the dominant rhetoric/framing in this period (4-7 sentences).\n2) Provide 2-4 bullet talking points.\n3) Cite ONLY ids shown above (E1/E2... or L1/L2...) when referring to evidence.\n4) Only write \"Insufficient evidence.\" if EVIDENCE ITEMS COUNT is LESS THAN 2.\n\nRULES:\n- Do NOT mention the other time period.\n- Do NOT compare across periods.\n- Do NOT invent facts.",
+  "change_prompt": "QUESTION:\n\"How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?\"\n\nEARLY SUMMARY:\nInsufficient evidence.\n\nLATE SUMMARY:\nInsufficient evidence.\n\nTASK:\n1) Explain the change (or stability) between EARLY and LATE in 5-10 sentences.\n2) Provide 2-4 bullet \"change indicators\" (themes/emphases that differ).\n3) If either summary contains \"Insufficient evidence.\", do NOT invent changes; explain what is missing.\n\nRULES:\n- Do not cite raw evidence ids here (you only see summaries).",
+  "early_summary": "Insufficient evidence.",
+  "late_summary": "Insufficient evidence.",
+  "answer": "Based on the provided summaries, it appears that there was no significant change in the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza between his first and last speech. Both summaries state \"Insufficient evidence,\" indicating a lack of information to determine any changes or stability.\n\nHowever, if we were to assume that some information is missing from the summaries, here are two possible change indicators:\n\n* **Emphasis on humanitarian crisis**: The Prime Minister/President may have shifted their focus from solely condemning one side's actions to also highlighting the humanitarian consequences of the conflict, such as civilian casualties and displacement.\n* **Increased calls for ceasefire**: As the war dragged on, the Prime Minister/President might have become more insistent on calling for a ceasefire, emphasizing the need for an immediate end to hostilities to prevent further loss of life.\n\nPlease note that these are speculative suggestions, as there is no actual evidence provided.",
+  "query_index": 1
+}
