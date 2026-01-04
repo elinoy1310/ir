@@ -124,6 +124,22 @@ def check_region(chunk_path):
         return "US"
     else:
         return "UNKNOWN"
+def filter_by_nation(X, names, nation):
+    if nation.lower() == "both":
+        return X, names
+
+    nation = nation.upper()
+    keep_idx = [i for i, n in enumerate(names) if nation in n]
+
+    if sparse.issparse(X):
+        X = X[keep_idx, :]
+    else:
+        X = X[keep_idx, :]
+
+    names = [names[i] for i in keep_idx]
+    return X, names
+
+
 
 
 def chunk_path_from_row(row_i: int, chunk_name: str, uk_n: int) -> Path:
@@ -246,13 +262,24 @@ def build_dense_lookup(dense_names: List[str], uk_n: int) -> Dict[Tuple[str, str
 
 
 # ---------------- Runner ----------------
-def run_query(query: str, K_values=(3, 5, 8)):
-    uk_n = uk_count()
+def run_query(query: str, K_values=(3, 5, 8), nation: str = "both"):
+
     chunkpath_to_source = load_chunkpath_to_source()
 
     # load stores
     X_bm25, vocab, bm25_names = load_bm25_store()
+    X_bm25, bm25_names = filter_by_nation(X_bm25, bm25_names, nation)
+
     X_emb, dense_names = load_dense_store()
+    X_emb, dense_names = filter_by_nation(X_emb, dense_names, nation)
+
+    if nation.lower() == "uk":
+        uk_n = len(dense_names)
+    elif nation.lower() == "us":
+        uk_n = 0
+    else:
+        uk_n = uk_count()
+
 
     # build mapping for hybrid (no re-embedding needed)
     dense_lookup = build_dense_lookup(dense_names, uk_n)
@@ -292,5 +319,5 @@ def run_query(query: str, K_values=(3, 5, 8)):
 
 if __name__ == "__main__":
     q = "On what dates did the British Prime Minister deliver his speech on the defense budget?"
-    run_query(q, K_values=(3,))
+    run_query(q, K_values=(3,),nation="uk")
     # 

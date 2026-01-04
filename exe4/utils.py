@@ -52,3 +52,52 @@ def resolve_chunk_metadata(
 
     meta = metadata_index[normalized_source_file]
     return meta["corpus"], meta["timestamp"]
+
+# =========================
+# Temporal query groups
+# =========================
+
+hard_filter = [
+        "what was the specific budget allocated to security in 2024?",
+
+        "What was the specific amount allocated to support the public sector for National Insurance costs in 2025?"
+]
+
+recency = [
+        "What is the current official position regarding the State of Israel?",
+"What is the current official position regarding Hamas/Gaza?",
+"Was the official position in the last quarter of 2023 supportive of the State of Israel?",
+"Was the official position in the last quarter of 2023 supportive of Hamas/Gaza?",
+"Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?"
+,
+
+"What is the latest official position regarding legislation on the protection of veterans?"
+
+]
+
+evolution = [
+    "how did the prime minister/president's rhetoric regarding the war between israel and hamas/gaza change between his first and last speech?",
+
+"How has the approach to the restoration and maintenance of local and community infrastructure changed between late 2023 and late 2024?"
+
+]
+
+ambiguity = [
+    "who is the minister of defense/secretary of defense?",
+
+    "Who holds the position responsible for Rural Development?"
+
+]
+def get_queries():
+    return hard_filter+ recency+evolution+ambiguity
+
+
+def get_type(query):
+    if query in hard_filter:
+        return "hard_filter"
+    if query in recency:
+        return "recency"
+    if query in evolution:
+        return "evolution"
+    if query in ambiguity:
+        return "ambiguity"

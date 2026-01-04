@@ -4,27 +4,7 @@ from pathlib import Path
 from contextlib import redirect_stdout
 from stage4_llm_rag import run_rag_with_multiple_configs
 
-# =========================
-# Temporal query groups
-# =========================
 
-HARD_FILTER = [
-    ("HARD_FILTER", "What was the specific budget allocated to security in 2024?"),
-]
-
-RECENCY = [
-    ("RECENCY", "What is the current official position regarding the State of Israel?"),
-    ("RECENCY", "What is the current official position regarding Hamas/Gaza?"),
-    ("RECENCY", "Has the official position in the last quarter of 2023 changed relative to the official position in the last quarter of 2025?"),
-]
-
-EVOLUTION = [
-    ("EVOLUTION", "How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza change between his first and last speech?"),
-]
-
-AMBIGUITY = [
-    ("AMBIGUITY", "Who is the Minister of Defense/Secretary of Defense?"),
-]
 
 
 # =========================
@@ -51,8 +31,8 @@ if __name__ == "__main__":
                 print("=" * 90)
                 print(f"### TEMPORAL TEST GROUP: {group_name}")
                 print("=" * 90)
-                run_rag_with_multiple_configs(queries, chunk_method="fixed",answers_path_no_prefix="exe4/outputs/stage1/answers",
-                                              sources_path_no_prefix="exe4/outputs/stage1/sources")
+                run_rag_with_multiple_configs(queries,k_list=[3],method_list=["dense","bm25"], chunk_method="fixed",answers_path_no_prefix="exe4/outputs/stage1/answers",
+                                              sources_path_no_prefix="exe4/outputs/stage1/sources",nation="uk")
                 # run_rag_with_multiple_configs(queries, chunk_method="parent-son",answers_path_no_prefix="exe4/outputs/stage1/answers",
                 #                               sources_path_no_prefix="exe4/outputs/stage1/sources")
 
