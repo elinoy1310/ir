@@ -28,6 +28,9 @@ def run_all_fast(
     run_counter = 0
 
     for qi, query in enumerate(queries, 1):
+        if query is None:
+          continue
+
         for nation in nations:
             for chunking in chunking_methods:
                 for vec in vector_methods:
@@ -65,8 +68,10 @@ def run_all_fast(
 
 if __name__ == "__main__":
     queries = [
-        "How did the Prime Minister/President's rhetoric regarding the war between Israel and Hamas/Gaza develop/change between his first and last speech?",
+    None,  # Q1 – כבר רץ, מדלגים
+    "How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?",
     ]
+
     run_all_fast(
         queries=queries,
         k=5,
