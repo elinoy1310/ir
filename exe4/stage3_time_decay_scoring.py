@@ -5,7 +5,18 @@ from datetime import datetime
 from pathlib import Path
 from typing import Tuple, List
 
-from .utils import resolve_chunk_metadata
+import numpy as np
+from sentence_transformers import SentenceTransformer
+from exe3.stage3_retrieval import (
+    load_chunkpath_to_source,
+    load_bm25_store,
+    load_dense_store,
+    bm25_retrieve,
+    dense_retrieve,
+    MODEL_NAME,
+    change_chanking_method
+)
+from .utils import resolve_chunk_metadata, get_queries
 
 
 def compute_time_score(
@@ -63,9 +74,10 @@ def run_soft_decay_query(
         MODEL_NAME,
     )
 
-    qd = query_date or datetime.today()
-
-    # similarity over all chunks
+    # ---------- Shared Preparation ----------
+    query_date = datetime.today() #maybe change this
+    change_chanking_method(chunking_method)
+    
     if use_dense:
         X_emb, names = load_dense_store()
         model = SentenceTransformer(MODEL_NAME)
@@ -81,7 +93,7 @@ def run_soft_decay_query(
             chunk_index_path=str(chunks_index_path),
             metadata_index_path=str(metadata_index_path),
             chunking_method=chunking_method,
-            query_date=qd,
+            query_date=query_date,
             lambda_decay=lambda_decay,
         )
         final_score = (1.0 - alpha) * float(sim_score) + alpha * float(time_score)
@@ -105,7 +117,7 @@ def save_soft_decay_results(
     use_dense: bool = True,
     alpha: float = 0.3,
     lambda_decay: float = 0.6,
-    metadata_index_path: Path = Path("exe4/metadata_index.json"),
+    nation="both"
 ):
     """
     Optional utility: saves a CSV (requires pandas)
@@ -120,7 +132,12 @@ def save_soft_decay_results(
         use_dense=use_dense,
         alpha=alpha,
         lambda_decay=lambda_decay,
-        metadata_index_path=metadata_index_path,
+        nation=nation
+    )
+
+    df = pd.DataFrame(
+        results,
+        columns=["row_index", "chunk_path", "sim_score", "time_score", "final_score"]
     )
 
     df = pd.DataFrame(results, columns=["row_index", "chunk_path", "sim_score", "time_score", "final_score"])
@@ -140,18 +157,61 @@ def save_soft_decay_results(
     print(f"Results saved to {save_path / csv_filename}")
 
 
+
+# -------------------- Runner --------------------
 if __name__ == "__main__":
-    # quick sanity run (optional)
-    q = "What was the specific budget allocated to security in 2024?"
-    res = run_soft_decay_query(
-        query=q,
-        chunks_index_path=Path("exe4/united_fixed_chunk_index.json"),
-        chunking_method="fixed",
-        top_k=5,
-        use_dense=True,
-        alpha=0.3,
-        lambda_decay=0.6,
-        nation="both",
-    )
-    for row in res:
-        print(row)
+
+    queries = get_queries()
+    print(f"Running {len(queries)} queries")
+
+    k_lst = [5]
+    # embedding_methods = ["dense"]
+    # chunking_methods = ["parentSon"]
+    # k_lst = [3, 5, 8]
+    embedding_methods = ["dense", "bm25"]
+    chunking_methods = ["fixed", "parentSon"]
+
+    for q_idx, q in enumerate(queries):
+        for k in k_lst:
+            for embedding_method in embedding_methods:
+                for chunking_method in chunking_methods:
+
+                    # --- embedding flag ---
+                    use_dense = embedding_method == "dense"
+
+                    # --- chunk index path לפי chunking ---
+                   
+                    chunks_index_path = Path(f"exe4/united_{chunking_method}_chunk_index.json" )
+                   
+
+                    try:
+                        save_soft_decay_results(
+                            query=q,
+                            chunks_index_path=chunks_index_path,
+                            chunking_method=chunking_method,
+                            save_path=Path("exe4/outputs/stage3_tables/soft_decay/uk"),
+                            query_index=q_idx,
+                            top_k=k,
+                            use_dense=use_dense,
+                            nation="uk"
+                        )
+                        save_soft_decay_results(
+                            query=q,
+                            chunks_index_path=chunks_index_path,
+                            chunking_method=chunking_method,
+                            save_path=Path("exe4/outputs/stage3_tables/soft_decay/us"),
+                            query_index=q_idx,
+                            top_k=k,
+                            use_dense=use_dense,
+                            nation="us"
+                        )
+
+                    except ValueError as e:
+                        print(
+                            f"Query skipped | "
+                            f"q_idx={q_idx}, "
+                            f"k={k}, "
+                            f"embedding={embedding_method}, "
+                            f"chunking={chunking_method} | "
+                            f"Reason: {e}"
+                        )

@@ -34,7 +34,7 @@ def resolve_chunk_metadata(
     # ---------- Resolve source file ----------
     if chunking_method == "fixed":
         source_file = chunk_index[normalized_chunk_path]
-    elif chunking_method == "parent-son":
+    elif chunking_method == "parent-son" or chunking_method=="parentSon":
         source_file = chunk_index[normalized_chunk_path]["original_file"]
     else:
         raise ValueError("chunking_method must be 'fixed' or 'parent-son'")

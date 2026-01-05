@@ -226,6 +226,7 @@ def transform_query_to_bm25(query_text, config_dir: Path=BM25_DIR, base_name="bm
 
 # ---------------- Dense ----------------
 def load_dense_store():
+    
     # NOTE: stored as sparse but loaded here to dense ndarray for speed in cosine ops
     X = np.load(DENSE_DIR / "embeddings.npy")
 
@@ -265,7 +266,7 @@ def build_dense_lookup(dense_names: List[str], uk_n: int) -> Dict[Tuple[str, str
 def run_query(query: str, K_values=(3, 5, 8), nation: str = "both"):
 
     chunkpath_to_source = load_chunkpath_to_source()
-
+    
     # load stores
     X_bm25, vocab, bm25_names = load_bm25_store()
     X_bm25, bm25_names = filter_by_nation(X_bm25, bm25_names, nation)

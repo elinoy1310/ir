@@ -237,8 +237,12 @@ def run_stage4_fast(
 
     log(f"[FILTER] early_hits={len(early_candidates)} | late_hits={len(late_candidates)} | topic_rejects={topic_rejects}")
 
+    early_candidates.sort(key=lambda e: e.ts)        # מהישן לחדש
+    late_candidates.sort(key=lambda e: e.ts, reverse=True)  # מהחדש לישן
+
     early_top = early_candidates[:k]
     late_top = late_candidates[:k]
+
     log(f"[TOP-K] EARLY picked {len(early_top)} | LATE picked {len(late_top)}")
 
     # 6) evidence gate (תיקון B)
