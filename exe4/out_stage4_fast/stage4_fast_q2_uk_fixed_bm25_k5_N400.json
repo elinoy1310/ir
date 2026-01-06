@@ -1,0 +1,107 @@
+{
+  "query": "How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?",
+  "nation": "uk",
+  "chunking_method": "fixed",
+  "vector_method": "bm25",
+  "k": 5,
+  "candidate_n": 400,
+  "window_months": 8,
+  "min_evidence": 2,
+  "early_window": [
+    "2023-06-28T00:00:00",
+    "2024-02-23T00:00:00"
+  ],
+  "late_window": [
+    "2025-03-04T00:00:00",
+    "2025-10-30T00:00:00"
+  ],
+  "early_sources": [
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_851.txt",
+      "score": 77.85065230295196,
+      "ts": "2023-10-24T00:00:00",
+      "corpus": "UK",
+      "text_preview": "We will be represented at senior ministerial level at the Security Council later today. We want to take action that will actually deliver aid and support to the Palestinian people who are suffering in Gaza. Seven years ago, my Dartford constituent Ge"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_977.txt",
+      "score": 71.64886281572369,
+      "ts": "2023-11-08T00:00:00",
+      "corpus": "UK",
+      "text_preview": "Immediately after Hamas's brutal assault, the Government brought home almost 1,000 British nationals safely on charter and military flights, but the safety of all British nationals is our utmost priority, so we are in regular contact with those in Ga"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_1254.txt",
+      "score": 71.54257632210509,
+      "ts": "2023-11-27T00:00:00",
+      "corpus": "UK",
+      "text_preview": "Why does the Minister think that the international community should trust Hamas to distribute any aid? As my hon. Friend will be aware, we are extremely careful about how British aid is distributed and do it only through trusted partners of whom we h"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_1479.txt",
+      "score": 70.4578180650754,
+      "ts": "2023-12-11T00:00:00",
+      "corpus": "UK",
+      "text_preview": "One plus zero has never equalled two. It is, I think, the policy of both sides of the House that we should not pursue the possibility of a ceasefire, because there is no possibility, for very trenchant reasons that have been set out. The hon. Lady is"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_847.txt",
+      "score": 68.92968666400378,
+      "ts": "2023-10-24T00:00:00",
+      "corpus": "UK",
+      "text_preview": "I, too, wish to put on record my solidarity with those who are living in fear and heartbreak in Gaza and Israel. The withdrawal from Afghanistan was an absolute debacle. It is a continuing source of shame to this country that so many people who helpe"
+    }
+  ],
+  "late_sources": [
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_8641.txt",
+      "score": 80.12390075698099,
+      "ts": "2025-09-02T00:00:00",
+      "corpus": "UK",
+      "text_preview": "I know that the hon. Gentleman has not been in Parliament very long, but he will see that there is a Second Reading next week, and of course there will be a vote. For Palestinians, if suffering decades of oppression and apartheid, thousands being kil"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_7658.txt",
+      "score": 72.66266252104288,
+      "ts": "2025-06-02T00:00:00",
+      "corpus": "UK",
+      "text_preview": "My constituents in Taunton have a proud record of supporting refugees; they would support refugees from Gaza, as they do those from other countries. But charities that support refugees come to me with concerns about the asylum accommodation being all"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_9140.txt",
+      "score": 70.62845786419126,
+      "ts": "2025-10-28T00:00:00",
+      "corpus": "UK",
+      "text_preview": "What steps her Department is taking to help improve the humanitarian situation in Gaza. What diplomatic steps she is taking to help ensure that humanitarian aid can reach people in Gaza. Alongside our international partners, the UK is working to get "
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_8789.txt",
+      "score": 70.0682233531688,
+      "ts": "2025-09-10T00:00:00",
+      "corpus": "UK",
+      "text_preview": "Regrettably, it has been continually delayed by events in the region, but we hope to have it soon. Qatar is an ally, and a key negotiator and mediator in Gaza ceasefire talks. Through committing atrocities in Gaza, illegal settlements in the west ban"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_8637.txt",
+      "score": 67.63241565499165,
+      "ts": "2025-09-02T00:00:00",
+      "corpus": "UK",
+      "text_preview": "The situation on the ground in Gaza is horrendous, and we urgently want to see a deal done to end the suffering on all sides. An immediate ceasefire is our overwhelming priority, alongside the unconditional release of all hostages and a large-scale d"
+    }
+  ],
+  "stats": {
+    "missing_meta": 0,
+    "other_nation": 18,
+    "gated_kept": 382,
+    "topic_rejects": 227,
+    "early_hits": 70,
+    "late_hits": 23
+  },
+  "early_prompt": "You are given evidence from ONLY the EARLY period.\n\nQUESTION:\n\"How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?\"\n\nEVIDENCE ITEMS COUNT: 5\n\nEVIDENCE:\nE1 (UK | 2023-10-24T00:00:00 | score=77.8507)\nWe will be represented at senior ministerial level at the Security Council later today. We want to take action that will actually deliver aid and support to the Palestinian people who are suffering in Gaza. Seven years ago, my Dartford constituent George Lowe was brutally murdered in Cyprus. We know who the killers are, and the Cypriot police know who the killers are, yet they have never been brought to justice. Although I accept that this is a complicated diplomatic situation, will the Minister assure the House that the Foreign Office will not rest until justice for George Lowe is forthcoming? My sincere condolences go out to George Lowe's family. Consular staff remain in contact with the C\n\nE2 (UK | 2023-11-08T00:00:00 | score=71.6489)\nImmediately after Hamas's brutal assault, the Government brought home almost 1,000 British nationals safely on charter and military flights, but the safety of all British nationals is our utmost priority, so we are in regular contact with those in Gaza registered with us since the conflict began. Working with partners, we have been engaging intensively with Israel and Egypt to allow foreign nationals to leave Gaza via the Rafah border crossing. This has proved possible on five of the last seven days, and I can confirm to the House that, as of late last night, more than 150 British nationals had made it through to Egypt. A forward-deployed team of consular officials is in el-Arish, close to R\n\nE3 (UK | 2023-11-27T00:00:00 | score=71.5426)\nWhy does the Minister think that the international community should trust Hamas to distribute any aid? As my hon. Friend will be aware, we are extremely careful about how British aid is distributed and do it only through trusted partners of whom we have long and detailed experience. This is perhaps the most observed and scrutinised aid programme of any that the British taxpayer and British Government pursue anywhere in the world. In Home Office questions, I raised the case of a constituent on a student visa whose five-year-old daughter is in southern Gaza, and I am hoping for a similarly positive response from this Minister. Were that visa to be granted, would that young girl be allowed to t\n\nE4 (UK | 2023-12-11T00:00:00 | score=70.4578)\nOne plus zero has never equalled two. It is, I think, the policy of both sides of the House that we should not pursue the possibility of a ceasefire, because there is no possibility, for very trenchant reasons that have been set out. The hon. Lady is, however, right to point to the political horizon, to ensure that we take advantage, as soon as the moment is plausible, of building a political track. As part of that, we are looking to build Palestinian state capacity. We know that Gaza should be under Palestinian control when this is over. Hamas has no place in a future of Gaza and we must never allow them ever to be able to entrench themselves in the civilian population again. I refer the Ho\n\nE5 (UK | 2023-10-24T00:00:00 | score=68.9297)\nI, too, wish to put on record my solidarity with those who are living in fear and heartbreak in Gaza and Israel. The withdrawal from Afghanistan was an absolute debacle. It is a continuing source of shame to this country that so many people who helped us, trusted us, relied on us, have been absolutely abandoned. We are hearing horrifying reports from those who have done the right thing and taken terrible risks to escape to Pakistan, who are now living in constant fear of arrest or deportation because this Government have left them in limbo. My question is simple: how many are still waiting and how much longer will they have to wait? Respectfully, we have not left them in limbo. The situation\n\nTASK:\n1) Describe the dominant rhetoric/framing in this period (4-7 sentences).\n2) Provide 2-4 bullet talking points.\n3) Cite ONLY ids shown above (E1/E2... or L1/L2...) when referring to evidence.\n4) Only write \"Insufficient evidence.\" if EVIDENCE ITEMS COUNT is LESS THAN 2.\n\nRULES:\n- Do NOT mention the other time period.\n- Do NOT compare across periods.\n- Do NOT invent facts.",
+  "late_prompt": "You are given evidence from ONLY the LATE period.\n\nQUESTION:\n\"How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?\"\n\nEVIDENCE ITEMS COUNT: 5\n\nEVIDENCE:\nL1 (UK | 2025-09-02T00:00:00 | score=80.1239)\nI know that the hon. Gentleman has not been in Parliament very long, but he will see that there is a Second Reading next week, and of course there will be a vote. For Palestinians, if suffering decades of oppression and apartheid, thousands being killed, and millions confined in an ever-reducing area as their homes are stolen and communities are destroyed was not bad enough, now the American President is devising a plan to carve up what is left of Palestinian territory for prime real estate. Will the Foreign Secretary categorically say at the Dispatch Box today that under no circumstances will the UK support this reprehensible plan to ethnically cleanse Palestine and create a \"Gaza Riviera\",\n\nL2 (UK | 2025-06-02T00:00:00 | score=72.6627)\nMy constituents in Taunton have a proud record of supporting refugees; they would support refugees from Gaza, as they do those from other countries. But charities that support refugees come to me with concerns about the asylum accommodation being allocated to the town. Will the Minister meet me to discuss the concerns about the latest allocations, on which I was not consulted, and about which I received no notification? I will be very happy to meet the hon. Gentleman. What recent assessment she has made of trends in the incidence of fraud. What steps she is taking to help tackle fraud. What steps her Department is taking to help protect consumers against fraud. We monitor fraud trends very c\n\nL3 (UK | 2025-10-28T00:00:00 | score=70.6285)\nWhat steps her Department is taking to help improve the humanitarian situation in Gaza. What diplomatic steps she is taking to help ensure that humanitarian aid can reach people in Gaza. Alongside our international partners, the UK is working to get aid into Gaza on the scale needed to ease the desperate humanitarian crisis that is taking place. In recent days, the Foreign Secretary has spoken with Tom Fletcher of the United Nations, Egyptian Foreign Minister Abdelatty and Israeli Foreign Minister Sa'ar about the importance of opening more crossings and removing all restrictions on aid. We are ready to play our full part in providing that aid. We have announced 74 million of humanitarian fun\n\nL4 (UK | 2025-09-10T00:00:00 | score=70.0682)\nRegrettably, it has been continually delayed by events in the region, but we hope to have it soon. Qatar is an ally, and a key negotiator and mediator in Gaza ceasefire talks. Through committing atrocities in Gaza, illegal settlements in the west bank, marching into Syria, and attacking Lebanon, Iran, Yemen and now Qatar, this Israeli Government have proven themselves to be a rogue ally to us and a dangerous neighbour. At what point does the UK draw a line in the sand and call out this Israeli Government for what they area danger to peace in the middle east? I thank my hon. Friend for his long commitment to these issues. He has heard my condemnation, as well as that of the previous Foreign S\n\nL5 (UK | 2025-09-02T00:00:00 | score=67.6324)\nThe situation on the ground in Gaza is horrendous, and we urgently want to see a deal done to end the suffering on all sides. An immediate ceasefire is our overwhelming priority, alongside the unconditional release of all hostages and a large-scale delivery of aid. The ceasefire must be sustainable and lead to a wider peace plan, which we are developing with our international partners. My constituency of Watford is a richly ethnically diverse community. When I speak to residents there about the conflict in Gaza, the overwhelming desire is for the killing to stop, for the hostages to be released and for the people of Gaza to be able to live in peace. Will the Secretary of State further outlin\n\nTASK:\n1) Describe the dominant rhetoric/framing in this period (4-7 sentences).\n2) Provide 2-4 bullet talking points.\n3) Cite ONLY ids shown above (E1/E2... or L1/L2...) when referring to evidence.\n4) Only write \"Insufficient evidence.\" if EVIDENCE ITEMS COUNT is LESS THAN 2.\n\nRULES:\n- Do NOT mention the other time period.\n- Do NOT compare across periods.\n- Do NOT invent facts.",
+  "change_prompt": "QUESTION:\n\"How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?\"\n\nEARLY SUMMARY:\nBased on the provided evidence from the early period, here's my analysis:\n\n**Dominant Rhetoric/Framing:**\nThe dominant rhetoric in this period is centered around humanitarian concerns and the need for action to deliver aid and support to the Palestinian people suffering in Gaza. There is a strong emphasis on ensuring the safety of British nationals and working with international partners to facilitate their evacuation from Gaza.\n\n**Talking Points:**\n\n* The UK government is committed to delivering aid and support to the Palestinian people in Gaza (E1).\n* The government has been actively engaged in efforts to evacuate British nationals from Gaza, including through charter and military flights (E2).\n* The UK government is cautious about how aid is distributed, only working with trusted partners who have a proven track record (E3).\n\n**Citations:**\nEvidence E1, Evidence E2, Evidence E3\n\nLATE SUMMARY:\nBased on the provided evidence from the late period, here's my analysis:\n\n**Dominant rhetoric/framing:**\nThe dominant rhetoric in this period is one of strong condemnation and criticism towards Israeli actions in Gaza, with a focus on humanitarian concerns and calls for an immediate ceasefire. There is also a sense of urgency and desperation to address the suffering of Palestinians in Gaza.\n\n**Talking points:**\n\n* The UK government must take a stronger stance against Israel's \"reprehensible\" plan to carve up Palestinian territory (L1).\n* The situation in Gaza is \"horrendous\" and requires an immediate ceasefire, unconditional release of hostages, and large-scale delivery of aid (L5).\n* The UK should work with international partners to develop a wider peace plan for the region (L5).\n\n**References:**\nEvidence items L1, L3, L4, and L5.\n\nTASK:\n1) Explain the change (or stability) between EARLY and LATE in 5-10 sentences.\n2) Provide 2-4 bullet \"change indicators\" (themes/emphases that differ).\n3) If either summary contains \"Insufficient evidence.\", do NOT invent changes; explain what is missing.\n\nRULES:\n- Do not cite raw evidence ids here (you only see summaries).",
+  "early_summary": "Based on the provided evidence from the early period, here's my analysis:\n\n**Dominant Rhetoric/Framing:**\nThe dominant rhetoric in this period is centered around humanitarian concerns and the need for action to deliver aid and support to the Palestinian people suffering in Gaza. There is a strong emphasis on ensuring the safety of British nationals and working with international partners to facilitate their evacuation from Gaza.\n\n**Talking Points:**\n\n* The UK government is committed to delivering aid and support to the Palestinian people in Gaza (E1).\n* The government has been actively engaged in efforts to evacuate British nationals from Gaza, including through charter and military flights (E2).\n* The UK government is cautious about how aid is distributed, only working with trusted partners who have a proven track record (E3).\n\n**Citations:**\nEvidence E1, Evidence E2, Evidence E3",
+  "late_summary": "Based on the provided evidence from the late period, here's my analysis:\n\n**Dominant rhetoric/framing:**\nThe dominant rhetoric in this period is one of strong condemnation and criticism towards Israeli actions in Gaza, with a focus on humanitarian concerns and calls for an immediate ceasefire. There is also a sense of urgency and desperation to address the suffering of Palestinians in Gaza.\n\n**Talking points:**\n\n* The UK government must take a stronger stance against Israel's \"reprehensible\" plan to carve up Palestinian territory (L1).\n* The situation in Gaza is \"horrendous\" and requires an immediate ceasefire, unconditional release of hostages, and large-scale delivery of aid (L5).\n* The UK should work with international partners to develop a wider peace plan for the region (L5).\n\n**References:**\nEvidence items L1, L3, L4, and L5.",
+  "answer": "Here's the analysis:\n\nThe dominant rhetoric and framing in the early period focused on humanitarian concerns, emphasizing the need for aid delivery and evacuation of British nationals from Gaza. In contrast, the late period saw a shift towards strong condemnation and criticism of Israeli actions in Gaza, with a sense of urgency and desperation to address Palestinian suffering.\n\nChange indicators that differ between the two periods include:\n\n* **Shift from humanitarian focus to political critique**: The early period emphasized delivering aid and evacuating British nationals, while the late period focused on criticizing Israeli actions and calling for an immediate ceasefire.\n* **Increased emphasis on condemnation and criticism**: The late period saw a stronger tone of disapproval towards Israel's actions, whereas the early period was more neutral in its language.\n* **Urgency and sense of desperation**: The late period conveyed a greater sense of urgency and desperation to address the situation in Gaza, whereas the early period was more measured in its approach.\n\nNote that there is no indication of \"Insufficient evidence.\" in either summary.",
+  "query_index": 2
+}

@@ -1,0 +1,107 @@
+{
+  "query": "How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?",
+  "nation": "uk",
+  "chunking_method": "fixed",
+  "vector_method": "dense",
+  "k": 5,
+  "candidate_n": 400,
+  "window_months": 8,
+  "min_evidence": 2,
+  "early_window": [
+    "2023-06-28T00:00:00",
+    "2024-02-23T00:00:00"
+  ],
+  "late_window": [
+    "2025-03-04T00:00:00",
+    "2025-10-30T00:00:00"
+  ],
+  "early_sources": [
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_1056.txt",
+      "score": 0.8491041660308838,
+      "ts": "2023-11-14T00:00:00",
+      "corpus": "UK",
+      "text_preview": "We must not give up on the narrow openings that keep the prospect of peace alive. That means preventing escalation, condemning violence from settlers in the west bank, condemning rocket attacks on Israel from Iran's proxies in Lebanon and elsewhere, "
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_755.txt",
+      "score": 0.84855055809021,
+      "ts": "2023-10-18T00:00:00",
+      "corpus": "UK",
+      "text_preview": "Friend makes some important points. The truth is that we remain committed to a two-state solution, with Palestinians and Israelis living side-by-side in peace and prosperity. While at the moment and in these circumstances that might feel like an unac"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_1642.txt",
+      "score": 0.847694456577301,
+      "ts": "2024-01-08T00:00:00",
+      "corpus": "UK",
+      "text_preview": "Gentleman calls for a sustained ceasefire, and the British Government believe that is the right approach. That is why we put so much effort into securing agreement on United Nations resolution 2720. The right hon. Gentleman is also entirely right to "
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_699.txt",
+      "score": 0.8453303575515747,
+      "ts": "2023-10-16T00:00:00",
+      "corpus": "UK",
+      "text_preview": "That is why there is complexity to opening the Rafah border crossing, but she should be reassured that we are engaged in those conversations with the Egyptians and with other partners, including the Americans, to find a safe way to open the crossingi"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_1057.txt",
+      "score": 0.8447462320327759,
+      "ts": "2023-11-14T00:00:00",
+      "corpus": "UK",
+      "text_preview": "Secondly, has the Foreign Office's overseas judicial assistance assessment increased since 7 October yes or no? My hon. Friend asks me about the position on fuel. Fuel is desperately needed todayit is going to run out. The United Nations has been acc"
+    }
+  ],
+  "late_sources": [
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_8070.txt",
+      "score": 0.8527193069458008,
+      "ts": "2025-06-24T00:00:00",
+      "corpus": "UK",
+      "text_preview": "Gentleman knows, this Government have taken a series of actions in response to developments in Gaza. We will continue to take such actions until the situation changes. What is the Government's assessment of how effectively medical aid can be delivere"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_6932.txt",
+      "score": 0.8494410514831543,
+      "ts": "2025-04-01T00:00:00",
+      "corpus": "UK",
+      "text_preview": "We regret that, at this point, we are still in disagreement with the Israeli Government, and we regret the scenes of the last few weeks in relation to the west bank and to Gaza. In relation to settlement goods, as the Foreign Secretary said earlier a"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_8071.txt",
+      "score": 0.8476808071136475,
+      "ts": "2025-06-24T00:00:00",
+      "corpus": "UK",
+      "text_preview": "How many more children need to die before something changes? As I have said, the Foreign Secretary has raised these issues with both his American and Israeli counterparts, and I have done the same. We remain steely in our focus on the situation in Ga"
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_9140.txt",
+      "score": 0.8452338576316833,
+      "ts": "2025-10-28T00:00:00",
+      "corpus": "UK",
+      "text_preview": "What steps her Department is taking to help improve the humanitarian situation in Gaza. What diplomatic steps she is taking to help ensure that humanitarian aid can reach people in Gaza. Alongside our international partners, the UK is working to get "
+    },
+    {
+      "chunk_path": "exe3/chunked-text/UK/chunk_9174.txt",
+      "score": 0.8436237573623657,
+      "ts": "2025-10-29T00:00:00",
+      "corpus": "UK",
+      "text_preview": "Britain will continue to play our full part in support of the ceasefire and the wider peace initiative. There is not a moment to lose to get relief at scale to those in need and to make progress on the pathway to a lasting peace. The situation in Gaz"
+    }
+  ],
+  "stats": {
+    "missing_meta": 0,
+    "other_nation": 18,
+    "gated_kept": 382,
+    "topic_rejects": 189,
+    "early_hits": 75,
+    "late_hits": 36
+  },
+  "early_prompt": "You are given evidence from ONLY the EARLY period.\n\nQUESTION:\n\"How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?\"\n\nEVIDENCE ITEMS COUNT: 5\n\nEVIDENCE:\nE1 (UK | 2023-11-14T00:00:00 | score=0.8491)\nWe must not give up on the narrow openings that keep the prospect of peace alive. That means preventing escalation, condemning violence from settlers in the west bank, condemning rocket attacks on Israel from Iran's proxies in Lebanon and elsewhere, and creating a future where Gaza is not subject to occupation. Meanwhile, international diplomacy evolves and the facts on the ground are changing day to day, in relation to both hostages being rescued and Hamas's capability to carry out attacks such as we saw on 7 October . As the Leader of the Opposition set out to Chatham House, we must move to a full \"cessation of fighting as quickly as possible...the reality is that neither the long-term sec\n\nE2 (UK | 2023-10-18T00:00:00 | score=0.8486)\nFriend makes some important points. The truth is that we remain committed to a two-state solution, with Palestinians and Israelis living side-by-side in peace and prosperity. While at the moment and in these circumstances that might feel like an unachievable aim, we refuse to be fatalistic and give up that aspiration. The details will be for negotiation, but he and the House will have heard us say on a number of occasions that it will be based on the 1967 borders, with land swaps and a shared capital in Jerusalem. But we will not be dogmatic; what we want to see is peace brought about. I hear what he said about appointing a special envoy. We have some of our most capable people in our posts \n\nE3 (UK | 2024-01-08T00:00:00 | score=0.8477)\nGentleman calls for a sustained ceasefire, and the British Government believe that is the right approach. That is why we put so much effort into securing agreement on United Nations resolution 2720. The right hon. Gentleman is also entirely right to say it is important that the conflict is contained, and from the first moment Britain has moved military assets and other equipment to try to ensure that we detect any likelihood of it spreading more widely. The right hon. Gentleman mentioned in particular what is going on in the Red sea, and will understand that many Governments are committed to ensuring freedom of navigation and trade. We are protected in that extent by international law. Opera\n\nE4 (UK | 2023-10-16T00:00:00 | score=0.8453)\nThat is why there is complexity to opening the Rafah border crossing, but she should be reassured that we are engaged in those conversations with the Egyptians and with other partners, including the Americans, to find a safe way to open the crossingideally, for the evacuation of British nationals who may be in Gaza, but also to send humanitarian support into Gaza, which I know we would all like to see happen. The International Committee of the Red Cross has stated that \"hospitals in Gaza risk turning into morgues without electricity.\" The Commissioner-General of the United Nations Relief and Works Agency for Palestine Refugees in the Near East has said that the agency's colleagues in Gaza ar\n\nE5 (UK | 2023-11-14T00:00:00 | score=0.8447)\nSecondly, has the Foreign Office's overseas judicial assistance assessment increased since 7 October yes or no? My hon. Friend asks me about the position on fuel. Fuel is desperately needed todayit is going to run out. The United Nations has been accessing dirty fuel, but now that is at an end and we are incredibly worried about the situation. We are talking to the key American humanitarian intervenor, Mr Satterfield, about this. We are working diplomatically to do everything we can to make sure that the position on fuel is addressed, as we have been doing since I last updated the House. I did not catch the first part of my hon. Friend's final question, so I will write to her on that point.\n\nTASK:\n1) Describe the dominant rhetoric/framing in this period (4-7 sentences).\n2) Provide 2-4 bullet talking points.\n3) Cite ONLY ids shown above (E1/E2... or L1/L2...) when referring to evidence.\n4) Only write \"Insufficient evidence.\" if EVIDENCE ITEMS COUNT is LESS THAN 2.\n\nRULES:\n- Do NOT mention the other time period.\n- Do NOT compare across periods.\n- Do NOT invent facts.",
+  "late_prompt": "You are given evidence from ONLY the LATE period.\n\nQUESTION:\n\"How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?\"\n\nEVIDENCE ITEMS COUNT: 5\n\nEVIDENCE:\nL1 (UK | 2025-06-24T00:00:00 | score=0.8527)\nGentleman knows, this Government have taken a series of actions in response to developments in Gaza. We will continue to take such actions until the situation changes. What is the Government's assessment of how effectively medical aid can be delivered to those in need in Gaza, including the remaining Israeli hostages? Aid can be delivered effectively into Gaza. There are established mechanisms through the United Nations and its partners, and we want to see those mechanisms in place. The hon. Gentleman raises the vital question of ensuring that the hostages themselves get sufficient access to food. Both my right hon. Friend the Foreign Secretary and I have heard directly from Eli Sharabi, a r\n\nL2 (UK | 2025-04-01T00:00:00 | score=0.8494)\nWe regret that, at this point, we are still in disagreement with the Israeli Government, and we regret the scenes of the last few weeks in relation to the west bank and to Gaza. In relation to settlement goods, as the Foreign Secretary said earlier and as I have said before, different provisions exist for illegal settlements, which we consider to be illegal and which do not benefit from any of the provisions that would otherwise cover goods from Israel. Over the past week, I have been in touch with medical colleagues on the ground in Gaza and also with representatives of hostage families in Israel. In Gaza, they corroborate the worrying UN reports of a shallow grave containing the bodies of \n\nL3 (UK | 2025-06-24T00:00:00 | score=0.8477)\nHow many more children need to die before something changes? As I have said, the Foreign Secretary has raised these issues with both his American and Israeli counterparts, and I have done the same. We remain steely in our focus on the situation in Gaza, including the tragic scenes around the deprivation of aid and the impact that is having on civilians right across the strip, including children. We are trying to take every measure we can to reduce that suffering. That includes aid where it can be brought in; aid into the region, where that is the most appropriate way to reach the medically vulnerable; and in a few small cases ensuring that Gazan children can access medical assistance here. I\n\nL4 (UK | 2025-10-28T00:00:00 | score=0.8452)\nWhat steps her Department is taking to help improve the humanitarian situation in Gaza. What diplomatic steps she is taking to help ensure that humanitarian aid can reach people in Gaza. Alongside our international partners, the UK is working to get aid into Gaza on the scale needed to ease the desperate humanitarian crisis that is taking place. In recent days, the Foreign Secretary has spoken with Tom Fletcher of the United Nations, Egyptian Foreign Minister Abdelatty and Israeli Foreign Minister Sa'ar about the importance of opening more crossings and removing all restrictions on aid. We are ready to play our full part in providing that aid. We have announced 74 million of humanitarian fun\n\nL5 (UK | 2025-10-29T00:00:00 | score=0.8436)\nBritain will continue to play our full part in support of the ceasefire and the wider peace initiative. There is not a moment to lose to get relief at scale to those in need and to make progress on the pathway to a lasting peace. The situation in Gaza is fragile. We all want the ceasefire to hold and endure, and for it to transition into a sustainable end to the conflict, but that requires the terms of the ceasefire to be adhered to. The scenes of masked Hamas gunmen carrying out summary executions is sickening. Their continued hoarding and disruption of aid to starve Gazans is shocking. Their refusal to disarm is disturbing, and their failure to return the bodies of the deceased hostages is\n\nTASK:\n1) Describe the dominant rhetoric/framing in this period (4-7 sentences).\n2) Provide 2-4 bullet talking points.\n3) Cite ONLY ids shown above (E1/E2... or L1/L2...) when referring to evidence.\n4) Only write \"Insufficient evidence.\" if EVIDENCE ITEMS COUNT is LESS THAN 2.\n\nRULES:\n- Do NOT mention the other time period.\n- Do NOT compare across periods.\n- Do NOT invent facts.",
+  "change_prompt": "QUESTION:\n\"How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?\"\n\nEARLY SUMMARY:\nBased on the provided evidence from the early period, here's my analysis:\n\n**Dominant rhetoric/framing:**\nThe dominant rhetoric in this period is focused on promoting a peaceful resolution to the conflict in Gaza, with an emphasis on preventing escalation and creating conditions for a two-state solution. The language used is often diplomatic and cautious, with a tone of urgency and concern for humanitarian issues.\n\n**Talking points:**\n\n* Preventing escalation and condemning violence from all sides (E1)\n* Supporting a two-state solution with Palestinians and Israelis living side-by-side in peace and prosperity (E2)\n* Securing a ceasefire and containing the conflict to prevent its spread (E3)\n* Addressing humanitarian concerns, including the need for fuel and opening the Rafah border crossing (E4/E5)\n\n**Citations:**\nEvidence items E1, E2, E3, E4, and E5.\n\nLATE SUMMARY:\nBased on the provided evidence from the late period, here's my analysis:\n\n**Dominant Rhetoric/Framing:**\nThe dominant rhetoric in this period is one of concern and urgency regarding the humanitarian crisis in Gaza. The UK government emphasizes its commitment to delivering aid to those in need, while also expressing disappointment and frustration with the situation on the ground. There is a sense of moral outrage at the suffering of civilians, particularly children, and a desire to see meaningful action taken to address the crisis.\n\n**Talking Points:**\n\n* The UK government is working to deliver aid to Gaza through established mechanisms, such as the United Nations (L1).\n* The situation in Gaza is fragile, and there is a need for urgent action to ease the humanitarian crisis (L4, L5).\n* The UK is committed to playing its full part in supporting a ceasefire and the wider peace initiative (L5).\n\n**References:**\nEvidence items L1, L2, L3, L4, and L5.\n\nTASK:\n1) Explain the change (or stability) between EARLY and LATE in 5-10 sentences.\n2) Provide 2-4 bullet \"change indicators\" (themes/emphases that differ).\n3) If either summary contains \"Insufficient evidence.\", do NOT invent changes; explain what is missing.\n\nRULES:\n- Do not cite raw evidence ids here (you only see summaries).",
+  "early_summary": "Based on the provided evidence from the early period, here's my analysis:\n\n**Dominant rhetoric/framing:**\nThe dominant rhetoric in this period is focused on promoting a peaceful resolution to the conflict in Gaza, with an emphasis on preventing escalation and creating conditions for a two-state solution. The language used is often diplomatic and cautious, with a tone of urgency and concern for humanitarian issues.\n\n**Talking points:**\n\n* Preventing escalation and condemning violence from all sides (E1)\n* Supporting a two-state solution with Palestinians and Israelis living side-by-side in peace and prosperity (E2)\n* Securing a ceasefire and containing the conflict to prevent its spread (E3)\n* Addressing humanitarian concerns, including the need for fuel and opening the Rafah border crossing (E4/E5)\n\n**Citations:**\nEvidence items E1, E2, E3, E4, and E5.",
+  "late_summary": "Based on the provided evidence from the late period, here's my analysis:\n\n**Dominant Rhetoric/Framing:**\nThe dominant rhetoric in this period is one of concern and urgency regarding the humanitarian crisis in Gaza. The UK government emphasizes its commitment to delivering aid to those in need, while also expressing disappointment and frustration with the situation on the ground. There is a sense of moral outrage at the suffering of civilians, particularly children, and a desire to see meaningful action taken to address the crisis.\n\n**Talking Points:**\n\n* The UK government is working to deliver aid to Gaza through established mechanisms, such as the United Nations (L1).\n* The situation in Gaza is fragile, and there is a need for urgent action to ease the humanitarian crisis (L4, L5).\n* The UK is committed to playing its full part in supporting a ceasefire and the wider peace initiative (L5).\n\n**References:**\nEvidence items L1, L2, L3, L4, and L5.",
+  "answer": "Here's the analysis:\n\nThe dominant rhetoric and framing of U.S. foreign policy and humanitarian concerns regarding Gaza underwent a significant shift between the early and late periods. In the early period, the focus was on promoting a peaceful resolution to the conflict, with an emphasis on preventing escalation and creating conditions for a two-state solution. The language used was diplomatic and cautious, with a tone of urgency and concern for humanitarian issues.\n\nIn contrast, the late period saw a shift towards a more urgent and moral tone, with a greater emphasis on addressing the humanitarian crisis in Gaza. The UK government's rhetoric became more direct and critical, expressing disappointment and frustration with the situation on the ground.\n\n**Change indicators:**\n\n* **Shift from diplomatic to moral tone**: The early period focused on promoting a peaceful resolution through diplomatic means, while the late period emphasized the need for urgent action to address the humanitarian crisis.\n* **Increased emphasis on humanitarian concerns**: The late period placed greater importance on delivering aid and addressing the suffering of civilians, particularly children, whereas the early period also mentioned humanitarian concerns but in a more general sense.\n* **Decreased focus on two-state solution**: The early period emphasized the need for a two-state solution, while the late period focused more on addressing the immediate humanitarian crisis.\n\n**Insufficient evidence:** None.",
+  "query_index": 2
+}

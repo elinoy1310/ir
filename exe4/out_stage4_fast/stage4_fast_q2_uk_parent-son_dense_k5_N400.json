@@ -1,0 +1,35 @@
+{
+  "query": "How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?",
+  "nation": "uk",
+  "chunking_method": "parent-son",
+  "vector_method": "dense",
+  "k": 5,
+  "candidate_n": 400,
+  "window_months": 8,
+  "min_evidence": 2,
+  "early_window": [
+    "2023-06-28T00:00:00",
+    "2024-02-23T00:00:00"
+  ],
+  "late_window": [
+    "2025-03-04T00:00:00",
+    "2025-10-30T00:00:00"
+  ],
+  "early_sources": [],
+  "late_sources": [],
+  "stats": {
+    "missing_meta": 0,
+    "other_nation": 15,
+    "gated_kept": 385,
+    "topic_rejects": 385,
+    "early_hits": 0,
+    "late_hits": 0
+  },
+  "early_prompt": "You are given evidence from ONLY the EARLY period.\n\nQUESTION:\n\"How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?\"\n\nEVIDENCE ITEMS COUNT: 0\n\nEVIDENCE:\n\n\nTASK:\n1) Describe the dominant rhetoric/framing in this period (4-7 sentences).\n2) Provide 2-4 bullet talking points.\n3) Cite ONLY ids shown above (E1/E2... or L1/L2...) when referring to evidence.\n4) Only write \"Insufficient evidence.\" if EVIDENCE ITEMS COUNT is LESS THAN 2.\n\nRULES:\n- Do NOT mention the other time period.\n- Do NOT compare across periods.\n- Do NOT invent facts.",
+  "late_prompt": "You are given evidence from ONLY the LATE period.\n\nQUESTION:\n\"How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?\"\n\nEVIDENCE ITEMS COUNT: 0\n\nEVIDENCE:\n\n\nTASK:\n1) Describe the dominant rhetoric/framing in this period (4-7 sentences).\n2) Provide 2-4 bullet talking points.\n3) Cite ONLY ids shown above (E1/E2... or L1/L2...) when referring to evidence.\n4) Only write \"Insufficient evidence.\" if EVIDENCE ITEMS COUNT is LESS THAN 2.\n\nRULES:\n- Do NOT mention the other time period.\n- Do NOT compare across periods.\n- Do NOT invent facts.",
+  "change_prompt": "QUESTION:\n\"How did references to U.S. foreign policy and humanitarian concerns regarding Gaza change between the early and late periods of the corpus?\"\n\nEARLY SUMMARY:\nInsufficient evidence.\n\nLATE SUMMARY:\nInsufficient evidence.\n\nTASK:\n1) Explain the change (or stability) between EARLY and LATE in 5-10 sentences.\n2) Provide 2-4 bullet \"change indicators\" (themes/emphases that differ).\n3) If either summary contains \"Insufficient evidence.\", do NOT invent changes; explain what is missing.\n\nRULES:\n- Do not cite raw evidence ids here (you only see summaries).",
+  "early_summary": "Insufficient evidence.",
+  "late_summary": "Insufficient evidence.",
+  "answer": "Based on the provided summaries, it appears that there was no significant change in references to U.S. foreign policy and humanitarian concerns regarding Gaza between the early and late periods of the corpus.\n\nThe lack of sufficient evidence in both summaries suggests that there is limited information available to determine whether there were any changes or continuities in this regard. Therefore, we cannot identify specific themes or emphases that differ between the two periods.\n\nHowever, if more information were available, potential change indicators could include:\n\n• Shifts in U.S. foreign policy priorities: If the corpus included more detailed information about U.S. foreign policy decisions and actions during the early and late periods, it might reveal changes in priorities or approaches to addressing humanitarian concerns in Gaza.\n• Changes in humanitarian organizations' involvement: The summaries do not provide insight into the role of humanitarian organizations in responding to crises in Gaza during the early and late periods. If more information were available, it could highlight differences in their involvement, strategies, or effectiveness.\n• Evolving international community responses: The corpus might have included information about how other countries or international organizations responded to crises in Gaza during the early and late periods. This could reveal changes in diplomatic efforts, aid provision, or political pressure.\n\nIn summary, without more evidence, it is impossible to determine whether there were any changes or continuities in references to U.S. foreign policy and humanitarian concerns regarding Gaza between the early and late periods of the corpus.",
+  "query_index": 2
+}
