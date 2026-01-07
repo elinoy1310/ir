@@ -6,14 +6,8 @@ from pathlib import Path
 from typing import Tuple, List
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
 from exe3.stage3_retrieval import (
-    load_chunkpath_to_source,
-    load_bm25_store,
-    load_dense_store,
-    bm25_retrieve,
-    dense_retrieve,
-    MODEL_NAME,
+
     change_chanking_method
 )
 from .utils import resolve_chunk_metadata, get_queries
@@ -75,7 +69,8 @@ def run_soft_decay_query(
     )
 
     # ---------- Shared Preparation ----------
-    query_date = datetime.today() #maybe change this
+    query_date = estimate_query_date(query)
+
     change_chanking_method(chunking_method)
     
     if use_dense:
@@ -156,6 +151,37 @@ def save_soft_decay_results(
     df.to_csv(save_path / csv_filename, index=False, encoding="utf-8")
     print(f"Results saved to {save_path / csv_filename}")
 
+from datetime import datetime, timedelta
+import re
+
+def estimate_query_date(query: str) -> datetime:
+    q = query.lower()
+    today = datetime.today()
+
+    # --- explicit year ---
+    m = re.search(r"(19|20)\d{2}", q)
+    if m:
+        year = int(m.group())
+        return datetime(year, 6, 30)
+
+    # --- quarters ---
+    if "last quarter of 2023" in q:
+        return datetime(2023, 11, 15)
+
+    if "late 2024" in q:
+        return datetime(2024, 11, 15)
+
+    # --- recency ---
+    if any(x in q for x in ["current", "latest", "now"]):
+        return today - timedelta(days=30)
+
+    # --- evolution ---
+    if "between" in q and "and" in q:
+        # fallback: midpoint
+        return today - timedelta(days=180)
+
+    # --- default fallback ---
+    return today - timedelta(days=60)
 
 
 # -------------------- Runner --------------------
