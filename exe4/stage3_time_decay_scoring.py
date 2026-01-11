@@ -162,23 +162,30 @@ def estimate_query_date(query: str) -> datetime:
     m = re.search(r"(19|20)\d{2}", q)
     if m:
         year = int(m.group())
-        return datetime(year, 6, 30)
+        return datetime(year, 12, 29)
 
     # --- quarters ---
     if "last quarter of 2023" in q:
-        return datetime(2023, 11, 15)
+        return datetime(2023, 11, 1)
 
     if "late 2024" in q:
         return datetime(2024, 11, 15)
 
     # --- recency ---
-    if any(x in q for x in ["current", "latest", "now"]):
+    if any(x in q for x in ["current", "latest", "now", "recent", "this year"]):
         return today - timedelta(days=30)
 
-    # --- evolution ---
+        # --- evolution ---
     if "between" in q and "and" in q:
-        # fallback: midpoint
-        return today - timedelta(days=180)
+        # חיפוש אחר השנים
+        years = re.findall(r"(19|20)\d{2}", q)
+        if len(years) == 2:
+            start_year = int(years[0])
+            end_year = int(years[1])
+            # לחשב את התאריך האמצעי
+            midpoint_year = (start_year + end_year) // 2
+            midpoint_date = datetime(midpoint_year, 6, 30)  # 30 ביוני, אמצע השנה
+            return midpoint_date
 
     # --- default fallback ---
     return today - timedelta(days=60)

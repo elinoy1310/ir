@@ -35,7 +35,7 @@ from sentence_transformers import SentenceTransformer
 
 # ---------- Ollama ----------
 OLLAMA_URL = "http://127.0.0.1:11434/api/generate"
-OLLAMA_MODEL = "llama3:8b"
+OLLAMA_MODEL = "llama3.2:1b"
 
 
 # ---------- Helpers ----------

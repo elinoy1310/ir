@@ -75,7 +75,7 @@ def run_rag_on_stage3(
 
 if __name__ == "__main__":
 
-    queries = [get_queries()[0]]
+    queries = get_queries()
 
     # corpora = ["uk"]
     # approaches = {
