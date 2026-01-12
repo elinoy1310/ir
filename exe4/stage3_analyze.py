@@ -1,3 +1,4 @@
+# exe4\stage3_analyze.py
 import pandas as pd
 import re
 import matplotlib.pyplot as plt
@@ -137,38 +138,6 @@ def create_comparison_logic():
             # עכשיו out_plots מכיל כבר את הנתיב הנכון (כולל ה-corpus)
             # פשוט קוראים לפונקציה פעם אחת עבור הקורפוס הנוכחי
             plot_overlaps(all_overlap_data, out_plots, corpus)
-        # --- יצירת הפלוט ---
-        # --- במקום השורות הישנות של יצירת הפלוט, שים את זה: ---
-        # if all_overlap_data:
-        #     # פלוט עבור UK
-        #     uk_data = [d for d in all_overlap_data if d['corpus'] == 'uk']
-        #     plot_overlaps(uk_data, out_plots, "uk")
-            
-        #     # פלוט עבור US
-        #     us_data = [d for d in all_overlap_data if d['corpus'] == 'us']
-        #     plot_overlaps(us_data, out_plots, "us")
-
-# def plot_overlaps(data: List[Dict], save_path: Path, corpus_name: str):
-#     df_plot = pd.DataFrame(data)
-#     if df_plot.empty: return # הגנה למקרה שאין נתונים
-    
-#     df_melted = df_plot.melt(id_vars=["query_idx", "emb", "chk", "corpus"], 
-#                              value_vars=["base_hard_soft", "base_hard", "base_soft", "hard_soft"],
-#                              var_name="Overlap_Type", value_name="Count")
-    
-#     plt.figure(figsize=(15, 8))
-#     # שים לב לשינוי: הוספת hue גם עבור שילוב של סוג חפיפה ושיטת צאנקינג אם תרצה, 
-#     # אבל כרגע נשמור על זה פשוט לפי בקשתך
-#     sns.barplot(data=df_melted, x="query_idx", y="Count", hue="Overlap_Type",errorbar=None)
-    
-#     plt.title(f"Chunk Overlap Comparison - {corpus_name.upper()}")
-#     plt.xlabel("Query Index")
-#     plt.ylabel("Number of Overlapping Chunks (Top K)")
-#     plt.legend(title="Combination", bbox_to_anchor=(1.05, 1), loc='upper left')
-#     plt.tight_layout()
-    
-#     plt.savefig(save_path / f"{corpus_name}_overlap_comparison.png")
-#     plt.close() # חשוב לסגור את הפיגור כדי שלא יתערבבו הגרפים
 
 def plot_overlaps(data: List[Dict], save_path: Path, corpus_name: str):
     df_all = pd.DataFrame(data)

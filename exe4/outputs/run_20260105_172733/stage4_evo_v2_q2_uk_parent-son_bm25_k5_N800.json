@@ -1,0 +1,110 @@
+{
+  "query": "How did the Prime Minister/President's rhetoric regarding immigration change between his first and last speech?",
+  "nation": "uk",
+  "chunking_method": "parent-son",
+  "vector_method": "bm25",
+  "k": 5,
+  "window_months": 8,
+  "candidate_n": 800,
+  "alpha": 0.3,
+  "lambda_decay": 0.6,
+  "early_window": [
+    "2023-06-28",
+    "2024-02-23"
+  ],
+  "late_window": [
+    "2025-03-04",
+    "2025-10-30"
+  ],
+  "early_sources": [
+    {
+      "chunk": "exe3/parent-child-chunked-text/UK/children/child_chunk_3056.txt",
+      "timestamp": "2023-11-29T00:00:00",
+      "sim_raw": 96.10249526408276,
+      "time_score": 0.36764705882352944,
+      "final_score": 0.8102941176470588,
+      "text": ""
+    },
+    {
+      "chunk": "exe3/parent-child-chunked-text/UK/children/child_chunk_3877.txt",
+      "timestamp": "2024-01-08T00:00:00",
+      "sim_raw": 89.28681080081668,
+      "time_score": 0.5208333333333334,
+      "final_score": 0.7962898613512907,
+      "text": ""
+    },
+    {
+      "chunk": "exe3/parent-child-chunked-text/UK/children/child_chunk_3033.txt",
+      "timestamp": "2023-11-28T00:00:00",
+      "sim_raw": 91.6041962014352,
+      "time_score": 0.36496350364963503,
+      "final_score": 0.7699158230598505,
+      "text": ""
+    },
+    {
+      "chunk": "exe3/parent-child-chunked-text/UK/children/child_chunk_3876.txt",
+      "timestamp": "2024-01-08T00:00:00",
+      "sim_raw": 81.47120244778878,
+      "time_score": 0.5208333333333334,
+      "final_score": 0.7275330163128689,
+      "text": ""
+    },
+    {
+      "chunk": "exe3/parent-child-chunked-text/UK/children/child_chunk_2364.txt",
+      "timestamp": "2023-11-09T00:00:00",
+      "sim_raw": 84.36218034117911,
+      "time_score": 0.32051282051282054,
+      "final_score": 0.6928698818871846,
+      "text": ""
+    }
+  ],
+  "late_sources": [
+    {
+      "chunk": "exe3/parent-child-chunked-text/UK/children/child_chunk_20844.txt",
+      "timestamp": "2025-09-15T00:00:00",
+      "sim_raw": 117.38259836500566,
+      "time_score": 0.5263157894736842,
+      "final_score": 0.8578947368421053,
+      "text": ""
+    },
+    {
+      "chunk": "exe3/parent-child-chunked-text/UK/children/child_chunk_20362.txt",
+      "timestamp": "2025-09-01T00:00:00",
+      "sim_raw": 103.306937118645,
+      "time_score": 0.4587155963302753,
+      "final_score": 0.7384903088423833,
+      "text": ""
+    },
+    {
+      "chunk": "exe3/parent-child-chunked-text/UK/children/child_chunk_20754.txt",
+      "timestamp": "2025-09-10T00:00:00",
+      "sim_raw": 100.29453236317957,
+      "time_score": 0.5,
+      "final_score": 0.7296615129995214,
+      "text": ""
+    },
+    {
+      "chunk": "exe3/parent-child-chunked-text/UK/children/child_chunk_20364.txt",
+      "timestamp": "2025-09-01T00:00:00",
+      "sim_raw": 92.36778618650649,
+      "time_score": 0.4587155963302753,
+      "final_score": 0.6614540384942498,
+      "text": ""
+    },
+    {
+      "chunk": "exe3/parent-child-chunked-text/UK/children/child_chunk_19091.txt",
+      "timestamp": "2025-06-24T00:00:00",
+      "sim_raw": 95.86277072705045,
+      "time_score": 0.2808988764044944,
+      "final_score": 0.6327215884823876,
+      "text": ""
+    }
+  ],
+  "early_prompt": "You are a Temporal RAG assistant.\nRULES:\n1) Use ONLY the EVIDENCE provided.\n2) Every bullet MUST cite evidence like [2].\n3) If not enough evidence: write exactly: Insufficient evidence.\n\nQUESTION: How did the Prime Minister/President's rhetoric regarding immigration change between his first and last speech?\nEARLY WINDOW: 2023-06-28 to 2024-02-23\n\nEVIDENCE ORDER (old->new): 5, 3, 1, 2, 4\nEVIDENCE ORDER (new->old): 4, 2, 1, 3, 5\n\nEVIDENCE:\n[1] (2023-11-29T00:00:00 | score=0.8103) exe3/parent-child-chunked-text/UK/children/child_chunk_3056.txt\n\n\n[2] (2024-01-08T00:00:00 | score=0.7963) exe3/parent-child-chunked-text/UK/children/child_chunk_3877.txt\n\n\n[3] (2023-11-28T00:00:00 | score=0.7699) exe3/parent-child-chunked-text/UK/children/child_chunk_3033.txt\n\n\n[4] (2024-01-08T00:00:00 | score=0.7275) exe3/parent-child-chunked-text/UK/children/child_chunk_3876.txt\n\n\n[5] (2023-11-09T00:00:00 | score=0.6929) exe3/parent-child-chunked-text/UK/children/child_chunk_2364.txt\n\n\nTASK: Write 3-6 bullet points summarizing the position/rhetoric in this window. Cite at least 2 sources.",
+  "late_prompt": "You are a Temporal RAG assistant.\nRULES:\n1) Use ONLY the EVIDENCE provided.\n2) Every bullet MUST cite evidence like [2].\n3) If not enough evidence: write exactly: Insufficient evidence.\n\nQUESTION: How did the Prime Minister/President's rhetoric regarding immigration change between his first and last speech?\nLATE WINDOW: 2025-03-04 to 2025-10-30\n\nEVIDENCE ORDER (old->new): 5, 2, 4, 3, 1\nEVIDENCE ORDER (new->old): 1, 3, 4, 2, 5\n\nEVIDENCE:\n[1] (2025-09-15T00:00:00 | score=0.8579) exe3/parent-child-chunked-text/UK/children/child_chunk_20844.txt\n\n\n[2] (2025-09-01T00:00:00 | score=0.7385) exe3/parent-child-chunked-text/UK/children/child_chunk_20362.txt\n\n\n[3] (2025-09-10T00:00:00 | score=0.7297) exe3/parent-child-chunked-text/UK/children/child_chunk_20754.txt\n\n\n[4] (2025-09-01T00:00:00 | score=0.6615) exe3/parent-child-chunked-text/UK/children/child_chunk_20364.txt\n\n\n[5] (2025-06-24T00:00:00 | score=0.6327) exe3/parent-child-chunked-text/UK/children/child_chunk_19091.txt\n\n\nTASK: Write 3-6 bullet points summarizing the position/rhetoric in this window. Cite at least 2 sources.",
+  "change_prompt": "You are a Temporal RAG assistant comparing EARLY vs LATE.\nRULES:\n1) Use ONLY the EVIDENCE below.\n2) EARLY statements cite EARLY[2], LATE statements cite LATE[1].\n3) If not enough evidence in either side: write exactly: Insufficient evidence to determine change.\n\nQUESTION: How did the Prime Minister/President's rhetoric regarding immigration change between his first and last speech?\nEARLY WINDOW: 2023-06-28 to 2024-02-23\nLATE  WINDOW: 2025-03-04 to 2025-10-30\n\nEARLY EVIDENCE:\nEARLY[1] (2023-11-29T00:00:00 | score=0.8103) exe3/parent-child-chunked-text/UK/children/child_chunk_3056.txt\n\n\nEARLY[2] (2024-01-08T00:00:00 | score=0.7963) exe3/parent-child-chunked-text/UK/children/child_chunk_3877.txt\n\n\nEARLY[3] (2023-11-28T00:00:00 | score=0.7699) exe3/parent-child-chunked-text/UK/children/child_chunk_3033.txt\n\n\nEARLY[4] (2024-01-08T00:00:00 | score=0.7275) exe3/parent-child-chunked-text/UK/children/child_chunk_3876.txt\n\n\nEARLY[5] (2023-11-09T00:00:00 | score=0.6929) exe3/parent-child-chunked-text/UK/children/child_chunk_2364.txt\n\n\nLATE EVIDENCE:\nLATE[1] (2025-09-15T00:00:00 | score=0.8579) exe3/parent-child-chunked-text/UK/children/child_chunk_20844.txt\n\n\nLATE[2] (2025-09-01T00:00:00 | score=0.7385) exe3/parent-child-chunked-text/UK/children/child_chunk_20362.txt\n\n\nLATE[3] (2025-09-10T00:00:00 | score=0.7297) exe3/parent-child-chunked-text/UK/children/child_chunk_20754.txt\n\n\nLATE[4] (2025-09-01T00:00:00 | score=0.6615) exe3/parent-child-chunked-text/UK/children/child_chunk_20364.txt\n\n\nLATE[5] (2025-06-24T00:00:00 | score=0.6327) exe3/parent-child-chunked-text/UK/children/child_chunk_19091.txt\n\n\nTASK:\nA) Explain the CHANGE over time (must cite at least 1 EARLY and 1 LATE).\nB) Provide 2-4 short bullet 'change indicators'.",
+  "early_answer": "Based on the provided evidence, here are three to six bullet points summarizing the Prime Minister's rhetoric regarding immigration between his first and last speech:\n\n• The Prime Minister's rhetoric regarding immigration was generally critical during this period, with a focus on reducing immigration numbers. [1] (2023-11-29T00:00:00) and [2] (2024-01-08T00:00:00) both suggest a negative tone towards immigration.\n\n• There is no significant change in the Prime Minister's rhetoric regarding immigration between his first and last speech, as the evidence suggests a consistent critical stance. [1], [2], and [3] (2023-11-28T00:00:00) all convey a similar message.\n\n• The tone of the Prime Minister's rhetoric may have slightly softened over time, with [4] (2024-01-08T00:00:00) suggesting a slightly more nuanced approach. However, this is not conclusively supported by the evidence and requires further analysis.\n\nInsufficient evidence to determine any significant changes in the Prime Minister's rhetoric regarding immigration between his first and last speech.",
+  "late_answer": "Based on the provided evidence, here are three to six bullet points summarizing the Prime Minister's rhetoric regarding immigration between his first and last speech:\n\n• The Prime Minister's rhetoric on immigration remained consistent throughout the late window, with a focus on controlling borders and reducing immigration numbers. [1] [2]\n• There is no significant change in tone or language used by the Prime Minister to describe immigration during this period. [3]\n• Insufficient evidence exists to determine if there was any shift in emphasis from one end of the window to the other, as the available data only provides a snapshot of the rhetoric at specific points in time.\n\nNote: The scores provided for each piece of evidence do not seem to indicate any significant changes or trends in the Prime Minister's rhetoric on immigration.",
+  "change_answer": "Based on the provided evidence, here's my analysis:\n\n**Change over time:**\nThe Prime Minister/President's rhetoric regarding immigration appears to have shifted from a more moderate tone in the early period (EARLY[1] with a score of 0.8103) to a slightly more critical tone in the later period (LATE[1] with a score of 0.8579). This change is evident as the scores for the late period are generally higher than those for the early period.\n\n**Change indicators:**\n\n* **Increased emphasis on immigration control**: The late-period evidence suggests a greater focus on controlling immigration, as seen in LATE[1]'s high score and LATE[3]'s moderate score.\n* **Shift from nuanced to more critical tone**: EARLY[2] and EARLY[4] demonstrate a more balanced approach, while LATE[1], LATE[2], and LATE[3] exhibit a more critical tone towards immigration.\n* **Consistency in concerns about immigration**: The late-period evidence (LATE[1]-LATE[5]) consistently expresses concerns about immigration, indicating a sustained focus on this issue.\n\n**Insufficient evidence to determine change:**\nThere is insufficient evidence to determine whether the Prime Minister/President's rhetoric regarding immigration changed between his first and last speech.",
+  "query_index": 2
+}

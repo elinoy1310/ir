@@ -98,20 +98,15 @@ def run_rag(query: str, method: str = "hybrid", k: int = 5,nation="both"):
         for c in enriched
     ]
 
-    scores=[
-        f"{c['score']:.4f}"
-        for c in enriched
-    ]
-
 
     # הצגת התוצאה
     print("\n" + "="*90)
     print(f"METHOD={method}  K={k}")
     print("QUESTION:", query)
-    print("\nANSWER:\n", answer)
-    print("\nTOP CONTEXT SOURCES:")
-    for i, c in enumerate(enriched, 1):
-        print(f"[{i}] {c['source_file']}  ({c['chunk']})  score={c['score']:.4f}")
+    # print("\nANSWER:\n", answer)
+    # print("\nTOP CONTEXT SOURCES:")
+    # for i, c in enumerate(enriched, 1):
+    #     print(f"[{i}] {c['source_file']}  ({c['chunk']})  score={c['score']:.4f}")
     return answer, sources  # החזרת התשובה לשמירה
 
 
@@ -192,8 +187,8 @@ def save_sources_to_txt(
             f.write(f"- {s}\n")
 
 
-# from openpyxl import Workbook, load_workbook
-# from openpyxl.styles import Alignment
+from openpyxl import Workbook, load_workbook
+from openpyxl.styles import Alignment
 
 def get_or_create_wb(path: Path):
     if path.exists():
